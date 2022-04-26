@@ -22,11 +22,12 @@ export default [
         plugins: [
             resolve({
                 preferBuiltins: true,
-                extensions: [".js", ".jsx"]
+                extensions: [".js", ".jsx", ".css", ".scss"]
             }),
             postcss({
                 plugins: [],
                 minimize: true,
+                extensions: [".css", ".scss"],
             }),
             commonjs({
                 include: /node_modules/,
