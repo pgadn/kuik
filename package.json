@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pgadnmis/quiq.git"
+    "url": "git+https://github.com/pgadn/quiq.git"
   },
   "author": "Michael Jay Arizala",
   "license": "MIT",
