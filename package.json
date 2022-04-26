@@ -1,6 +1,6 @@
 {
   "name": "qcuicq",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
   "main": "dist/index.min.js",
   "module": "dist/index.es.min.js",
