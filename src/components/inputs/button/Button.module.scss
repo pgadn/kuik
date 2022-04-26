@@ -8,18 +8,18 @@
     border: 0;
     outline: 0;
     border-radius: 4px;
-    color: var(--color-textDark);
+    color: var(--qcuicq-color-textDark);
     background-color: transparent;
     display: flex;
     align-items: center;
     cursor: pointer;
     
-    padding: var(--btn-size-md-padding);
-    height: var(--btn-size-md-height);
-    font-size: var(--btn-size-md-font);
+    padding: var(--qcuicq-btn-size-md-padding);
+    height: var(--qcuicq-btn-size-md-height);
+    font-size: var(--qcuicq-btn-size-md-font);
 
     &:hover {
-        background-color: var(--color-light);
+        background-color: var(--qcuicq-color-light);
         transition: .5s;
         -webkit-transition: .5s;
         -moz-transition: .5s;
@@ -27,8 +27,8 @@
     }
 
     &:active {
-        background-color: var(--color-primary-lighter);
-        color: var(--color-textDark);
+        background-color: var(--qcuicq-color-primary-lighter);
+        color: var(--qcuicq-color-textDark);
         transition: .4s;
         -webkit-transition: .4s;
         -moz-transition: .4s;
@@ -43,10 +43,10 @@
 
 .Button_Variant__contained {
     color: #fff;
-    background-color: var(--color-primary);
+    background-color: var(--qcuicq-color-primary);
 
     &:hover {
-        background-color: var(--color-primary-light);
+        background-color: var(--qcuicq-color-primary-light);
         transition: .5s;
         -webkit-transition: .5s;
         -moz-transition: .5s;
@@ -55,23 +55,23 @@
 }
 
 .Button_Size__sm {
-    padding: var(--btn-size-sm-padding);
-    height: var(--btn-size-sm-height);
-    font-size: var(--btn-size-sm-font);
+    padding: var(--qcuicq-btn-size-sm-padding);
+    height: var(--qcuicq-btn-size-sm-height);
+    font-size: var(--qcuicq-btn-size-sm-font);
 }
 .Button_Size__lg {
-    padding: var(--btn-size-lg-padding);
-    height: var(--btn-size-lg-height);
-    font-size: var(--btn-size-lg-font);
+    padding: var(--qcuicq-btn-size-lg-padding);
+    height: var(--qcuicq-btn-size-lg-height);
+    font-size: var(--qcuicq-btn-size-lg-font);
 }
 
 .Button_Disabled {
-    color: var(--color-textLight);
+    color: var(--qcuicq-color-textLight);
     background-color: transparent;
     cursor:initial;
 
     &:hover {
-        color: var(--color-textLight);
+        color: var(--qcuicq-color-textLight);
         background-color: transparent;
     }
 }

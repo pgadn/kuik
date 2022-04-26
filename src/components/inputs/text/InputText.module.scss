@@ -10,8 +10,8 @@
     height: 48px;
     border-radius: 6px;
     text-indent: 10px;
-    box-shadow: 0px 0px 10px 1px var(--color-light);
-    color: var(--color-textDark);
+    box-shadow: 0px 0px 10px 1px var(--qcuicq-color-light);
+    color: var(--qcuicq-color-textDark);
     font-weight: 600;
     letter-spacing: .5px;
     font-size: .8rem;
@@ -22,11 +22,11 @@
     -o-transition: all .5s ease-out;
 
     &::placeholder {
-        color: var(--color-textSecondary);
+        color: var(--qcuicq-color-textSecondary);
     }
 
     &:focus {
-        border-color: var(--color-primary);
+        border-color: var(--qcuicq-color-primary);
         transition: all .5s ease-out;
         -webkit-transition: all .5s ease-out;
         -moz-transition: all .5s ease-out;
@@ -35,13 +35,13 @@
 }
 
 .InputError {
-    border: 1px solid var(--color-error);
+    border: 1px solid var(--qcuicq-color-error);
 }
 .HelperMessage {
-    color: var(--color-textLight);
+    color: var(--qcuicq-color-textLight);
     font-size: .8rem;
 }
 .ErrorMessage {
-    color: var(--color-textError);
+    color: var(--qcuicq-color-textError);
     font-size: .8rem;
 }
