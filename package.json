@@ -1,5 +1,5 @@
 {
-  "name": "quiq",
+  "name": "kuik",
   "version": "1.0.0",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
   "main": "dist/index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pgadn/quiq.git"
+    "url": "git+https://github.com/pgadn/kuik.git"
   },
   "author": "Michael Jay Arizala",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pgadn/quiq/issues"
+    "url": "https://github.com/pgadn/kuik/issues"
   },
-  "homepage": "https://github.com/pgadn/quiq#readme",
+  "homepage": "https://github.com/pgadn/kuik#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
