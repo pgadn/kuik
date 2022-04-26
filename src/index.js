@@ -1,3 +1,9 @@
+//styles
+import './styles/font/roboto.scss'
+import './styles/responsive/breakpoint.scss'
+import './styles/responsive/mixins.scss'
+import './styles/global.scss'
+
 // Inputs
 // =============
 export * from "./components/inputs"
