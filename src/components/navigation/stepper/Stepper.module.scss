@@ -1,0 +1,14 @@
+.StepperWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px;
+}
+
+.StepIndicatorText {
+    font-size: .7rem;
+    color: var(--color-textLight);
+    margin-top: 15px;
+    text-align: center;
+}
