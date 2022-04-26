@@ -2,8 +2,8 @@
   "name": "qcuicq",
   "version": "1.0.3",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
-  "main": "dist/index.min.js",
-  "module": "dist/index.es.min.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
