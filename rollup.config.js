@@ -12,34 +12,23 @@ export default [
             {
                 file: 'dist/index.js',
                 format: 'cjs',
+                sourcemap: true,
             },
             {
-                file: 'dist/index.es.js',
-                format: 'es',
-                exports: 'named',
+                file: 'dist/index.esm.js',
+                format: 'esm',
+                sourcemap: true,
             }
         ],
-        module: {
-            rules: [
-                {
-                    test: /\.s[ac]ss$/i,
-                    use: [
-                        'style-loader',
-                        'css-loader',
-                        'sass-loader',
-                    ],
-                },
-            ],
-        },
         plugins: [
-            resolve({
-                preferBuiltins: true,
-                extensions: [".js", ".jsx", ".css", ".scss"]
-            }),
             postcss({
                 plugins: [],
                 minimize: true,
                 extensions: [".css", ".scss"],
+            }),
+            resolve({
+                preferBuiltins: true,
+                extensions: [".js", ".jsx", ".css", ".scss"]
             }),
             commonjs({
                 include: /node_modules/,
@@ -52,7 +41,7 @@ export default [
                 presets: ['@babel/preset-react'],
             }),
             external(),
-            terser()
-        ]
+            // terser()
+        ],
     }
 ]

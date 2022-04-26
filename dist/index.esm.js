@@ -1,15 +1,6 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var React$1 = require('react');
-var MaskedInput = require('react-text-mask');
-var reactHookForm = require('react-hook-form');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React$1);
-var MaskedInput__default = /*#__PURE__*/_interopDefaultLegacy(MaskedInput);
+import React$1, { createContext, useContext } from 'react';
+import MaskedInput from 'react-text-mask';
+import { Controller } from 'react-hook-form';
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -193,16 +184,16 @@ var InputText = function InputText(props) {
       other = _objectWithoutProperties(props, _excluded); // console.log(inputRef)
 
 
-  return /*#__PURE__*/React__default["default"].createElement("div", {
+  return /*#__PURE__*/React$1.createElement("div", {
     className: styles$8.InputTextWrapper
-  }, /*#__PURE__*/React__default["default"].createElement("input", _extends({
+  }, /*#__PURE__*/React$1.createElement("input", _extends({
     className: classnames(styles$8.InputText, errorMsg && styles$8.InputError, InputTextStyles !== null && InputTextStyles !== void 0 ? InputTextStyles : ""),
     type: type !== null && type !== void 0 ? type : "text",
     name: name,
     placeholder: placeholder !== null && placeholder !== void 0 ? placeholder : ""
-  }, inputRef, other)), errorMsg && /*#__PURE__*/React__default["default"].createElement("span", {
+  }, inputRef, other)), errorMsg && /*#__PURE__*/React$1.createElement("span", {
     className: styles$8.ErrorMessage
-  }, errorMsg), !errorMsg && helperMsg && /*#__PURE__*/React__default["default"].createElement("span", {
+  }, errorMsg), !errorMsg && helperMsg && /*#__PURE__*/React$1.createElement("span", {
     className: styles$8.HelperMessage
   }, helperMsg));
 };
@@ -229,12 +220,12 @@ var InputMask = function InputMask(props) {
 
   return /*#__PURE__*/React.createElement("div", {
     className: styles$8.InputTextWrapper
-  }, /*#__PURE__*/React.createElement(reactHookForm.Controller, {
+  }, /*#__PURE__*/React.createElement(Controller, {
     control: control,
     name: name,
     render: function render(_ref) {
       var field = _ref.field;
-      return /*#__PURE__*/React.createElement(MaskedInput__default["default"], _extends({}, field, {
+      return /*#__PURE__*/React.createElement(MaskedInput, _extends({}, field, {
         className: classnames(styles$8.InputText, errorMsg && styles$8.InputError, InputTextStyles !== null && InputTextStyles !== void 0 ? InputTextStyles : ""),
         mask: mask,
         placeholder: placeholder,
@@ -252,13 +243,13 @@ var css_248z$7 = ".Step-module_StepWrapper__qjMSm{margin-right:calc(100% + 1000p
 var styles$7 = {"StepWrapper":"Step-module_StepWrapper__qjMSm","ActiveStep":"Step-module_ActiveStep__SZDLu"};
 styleInject(css_248z$7);
 
-var StepperContext = /*#__PURE__*/React$1.createContext();
+var StepperContext = /*#__PURE__*/createContext();
 
 var Step = function Step(props) {
   var children = props.children,
       stepNum = props.stepNum;
       props.currentStep;
-  var stepperContext = React$1.useContext(StepperContext);
+  var stepperContext = useContext(StepperContext);
   return /*#__PURE__*/React.createElement("div", {
     className: classnames(styles$7.StepWrapper, stepperContext.currentStep === stepNum ? styles$7.ActiveStep : "")
   }, children);
@@ -315,7 +306,7 @@ styleInject(css_248z$3);
 
 var Card = function Card(props) {
   var children = props.children;
-  return /*#__PURE__*/React__default["default"].createElement("div", {
+  return /*#__PURE__*/React$1.createElement("div", {
     className: styles$3.Card
   }, children);
 };
@@ -326,7 +317,7 @@ styleInject(css_248z$2);
 
 var CardHeader = function CardHeader(props) {
   var children = props.children;
-  return /*#__PURE__*/React__default["default"].createElement("div", {
+  return /*#__PURE__*/React$1.createElement("div", {
     className: styles$2.CardHeaderWrapper
   }, children);
 };
@@ -337,7 +328,7 @@ styleInject(css_248z$1);
 
 var CardContent = function CardContent(props) {
   var children = props.children;
-  return /*#__PURE__*/React__default["default"].createElement("div", {
+  return /*#__PURE__*/React$1.createElement("div", {
     className: styles$1.CardContentWrapper
   }, children);
 };
@@ -348,20 +339,10 @@ styleInject(css_248z);
 
 var CardFooter = function CardFooter(props) {
   var children = props.children;
-  return /*#__PURE__*/React__default["default"].createElement("div", {
+  return /*#__PURE__*/React$1.createElement("div", {
     className: styles.CardFooterWrapper
   }, children);
 };
 
-exports.Button = Button;
-exports.Card = Card;
-exports.CardContent = CardContent;
-exports.CardFooter = CardFooter;
-exports.CardHeader = CardHeader;
-exports.InputMask = InputMask;
-exports.InputText = InputText;
-exports.Step = Step;
-exports.StepContent = StepContent;
-exports.StepLabel = StepLabel;
-exports.Stepper = Stepper;
-//# sourceMappingURL=index.js.map
+export { Button, Card, CardContent, CardFooter, CardHeader, InputMask, InputText, Step, StepContent, StepLabel, Stepper };
+//# sourceMappingURL=index.esm.js.map
