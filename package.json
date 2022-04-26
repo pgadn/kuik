@@ -1,6 +1,6 @@
 {
-  "name": "kuik",
-  "version": "1.0.1",
+  "name": "qcuicq",
+  "version": "1.0.0",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pgadn/kuik.git"
+    "url": "git+https://github.com/pgadn/qcuicq.git"
   },
   "author": "Michael Jay Arizala",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pgadn/kuik/issues"
+    "url": "https://github.com/pgadn/qcuicq/issues"
   },
-  "homepage": "https://github.com/pgadn/kuik#readme",
+  "homepage": "https://github.com/pgadn/qcuicq#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
