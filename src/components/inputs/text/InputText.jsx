@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./InputText.module.scss"
 import classNames from "classnames"
 
-const InputText = (props) => {
+export const InputText = (props) => {
     const {
         type,
         name,
@@ -44,4 +44,4 @@ const InputText = (props) => {
     )
 }
 
-export default InputText
+// export default InputText
