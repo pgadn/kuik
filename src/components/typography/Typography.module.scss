@@ -1,0 +1,47 @@
+.TypographyWrapper {
+    color: var(--color-textPrimary);
+}
+
+.Typography_Align__left {
+    text-align: left;
+}
+.Typography_Align__center {
+    text-align: center;
+}
+.Typography_Align__right {
+    text-align: right;
+}
+.Typography_Align__justify {
+    text-align: justify;
+}
+
+.Typography_Variant__h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-textDark);
+    margin: 0;
+
+    &.Typography_FontColor__textPrimary {
+        color: var(--color-textPrimary)
+    }
+    &.Typography_FontColor__textSecondary {
+        color: var(--color-textSecondary)
+    }
+    &.Typography_FontColor__textDark {
+        color: var(--color-textDark)
+    }
+    &.Typography_FontColor__textLight {
+        color: var(--color-textLight)
+    }
+    &.Typography_FontColor__textDefault {
+        color: var(--color-textDefault)
+    }
+}
+
+.Typography_Variant__caption {
+    font-size: .8rem;
+    font-weight: 300;
+    color: var(--color-textDefault);
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,14 @@
+/*================ Media Query Mixin ================*/
+
+@mixin breakpoint($media-query) {
+    @each $bp in $grid-breakpoints {
+      $name: nth($bp, 1);
+      $declaration: nth($bp, 2);
+  
+      @if $media-query == $name and $declaration {
+        @media only screen and #{$declaration} {
+          @content;
+        }
+      }
+    }
+  }

@@ -1,0 +1,20 @@
+$wrapperWidth: 100%;
+
+.StepWrapper {
+    width: $wrapperWidth;
+    overflow-x: hidden;
+    
+    position: absolute;
+    max-height: 0;
+    opacity: 0;
+    margin-right: calc(#{$wrapperWidth} + 1000px);
+    transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.ActiveStep {
+    position: relative;
+    max-height: 100%;
+    opacity: 1;
+    margin-right: 0;
+    transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+}
