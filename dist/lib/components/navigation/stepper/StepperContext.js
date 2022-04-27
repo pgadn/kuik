@@ -1,1 +1,2 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):(e="undefined"!=typeof globalThis?globalThis:e||self).StepperContext=t(e.react)}(this,(function(e){"use strict";return e.createContext()}));
+"use strict";var e=require("react").createContext();module.exports=e;
+//# sourceMappingURL=StepperContext.js.map

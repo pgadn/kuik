@@ -33,7 +33,8 @@ const generateComponentsConfigs = (baseDir) => {
                 componentsConfig.push({
                     input: [`${formattedInputSrc}`],
                     output: [
-                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.js`.replace('src', 'lib'), format: 'umd', name: fileName[0] },
+                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.js`.replace('src', 'lib'), format: 'cjs', sourcemap: true, exports: 'auto' },
+                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.esm.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: 'auto' },
                     ],
                     plugins: [
                         postcss({
@@ -71,7 +72,8 @@ const generateComponentsConfigs = (baseDir) => {
             componentsConfig.push({
                 input: [`./${baseDir}/${d}/index.js`],
                 output: [
-                    { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'umd', name: d },
+                    { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'cjs', sourcemap: true, exports: 'auto' },
+                    { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: 'auto' },
                 ],
                 plugins: [
                     postcss({
