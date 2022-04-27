@@ -1,5 +1,4 @@
 import styles from "./Stepper.module.scss"
-import { Children, isValidElement, cloneElement } from "react"
 import StepperContext from "./StepperContext"
 
 const Stepper = (props) => {

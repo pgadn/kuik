@@ -1,8 +1,7 @@
 import styles from "./InputText.module.scss"
 import classNames from "classnames"
 import MaskedInput from "react-text-mask"
-import PropTypes from "prop-types"
-import { useForm, Controller } from "react-hook-form"
+import { Controller } from "react-hook-form"
 
 function Mask(props) {
     const { inputRef, mask, placeholder, placeholderChar, ...others } = props
