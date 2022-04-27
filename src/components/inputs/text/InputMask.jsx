@@ -3,25 +3,6 @@ import classNames from "classnames"
 import MaskedInput from "react-text-mask"
 import { Controller } from "react-hook-form"
 
-function Mask(props) {
-    const { inputRef, mask, placeholder, placeholderChar, ...others } = props
-    console.log(others)
-    return (
-        <MaskedInput
-            // {...inputRef}
-            // inputref={inputRef}
-            {...others}
-            {...inputRef}
-            mask={mask}
-            placeholder={placeholder}
-            placeholderChar={placeholderChar}
-        />
-    )
-}
-// Mask.propTypes = {
-//     inputRef: PropTypes.func.isRequired,
-// }
-
 const InputMask = (props) => {
     const {
         type,

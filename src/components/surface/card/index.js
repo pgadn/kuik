@@ -4,7 +4,7 @@ import CardContent from './CardContent'
 import CardFooter from './CardFooter'
 
 export {
-    Card,
+    Card as default,
     CardHeader,
     CardContent,
     CardFooter,

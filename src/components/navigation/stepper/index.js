@@ -5,7 +5,7 @@ import StepContent from './StepContent'
 
 export {
     Step,
-    Stepper,
+    Stepper as default,
     StepLabel,
     StepContent,
 }
