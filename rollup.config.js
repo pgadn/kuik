@@ -30,11 +30,12 @@ const generateComponentsConfigs = (baseDir) => {
                 // console.log(`FORMATTED PATH: ${bsDirArr.join('/')}/${d}`)
                 // console.log(fileName[0] + "==" + fileName[1])
                 formattedInputSrc = `${bsDirArr.join('/')}/${d}`
+                let exportsType = fileName[0] === 'index' ? 'auto' : 'default'
                 componentsConfig.push({
                     input: [`${formattedInputSrc}`],
                     output: [
-                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.js`.replace('src', 'lib'), format: 'cjs', sourcemap: true, exports: 'auto' },
-                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.esm.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: 'auto' },
+                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.js`.replace('src', 'lib'), format: 'cjs', sourcemap: true, exports: exportsType },
+                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.esm.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: exportsType },
                     ],
                     plugins: [
                         postcss({
@@ -49,6 +50,7 @@ const generateComponentsConfigs = (baseDir) => {
                         commonjs({
                             include: /node_modules/,
                             namedExports: {
+                                'react': ['React'],
                                 'classnames': ['classNames'],
                                 'react-text-mask': ['MaskedInput'],
                                 'react-hook-form': ['reactHookForm'],
@@ -88,6 +90,7 @@ const generateComponentsConfigs = (baseDir) => {
                     commonjs({
                         include: /node_modules/,
                         namedExports: {
+                            'react': ['React'],
                             'classnames': ['classNames'],
                             'react-text-mask': ['MaskedInput'],
                             'react-hook-form': ['reactHookForm'],
@@ -147,6 +150,7 @@ export default [
             commonjs({
                 include: /node_modules/,
                 namedExports: {
+                    'react': ['React'],
                     'classnames': ['classNames'],
                     'react-text-mask': ['MaskedInput'],
                     'react-hook-form': ['reactHookForm'],

@@ -1,6 +1,6 @@
 import styles from "./CardImage.module.scss"
 
-export const CardImage = (props) => {
+const CardImage = (props) => {
     const {
         component,
         height,
@@ -14,3 +14,5 @@ export const CardImage = (props) => {
         </div>
     )
 }
+
+export default CardImage

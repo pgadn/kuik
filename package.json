@@ -1,6 +1,6 @@
 {
   "name": "qcuicq",
-  "version": "1.0.11",
+  "version": "1.0.13",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
   "main": "dist/lib/index.js",
   "module": "dist/lib/index.esm.js",
@@ -14,6 +14,7 @@
     "dist/**/*.scss",
     "dist/**/*.map"
   ],
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",

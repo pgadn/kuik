@@ -41,81 +41,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
-/*================ Media Query Mixin ================*/
-.TypographyWrapper {
-  color: var(--qcuicq-color-textPrimary);
-}
-
-.Typography_Align__left {
-  text-align: left;
-}
-
-.Typography_Align__center {
-  text-align: center;
-}
-
-.Typography_Align__right {
-  text-align: right;
-}
-
-.Typography_Align__justify {
-  text-align: justify;
-}
-
-.Typography_Variant__h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--qcuicq-color-textDark);
-  margin: 0;
-}
-.Typography_Variant__h3.Typography_FontColor__textPrimary {
-  color: var(--qcuicq-color-textPrimary);
-}
-.Typography_Variant__h3.Typography_FontColor__textSecondary {
-  color: var(--qcuicq-color-textSecondary);
-}
-.Typography_Variant__h3.Typography_FontColor__textDark {
-  color: var(--qcuicq-color-textDark);
-}
-.Typography_Variant__h3.Typography_FontColor__textLight {
-  color: var(--qcuicq-color-textLight);
-}
-.Typography_Variant__h3.Typography_FontColor__textDefault {
-  color: var(--qcuicq-color-textDefault);
-}
-
-.Typography_Variant__caption {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: var(--qcuicq-color-textDefault);
-  margin: 0;
-  padding: 0;
-}
-
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepContentWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .StepWrapper {
   width: 100%;
   overflow-x: hidden;
@@ -134,6 +63,33 @@ body {
   transition: margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.StepContentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .CardFooterWrapper {
   padding: 20px 20px;
   border-radius: 0 0 20px 20px;
@@ -144,12 +100,6 @@ body {
   padding: 20px 20px 45px;
   border-radius: 20px 20px 0px 0px;
   background-color: var(--qcuicq-color-primary);
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .CardContentWrapper {
