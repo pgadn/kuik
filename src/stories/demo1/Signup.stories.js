@@ -8,12 +8,8 @@ import Card from '../../components/surface/card/Card'
 import CardHeader from '../../components/surface/card/CardHeader'
 import CardContent from '../../components/surface/card/CardContent'
 import CardFooter from '../../components/surface/card/CardFooter'
-import Stepper from '../../components/navigation/stepper/Stepper'
-import Step from '../../components/navigation/stepper/Step'
-import StepContent from '../../components/navigation/stepper/StepContent'
-import StepLabel from '../../components/navigation/stepper/StepLabel'
+import Stepper, { Step, StepContent } from '../../components/navigation/stepper'
 import Typography from "../../components/typography/Typography"
-import StepperContext from '../../components/navigation/stepper/StepperContext'
 
 const stories = storiesOf('Demo 1', module)
 
@@ -21,7 +17,6 @@ stories.add('Signup', () => {
     const [currentStep, setCurrentStep] = useState(1)
     const [withClearance, setWithClearance] = useState(false)
     const [move, setMove] = useState(currentStep)
-    const stepperContext = useContext(StepperContext)
 
     const steps = [
         {
@@ -31,7 +26,10 @@ stories.add('Signup', () => {
           label: "Basic Information",
           description: "Let's begin by getting to know you. We will check if we have already met before, and will provide you options if similar details exist. Otherwise, we will save your info for the first time.",
           component: (
-            <InputText placeholder="hello" helperMsg={`Enter basic info`} />
+              <>
+                <InputText placeholder="Input 1" />
+                <InputText placeholder="Input 2" />
+              </>
           )
         },
         {
@@ -40,7 +38,10 @@ stories.add('Signup', () => {
           form: "contactInfoForm",
           label: "Contact Information",
           component: (
-            <InputText placeholder="hello" helperMsg={`Enter contact info`} />
+            <>
+              <InputText placeholder="Input 1" />
+              <InputText placeholder="Input 2" />
+            </>
           )
         },
         {
@@ -49,7 +50,10 @@ stories.add('Signup', () => {
           form: "accountInfoForm",
           label: "Account Information",
           component: (
-            <InputText placeholder="hello" helperMsg={`Enter account info`} />
+            <>
+              <InputText placeholder="Input 1" />
+              <InputText placeholder="Input 2" />
+            </>
           )
         },
     ]
@@ -90,8 +94,10 @@ stories.add('Signup', () => {
                         getStep={(s) => setCurrentStep(s)}
                     >
                         {steps && steps.length > 0 && steps.map((s, idx) => (
-                        <Step key={s.id} stepNum={s.sequence}>
-                            {s.component}
+                            <Step key={s.id} stepNum={s.sequence}>
+                            <StepContent>
+                                {s.component}
+                            </StepContent>
                         </Step>
                         ))}
                     </Stepper>

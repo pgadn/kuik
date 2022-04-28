@@ -8,13 +8,14 @@ $wrapperWidth: 100%;
     max-height: 0;
     opacity: 0;
     margin-right: calc(#{$wrapperWidth} + 1000px);
-    transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+    transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
 .ActiveStep {
     position: relative;
     max-height: 100%;
+    overflow-x: visible;
     opacity: 1;
     margin-right: 0;
-    transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+    transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }

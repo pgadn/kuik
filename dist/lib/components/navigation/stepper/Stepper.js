@@ -100,7 +100,7 @@ var Stepper = function Stepper(props) {
       move = props.move,
       getStep = props.getStep;
 
-  var _useState = useState(1),
+  var _useState = useState(move !== null && move !== void 0 ? move : 1),
       _useState2 = _slicedToArray(_useState, 2),
       step = _useState2[0],
       setStep = _useState2[1];

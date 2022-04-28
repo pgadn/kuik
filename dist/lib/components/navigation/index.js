@@ -100,7 +100,7 @@ var Stepper = function Stepper(props) {
       move = props.move,
       getStep = props.getStep;
 
-  var _useState = useState(1),
+  var _useState = useState(move !== null && move !== void 0 ? move : 1),
       _useState2 = _slicedToArray(_useState, 2),
       step = _useState2[0],
       setStep = _useState2[1];
@@ -135,7 +135,7 @@ var Stepper = function Stepper(props) {
   }, step, " of ", steps.length, " ", /*#__PURE__*/React.createElement("br", null), steps[step - 1].label)));
 };
 
-var css_248z$2 = ".Step-module_StepWrapper__qjMSm{margin-right:calc(100% + 1000px);max-height:0;opacity:0;overflow-x:hidden;position:absolute;transition:margin-right .8s ease-out,opacity 1s ease-out;width:100%}.Step-module_ActiveStep__SZDLu{margin-right:0;max-height:100%;opacity:1;position:relative;transition:margin-right .8s ease-out,opacity 1s ease-out}";
+var css_248z$2 = ".Step-module_StepWrapper__qjMSm{margin-right:calc(100% + 1000px);max-height:0;opacity:0;overflow-x:hidden;position:absolute;width:100%}.Step-module_ActiveStep__SZDLu,.Step-module_StepWrapper__qjMSm{transition:overflow-x 1s ease-out,margin-right .8s ease-out,opacity 1s ease-out}.Step-module_ActiveStep__SZDLu{margin-right:0;max-height:100%;opacity:1;overflow-x:visible;position:relative}";
 var styles$2 = {"StepWrapper":"Step-module_StepWrapper__qjMSm","ActiveStep":"Step-module_ActiveStep__SZDLu"};
 styleInject(css_248z$2);
 
@@ -211,7 +211,7 @@ var Step = function Step(props) {
   }, children);
 };
 
-var css_248z$1 = ".StepContent-module_StepContentWrapper__sveNh{align-items:center;display:flex;justify-content:center}";
+var css_248z$1 = ".StepContent-module_StepContentWrapper__sveNh{display:flex;flex-direction:column;width:100%}";
 var styles$1 = {"StepContentWrapper":"StepContent-module_StepContentWrapper__sveNh"};
 styleInject(css_248z$1);
 

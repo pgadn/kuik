@@ -11,7 +11,7 @@ const Stepper = (props) => {
         getStep,
     } = props
 
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(move ?? 1)
 
     useEffect(() => {
         if (typeof move !== 'number') {

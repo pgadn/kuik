@@ -27,7 +27,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".Step-module_StepWrapper__qjMSm{margin-right:calc(100% + 1000px);max-height:0;opacity:0;overflow-x:hidden;position:absolute;transition:margin-right .8s ease-out,opacity 1s ease-out;width:100%}.Step-module_ActiveStep__SZDLu{margin-right:0;max-height:100%;opacity:1;position:relative;transition:margin-right .8s ease-out,opacity 1s ease-out}";
+var css_248z = ".Step-module_StepWrapper__qjMSm{margin-right:calc(100% + 1000px);max-height:0;opacity:0;overflow-x:hidden;position:absolute;width:100%}.Step-module_ActiveStep__SZDLu,.Step-module_StepWrapper__qjMSm{transition:overflow-x 1s ease-out,margin-right .8s ease-out,opacity 1s ease-out}.Step-module_ActiveStep__SZDLu{margin-right:0;max-height:100%;opacity:1;overflow-x:visible;position:relative}";
 var styles = {"StepWrapper":"Step-module_StepWrapper__qjMSm","ActiveStep":"Step-module_ActiveStep__SZDLu"};
 styleInject(css_248z);
 

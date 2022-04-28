@@ -27,7 +27,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".StepContent-module_StepContentWrapper__sveNh{align-items:center;display:flex;justify-content:center}";
+var css_248z = ".StepContent-module_StepContentWrapper__sveNh{display:flex;flex-direction:column;width:100%}";
 var styles = {"StepContentWrapper":"StepContent-module_StepContentWrapper__sveNh"};
 styleInject(css_248z);
 
