@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "./Card.module.scss"
 
 const Card = (props) => {
@@ -6,7 +7,7 @@ const Card = (props) => {
     } = props
 
     return (
-        <div className={styles.Card}>
+        <div className={styles.CardWrapper}>
             {children}
         </div>
     )

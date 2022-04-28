@@ -30,14 +30,15 @@ const generateComponentsConfigs = (baseDir) => {
                 // console.log(`FORMATTED PATH: ${bsDirArr.join('/')}/${d}`)
                 // console.log(fileName[0] + "==" + fileName[1])
                 formattedInputSrc = `${bsDirArr.join('/')}/${d}`
-                let exportsType = fileName[0] === 'index' ? 'auto' : 'default'
+                let exportsType = fileName[0] === 'index' ? 'named' : 'default'
                 componentsConfig.push({
                     input: [`${formattedInputSrc}`],
                     output: [
-                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.js`.replace('src', 'lib'), format: 'cjs', sourcemap: true, exports: exportsType },
-                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.esm.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: exportsType },
+                        { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.js`.replace('src', 'lib'), format: 'esm' },
+                        // { file: `dist/${bsDirArr.join('/')}/${fileName[0]}.esm.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: exportsType },
                     ],
                     plugins: [
+                        external(),
                         postcss({
                             plugins: [],
                             minimize: true,
@@ -54,57 +55,58 @@ const generateComponentsConfigs = (baseDir) => {
                                 'classnames': ['classNames'],
                                 'react-text-mask': ['MaskedInput'],
                                 'react-hook-form': ['reactHookForm'],
+                                'StepperContext': ['StepperContext'],
                             }
                         }),
                         babel({
                             exclude: 'node_modules/**',
                             presets: ['@babel/preset-react'],
                         }),
-                        external(),
-                        terser(),
+                        // terser(),
                     ]
                 })
             }
-        } else {
-            // console.log("=====")
-            // console.log(baseDir)
-            // console.log(fp)
-            // console.log(d)
-            // console.log("=====")
-            componentsConfig.push({
-                input: [`./${baseDir}/${d}/index.js`],
-                output: [
-                    { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'cjs', sourcemap: true, exports: 'auto' },
-                    { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: 'auto' },
-                ],
-                plugins: [
-                    postcss({
-                        plugins: [],
-                        minimize: true,
-                        extensions: [".css", ".scss"],
-                    }),
-                    resolve({
-                        preferBuiltins: true,
-                        extensions: [".js", ".jsx", ".css", ".scss"]
-                    }),
-                    commonjs({
-                        include: /node_modules/,
-                        namedExports: {
-                            'react': ['React'],
-                            'classnames': ['classNames'],
-                            'react-text-mask': ['MaskedInput'],
-                            'react-hook-form': ['reactHookForm'],
-                        }
-                    }),
-                    babel({
-                        exclude: 'node_modules/**',
-                        presets: ['@babel/preset-react'],
-                    }),
-                    external(),
-                    terser(),
-                ]
-            })
         }
+        // else {
+        //     // console.log("=====")
+        //     // console.log(baseDir)
+        //     // console.log(fp)
+        //     // console.log(d)
+        //     // console.log("=====")
+        //     componentsConfig.push({
+        //         input: [`./${baseDir}/${d}/index.js`],
+        //         output: [
+        //             { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'esm' },
+        //             // { file: `dist/${fp}/${d}.js`.replace('src', 'lib'), format: 'esm', sourcemap: true, exports: 'auto' },
+        //         ],
+        //         plugins: [
+        //             postcss({
+        //                 plugins: [],
+        //                 minimize: true,
+        //                 extensions: [".css", ".scss"],
+        //             }),
+        //             resolve({
+        //                 preferBuiltins: true,
+        //                 extensions: [".js", ".jsx", ".css", ".scss"]
+        //             }),
+        //             commonjs({
+        //                 include: /node_modules/,
+        //                 namedExports: {
+        //                     'react': ['React'],
+        //                     'classnames': ['classNames'],
+        //                     'react-text-mask': ['MaskedInput'],
+        //                     'react-hook-form': ['reactHookForm'],
+        //                 }
+        //             }),
+        //             babel({
+        //                 exclude: 'node_modules/**',
+        //                 presets: ['@babel/preset-react'],
+        //             }),
+        //             external(),
+        //             terser(),
+        //         ]
+        //     })
+        // }
     })
     return componentsConfig
 }
@@ -123,15 +125,14 @@ export default [
             {
                 file: 'dist/lib/index.js',
                 format: 'cjs',
-                sourcemap: true,
             },
             {
                 file: 'dist/lib/index.esm.js',
                 format: 'esm',
-                sourcemap: true,
             }
         ],
         plugins: [
+            external(),
             scss({
                 // include: [`/**/*/.css`,`/**/*/.scss`,`/**/*/.sass`],
                 output: `dist/lib/styles/index.css`,
@@ -160,7 +161,6 @@ export default [
                 exclude: 'node_modules/**',
                 presets: ['@babel/preset-react'],
             }),
-            external(),
             terser(),
         ],
     },

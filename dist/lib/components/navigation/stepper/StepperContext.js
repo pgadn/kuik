@@ -1,2 +1,7 @@
-"use strict";var e=require("react").createContext();module.exports=e;
-//# sourceMappingURL=StepperContext.js.map
+import React from 'react';
+
+var StepperContext = /*#__PURE__*/React.createContext({
+  step: 1
+});
+
+export { StepperContext as default };

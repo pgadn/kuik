@@ -41,26 +41,58 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
-.StepWrapper {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  max-height: 0;
-  opacity: 0;
-  margin-right: calc(100% + 1000px);
-  transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+/*================ Media Query Mixin ================*/
+.TypographyWrapper {
+  color: var(--qcuicq-color-textPrimary);
 }
 
-.ActiveStep {
-  position: relative;
-  max-height: 100%;
-  opacity: 1;
-  margin-right: 0;
-  transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+.Typography_Align__left {
+  text-align: left;
+}
+
+.Typography_Align__center {
+  text-align: center;
+}
+
+.Typography_Align__right {
+  text-align: right;
+}
+
+.Typography_Align__justify {
+  text-align: justify;
+}
+
+.Typography_Variant__h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--qcuicq-color-textDark);
+  margin: 0;
+}
+.Typography_Variant__h3.Typography_FontColor__textPrimary {
+  color: var(--qcuicq-color-textPrimary);
+}
+.Typography_Variant__h3.Typography_FontColor__textSecondary {
+  color: var(--qcuicq-color-textSecondary);
+}
+.Typography_Variant__h3.Typography_FontColor__textDark {
+  color: var(--qcuicq-color-textDark);
+}
+.Typography_Variant__h3.Typography_FontColor__textLight {
+  color: var(--qcuicq-color-textLight);
+}
+.Typography_Variant__h3.Typography_FontColor__textDefault {
+  color: var(--qcuicq-color-textDefault);
+}
+
+.Typography_Variant__caption {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--qcuicq-color-textDefault);
+  margin: 0;
+  padding: 0;
 }
 
 .StepperWrapper {
@@ -88,72 +120,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
-}
-
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
-}
-
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0px 0px 10px 1px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textDark);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
 }
 
 .ButtonWrapper {
@@ -225,4 +191,93 @@ body {
 .Button_Disabled:hover {
   color: var(--qcuicq-color-textLight);
   background-color: transparent;
+}
+
+.StepWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  margin-right: calc(100% + 1000px);
+  transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.ActiveStep {
+  position: relative;
+  max-height: 100%;
+  opacity: 1;
+  margin-right: 0;
+  transition: margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
+}
+
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0px 0px 10px 1px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textDark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
 }

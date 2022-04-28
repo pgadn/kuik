@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "./CardImage.module.scss"
 
 const CardImage = (props) => {

@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "./StepLabel.module.scss"
 
 const StepLabel = (props) => {

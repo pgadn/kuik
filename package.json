@@ -1,6 +1,6 @@
 {
   "name": "qcuicq",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
   "main": "dist/lib/index.js",
   "module": "dist/lib/index.esm.js",
@@ -14,7 +14,6 @@
     "dist/**/*.scss",
     "dist/**/*.map"
   ],
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
@@ -45,7 +44,7 @@
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "0.0.10",
     "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
+    "css-loader": "^5.2.7",
     "postcss-loader": "^6.2.1",
     "postcss-scss": "^4.0.4",
     "react": "^17.0.1",
@@ -59,7 +58,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.42.1",
     "sass-loader": "^10.2.1",
-    "style-loader": "^3.3.1"
+    "style-loader": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^17.0.1",

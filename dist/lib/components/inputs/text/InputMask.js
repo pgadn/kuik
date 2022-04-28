@@ -1,8 +1,201 @@
-"use strict";var e=require("react"),t=require("react-hook-form");function r(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var n=r(e);function o(){return o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},o.apply(this,arguments)}function a(e,t){if(null==e)return{};var r,n,o=function(e,t){if(null==e)return{};var r,n,o={},a=Object.keys(e);for(n=0;n<a.length;n++)r=a[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);for(n=0;n<a.length;n++)r=a[n],t.indexOf(r)>=0||Object.prototype.propertyIsEnumerable.call(e,r)&&(o[r]=e[r])}return o}var i="InputText-module_InputTextWrapper__KNWl-",l="InputText-module_InputText__85-mX",u="InputText-module_InputError__UZhFM",s="InputText-module_HelperMessage__pYl7q",f="InputText-module_ErrorMessage__8xdb2";!function(e,t){void 0===t&&(t={});var r=t.insertAt;if(e&&"undefined"!=typeof document){var n=document.head||document.getElementsByTagName("head")[0],o=document.createElement("style");o.type="text/css","top"===r&&n.firstChild?n.insertBefore(o,n.firstChild):n.appendChild(o),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(document.createTextNode(e))}}(".InputText-module_InputTextWrapper__KNWl-{padding:0 0 10px;width:100%}.InputText-module_InputText__85-mX{border:1px solid transparent;border-radius:6px;box-shadow:0 0 10px 1px var(--qcuicq-color-light);color:var(--qcuicq-color-textDark);font-size:.8rem;font-weight:600;height:48px;letter-spacing:.5px;outline:0;text-indent:10px;transition:all .5s ease-out;-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;-o-transition:all .5s ease-out;width:100%}.InputText-module_InputText__85-mX::placeholder{color:var(--qcuicq-color-textSecondary)}.InputText-module_InputText__85-mX:focus{border-color:var(--qcuicq-color-primary);transition:all .5s ease-out;-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;-o-transition:all .5s ease-out}.InputText-module_InputError__UZhFM{border:1px solid var(--qcuicq-color-error)}.InputText-module_HelperMessage__pYl7q{color:var(--qcuicq-color-textLight);font-size:.8rem}.InputText-module_ErrorMessage__8xdb2{color:var(--qcuicq-color-textError);font-size:.8rem}");"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;function p(e,t){return e(t={exports:{}},t.exports),t.exports}var c=p((function(e){
+import React from 'react';
+import { Controller } from 'react-hook-form';
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ".InputText-module_InputTextWrapper__KNWl-{padding:0 0 10px;width:100%}.InputText-module_InputText__85-mX{border:1px solid transparent;border-radius:6px;box-shadow:0 0 10px 1px var(--qcuicq-color-light);color:var(--qcuicq-color-textDark);font-size:.8rem;font-weight:600;height:48px;letter-spacing:.5px;outline:0;text-indent:10px;transition:all .5s ease-out;-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;-o-transition:all .5s ease-out;width:100%}.InputText-module_InputText__85-mX::placeholder{color:var(--qcuicq-color-textSecondary)}.InputText-module_InputText__85-mX:focus{border-color:var(--qcuicq-color-primary);transition:all .5s ease-out;-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;-o-transition:all .5s ease-out}.InputText-module_InputError__UZhFM{border:1px solid var(--qcuicq-color-error)}.InputText-module_HelperMessage__pYl7q{color:var(--qcuicq-color-textLight);font-size:.8rem}.InputText-module_ErrorMessage__8xdb2{color:var(--qcuicq-color-textError);font-size:.8rem}";
+var styles = {"InputTextWrapper":"InputText-module_InputTextWrapper__KNWl-","InputText":"InputText-module_InputText__85-mX","InputError":"InputText-module_InputError__UZhFM","HelperMessage":"InputText-module_HelperMessage__pYl7q","ErrorMessage":"InputText-module_ErrorMessage__8xdb2"};
+styleInject(css_248z);
+
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function unwrapExports (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var classnames = createCommonjsModule(function (module) {
 /*!
   Copyright (c) 2018 Jed Watson.
   Licensed under the MIT License (MIT), see
   http://jedwatson.github.io/classnames
 */
-!function(){var t={}.hasOwnProperty;function r(){for(var e=[],n=0;n<arguments.length;n++){var o=arguments[n];if(o){var a=typeof o;if("string"===a||"number"===a)e.push(o);else if(Array.isArray(o)){if(o.length){var i=r.apply(null,o);i&&e.push(i)}}else if("object"===a)if(o.toString===Object.prototype.toString)for(var l in o)t.call(o,l)&&o[l]&&e.push(l);else e.push(o.toString())}}return e.join(" ")}e.exports?(r.default=r,e.exports=r):window.classNames=r}()}));c.classNames;var d,h=p((function(e,t){var r;e.exports=(r=n.default,function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p="",t(0)}([function(e,t,r){function n(e){return e&&e.__esModule?e:{default:e}}function o(e,t){var r={};for(var n in e)t.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(r[n]=e[n]);return r}function a(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function l(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.conformToMask=void 0;var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},s=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),f=r(3);Object.defineProperty(t,"conformToMask",{enumerable:!0,get:function(){return n(f).default}});var p=n(r(11)),c=n(r(9)),d=n(r(5)),h=r(2),v=function(e){function t(){var e;a(this,t);for(var r=arguments.length,n=Array(r),o=0;o<r;o++)n[o]=arguments[o];var l=i(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(n)));return l.setRef=l.setRef.bind(l),l.onBlur=l.onBlur.bind(l),l.onChange=l.onChange.bind(l),l}return l(t,e),s(t,[{key:"setRef",value:function(e){this.inputElement=e}},{key:"initTextMask",value:function(){var e=this.props,t=this.props.value;this.textMaskInputElement=(0,d.default)(u({inputElement:this.inputElement},e)),this.textMaskInputElement.update(t)}},{key:"componentDidMount",value:function(){this.initTextMask()}},{key:"componentDidUpdate",value:function(e){var t=this.props,r=t.value,n=t.pipe,o=t.mask,a={guide:t.guide,placeholderChar:t.placeholderChar,showMask:t.showMask},i="function"==typeof n&&"function"==typeof e.pipe?n.toString()!==e.pipe.toString():(0,h.isNil)(n)&&!(0,h.isNil)(e.pipe)||!(0,h.isNil)(n)&&(0,h.isNil)(e.pipe),l=o.toString()!==e.mask.toString(),u=Object.keys(a).some((function(t){return a[t]!==e[t]}))||l||i;(r!==this.inputElement.value||u)&&this.initTextMask()}},{key:"render",value:function(){var e=this.props,t=e.render,r=o(e,["render"]);return delete r.mask,delete r.guide,delete r.pipe,delete r.placeholderChar,delete r.keepCharPositions,delete r.value,delete r.onBlur,delete r.onChange,delete r.showMask,t(this.setRef,u({onBlur:this.onBlur,onChange:this.onChange,defaultValue:this.props.value},r))}},{key:"onChange",value:function(e){this.textMaskInputElement.update(),"function"==typeof this.props.onChange&&this.props.onChange(e)}},{key:"onBlur",value:function(e){"function"==typeof this.props.onBlur&&this.props.onBlur(e)}}]),t}(p.default.PureComponent);t.default=v,v.propTypes={mask:c.default.oneOfType([c.default.array,c.default.func,c.default.bool,c.default.shape({mask:c.default.oneOfType([c.default.array,c.default.func]),pipe:c.default.func})]).isRequired,guide:c.default.bool,value:c.default.oneOfType([c.default.string,c.default.number]),pipe:c.default.func,placeholderChar:c.default.string,keepCharPositions:c.default.bool,showMask:c.default.bool},v.defaultProps={render:function(e,t){return p.default.createElement("input",u({ref:e},t))}}},function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.placeholderChar="_",t.strFunction="function"},function(e,t,r){function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:f,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:s.placeholderChar;if(!o(e))throw new Error("Text-mask:convertMaskToPlaceholder; The mask property must be an array.");if(-1!==e.indexOf(t))throw new Error("Placeholder character must not be used as part of the mask. Please specify a character that is not present in your mask as your placeholder character.\n\nThe placeholder character that was received is: "+JSON.stringify(t)+"\n\nThe mask that was received is: "+JSON.stringify(e));return e.map((function(e){return e instanceof RegExp?t:e})).join("")}function o(e){return Array.isArray&&Array.isArray(e)||e instanceof Array}function a(e){return"string"==typeof e||e instanceof String}function i(e){return"number"==typeof e&&void 0===e.length&&!isNaN(e)}function l(e){return null==e}function u(e){for(var t=[],r=void 0;-1!==(r=e.indexOf(p));)t.push(r),e.splice(r,1);return{maskWithoutCaretTraps:e,indexes:t}}Object.defineProperty(t,"__esModule",{value:!0}),t.convertMaskToPlaceholder=n,t.isArray=o,t.isString=a,t.isNumber=i,t.isNil=l,t.processCaretTraps=u;var s=r(1),f=[],p="[]"},function(e,t,r){function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:u,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:l,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};if(!(0,a.isArray)(t)){if((void 0===t?"undefined":o(t))!==i.strFunction)throw new Error("Text-mask:conformToMask; The mask property must be an array.");t=t(e,r),t=(0,a.processCaretTraps)(t).maskWithoutCaretTraps}var n=r.guide,s=void 0===n||n,f=r.previousConformedValue,p=void 0===f?u:f,c=r.placeholderChar,d=void 0===c?i.placeholderChar:c,h=r.placeholder,v=void 0===h?(0,a.convertMaskToPlaceholder)(t,d):h,m=r.currentCaretPosition,y=r.keepCharPositions,g=!1===s&&void 0!==p,b=e.length,x=p.length,T=v.length,_=t.length,k=b-x,O=k>0,C=m+(O?-k:0),w=C+Math.abs(k);if(!0===y&&!O){for(var P=u,M=C;M<w;M++)v[M]===d&&(P+=d);e=e.slice(0,C)+P+e.slice(C,b)}for(var S=e.split(u).map((function(e,t){return{char:e,isNew:t>=C&&t<w}})),E=b-1;E>=0;E--){var j=S[E].char;j!==d&&j===v[E>=C&&x===_?E-k:E]&&S.splice(E,1)}var I=u,R=!1;e:for(var N=0;N<T;N++){var q=v[N];if(q===d){if(S.length>0)for(;S.length>0;){var A=S.shift(),V=A.char,B=A.isNew;if(V===d&&!0!==g){I+=d;continue e}if(t[N].test(V)){if(!0===y&&!1!==B&&p!==u&&!1!==s&&O){for(var F=S.length,W=null,z=0;z<F;z++){var D=S[z];if(D.char!==d&&!1===D.isNew)break;if(D.char===d){W=z;break}}null!==W?(I+=V,S.splice(W,1)):N--}else I+=V;continue e}R=!0}!1===g&&(I+=v.substr(N,T));break}I+=q}if(g&&!1===O){for(var L=null,U=0;U<I.length;U++)v[U]===d&&(L=U);I=null!==L?I.substr(0,L+1):u}return{conformedValue:I,meta:{someCharsRejected:R}}}Object.defineProperty(t,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=n;var a=r(2),i=r(1),l=[],u=""},function(e,t){function r(e){var t=e.previousConformedValue,r=void 0===t?o:t,a=e.previousPlaceholder,i=void 0===a?o:a,l=e.currentCaretPosition,u=void 0===l?0:l,s=e.conformedValue,f=e.rawValue,p=e.placeholderChar,c=e.placeholder,d=e.indexesOfPipedChars,h=void 0===d?n:d,v=e.caretTrapIndexes,m=void 0===v?n:v;if(0===u||!f.length)return 0;var y=f.length,g=r.length,b=c.length,x=s.length,T=y-g,_=T>0;if(T>1&&!_&&0!==g)return u;var k=0,O=void 0,C=void 0;if(!_||r!==s&&s!==c){var w=s.toLowerCase(),P=f.toLowerCase().substr(0,u).split(o).filter((function(e){return-1!==w.indexOf(e)}));C=P[P.length-1];var M=i.substr(0,P.length).split(o).filter((function(e){return e!==p})).length,S=c.substr(0,P.length).split(o).filter((function(e){return e!==p})).length,E=S!==M,j=void 0!==i[P.length-1]&&void 0!==c[P.length-2]&&i[P.length-1]!==p&&i[P.length-1]!==c[P.length-1]&&i[P.length-1]===c[P.length-2];!_&&(E||j)&&M>0&&c.indexOf(C)>-1&&void 0!==f[u]&&(O=!0,C=f[u]);for(var I=h.map((function(e){return w[e]})),R=I.filter((function(e){return e===C})).length,N=P.filter((function(e){return e===C})).length,q=c.substr(0,c.indexOf(p)).split(o).filter((function(e,t){return e===C&&f[t]!==e})).length,A=q+N+R+(O?1:0),V=0,B=0;B<x&&(k=B+1,w[B]===C&&V++,!(V>=A));B++);}else k=u-T;if(_){for(var F=k,W=k;W<=b;W++)if(c[W]===p&&(F=W),c[W]===p||-1!==m.indexOf(W)||W===b)return F}else if(O){for(var z=k-1;z>=0;z--)if(s[z]===C||-1!==m.indexOf(z)||0===z)return z}else for(var D=k;D>=0;D--)if(c[D-1]===p||-1!==m.indexOf(D)||0===D)return D}Object.defineProperty(t,"__esModule",{value:!0}),t.default=r;var n=[],o=""},function(e,t,r){function n(e){return e&&e.__esModule?e:{default:e}}function o(e){var t={previousConformedValue:void 0,previousPlaceholder:void 0};return{state:t,update:function(r){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:e,o=n.inputElement,h=n.mask,m=n.guide,y=n.pipe,g=n.placeholderChar,b=void 0===g?c.placeholderChar:g,x=n.keepCharPositions,T=void 0!==x&&x,_=n.showMask,k=void 0!==_&&_;if(void 0===r&&(r=o.value),r!==t.previousConformedValue){(void 0===h?"undefined":u(h))===v&&void 0!==h.pipe&&void 0!==h.mask&&(y=h.pipe,h=h.mask);var O=void 0,C=void 0;if(h instanceof Array&&(O=(0,p.convertMaskToPlaceholder)(h,b)),!1!==h){var w=i(r),P=o.selectionEnd,M=t.previousConformedValue,S=t.previousPlaceholder,E=void 0;if((void 0===h?"undefined":u(h))===c.strFunction){if(!1===(C=h(w,{currentCaretPosition:P,previousConformedValue:M,placeholderChar:b})))return;var j=(0,p.processCaretTraps)(C);C=j.maskWithoutCaretTraps,E=j.indexes,O=(0,p.convertMaskToPlaceholder)(C,b)}else C=h;var I={previousConformedValue:M,guide:m,placeholderChar:b,pipe:y,placeholder:O,currentCaretPosition:P,keepCharPositions:T},R=(0,f.default)(w,C,I).conformedValue,N=(void 0===y?"undefined":u(y))===c.strFunction,q={};N&&(!1===(q=y(R,l({rawValue:w},I)))?q={value:M,rejected:!0}:(0,p.isString)(q)&&(q={value:q}));var A=N?q.value:R,V=(0,s.default)({previousConformedValue:M,previousPlaceholder:S,conformedValue:A,placeholder:O,rawValue:w,currentCaretPosition:P,placeholderChar:b,indexesOfPipedChars:q.indexesOfPipedChars,caretTrapIndexes:E}),B=A===O&&0===V?k?O:d:A;t.previousConformedValue=B,t.previousPlaceholder=O,o.value!==B&&(o.value=B,a(o,V))}}}}}function a(e,t){document.activeElement===e&&(m?y((function(){return e.setSelectionRange(t,t,h)}),0):e.setSelectionRange(t,t,h))}function i(e){if((0,p.isString)(e))return e;if((0,p.isNumber)(e))return String(e);if(null==e)return d;throw new Error("The 'value' provided to Text Mask needs to be a string or a number. The value received was:\n\n "+JSON.stringify(e))}Object.defineProperty(t,"__esModule",{value:!0});var l=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=o;var s=n(r(4)),f=n(r(3)),p=r(2),c=r(1),d="",h="none",v="object",m="undefined"!=typeof navigator&&/Android/i.test(navigator.userAgent),y="undefined"!=typeof requestAnimationFrame?requestAnimationFrame:setTimeout},function(e,t){function r(e){return function(){return e}}var n=function(){};n.thatReturns=r,n.thatReturnsFalse=r(!1),n.thatReturnsTrue=r(!0),n.thatReturnsNull=r(null),n.thatReturnsThis=function(){return this},n.thatReturnsArgument=function(e){return e},e.exports=n},function(e,t,r){function n(e,t,r,n,o,a,i,l){if(!e){var u;if(void 0===t)u=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var s=[r,n,o,a,i,l],f=0;(u=new Error(t.replace(/%s/g,(function(){return s[f++]})))).name="Invariant Violation"}throw u.framesToPop=1,u}}e.exports=n},function(e,t,r){var n=r(6),o=r(7),a=r(10);e.exports=function(){function e(e,t,r,n,i,l){l!==a&&o(!1,"Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types")}function t(){return e}e.isRequired=e;var r={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t};return r.checkPropTypes=n,r.PropTypes=r,r}},function(e,t,r){e.exports=r(8)()},function(e,t){var r="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";e.exports=r},function(e,t){e.exports=r}]))})),v=(d=h)&&d.__esModule&&Object.prototype.hasOwnProperty.call(d,"default")?d.default:d;h.MaskedInput,h.reactTextMask;var m=["type","name","placeholder","placeholderChar","inputRef","errorMsg","helperMsg","InputTextStyles","mask","control","validation"];module.exports=function(e){e.type;var r=e.name,n=e.placeholder,p=e.placeholderChar;e.inputRef;var d=e.errorMsg,h=e.helperMsg,y=e.InputTextStyles,g=e.mask,b=e.control;return e.validation,a(e,m),React.createElement("div",{className:i},React.createElement(t.Controller,{control:b,name:r,render:function(e){var t=e.field;return React.createElement(v,o({},t,{className:c(l,d&&u,null!=y?y:""),mask:g,placeholder:n,placeholderChar:p}))}}),d&&React.createElement("span",{className:f},d),!d&&h&&React.createElement("span",{className:s},h))};
-//# sourceMappingURL=InputMask.js.map
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+classnames.classNames;
+
+var reactTextMask = createCommonjsModule(function (module, exports) {
+!function(e,t){module.exports=t(React);}(commonjsGlobal,function(e){return function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p="",t(0)}([function(e,t,r){function n(e){return e&&e.__esModule?e:{default:e}}function o(e,t){var r={};for(var n in e)t.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(r[n]=e[n]);return r}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return !t||"object"!=typeof t&&"function"!=typeof t?e:t}function u(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t);}Object.defineProperty(t,"__esModule",{value:!0}),t.conformToMask=void 0;var s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n]);}return e},l=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n);}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),f=r(3);Object.defineProperty(t,"conformToMask",{enumerable:!0,get:function(){return n(f).default}});var c=r(11),p=n(c),d=r(9),h=n(d),v=r(5),y=n(v),m=r(2),b=function(e){function t(){var e;i(this,t);for(var r=arguments.length,n=Array(r),o=0;o<r;o++)n[o]=arguments[o];var u=a(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(n)));return u.setRef=u.setRef.bind(u),u.onBlur=u.onBlur.bind(u),u.onChange=u.onChange.bind(u),u}return u(t,e),l(t,[{key:"setRef",value:function(e){this.inputElement=e;}},{key:"initTextMask",value:function(){var e=this.props,t=this.props.value;this.textMaskInputElement=(0, y.default)(s({inputElement:this.inputElement},e)),this.textMaskInputElement.update(t);}},{key:"componentDidMount",value:function(){this.initTextMask();}},{key:"componentDidUpdate",value:function(e){var t=this.props,r=t.value,n=t.pipe,o=t.mask,i=t.guide,a=t.placeholderChar,u=t.showMask,s={guide:i,placeholderChar:a,showMask:u},l="function"==typeof n&&"function"==typeof e.pipe?n.toString()!==e.pipe.toString():(0, m.isNil)(n)&&!(0, m.isNil)(e.pipe)||!(0, m.isNil)(n)&&(0, m.isNil)(e.pipe),f=o.toString()!==e.mask.toString(),c=Object.keys(s).some(function(t){return s[t]!==e[t]})||f||l,p=r!==this.inputElement.value;(p||c)&&this.initTextMask();}},{key:"render",value:function e(){var t=this.props,e=t.render,r=o(t,["render"]);return delete r.mask,delete r.guide,delete r.pipe,delete r.placeholderChar,delete r.keepCharPositions,delete r.value,delete r.onBlur,delete r.onChange,delete r.showMask,e(this.setRef,s({onBlur:this.onBlur,onChange:this.onChange,defaultValue:this.props.value},r))}},{key:"onChange",value:function(e){this.textMaskInputElement.update(),"function"==typeof this.props.onChange&&this.props.onChange(e);}},{key:"onBlur",value:function(e){"function"==typeof this.props.onBlur&&this.props.onBlur(e);}}]),t}(p.default.PureComponent);t.default=b,b.propTypes={mask:h.default.oneOfType([h.default.array,h.default.func,h.default.bool,h.default.shape({mask:h.default.oneOfType([h.default.array,h.default.func]),pipe:h.default.func})]).isRequired,guide:h.default.bool,value:h.default.oneOfType([h.default.string,h.default.number]),pipe:h.default.func,placeholderChar:h.default.string,keepCharPositions:h.default.bool,showMask:h.default.bool},b.defaultProps={render:function(e,t){return p.default.createElement("input",s({ref:e},t))}};},function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.placeholderChar="_",t.strFunction="function";},function(e,t,r){function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:f,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:l.placeholderChar;if(!o(e))throw new Error("Text-mask:convertMaskToPlaceholder; The mask property must be an array.");if(e.indexOf(t)!==-1)throw new Error("Placeholder character must not be used as part of the mask. Please specify a character that is not present in your mask as your placeholder character.\n\n"+("The placeholder character that was received is: "+JSON.stringify(t)+"\n\n")+("The mask that was received is: "+JSON.stringify(e)));return e.map(function(e){return e instanceof RegExp?t:e}).join("")}function o(e){return Array.isArray&&Array.isArray(e)||e instanceof Array}function i(e){return "string"==typeof e||e instanceof String}function a(e){return "number"==typeof e&&void 0===e.length&&!isNaN(e)}function u(e){return "undefined"==typeof e||null===e}function s(e){for(var t=[],r=void 0;r=e.indexOf(c),r!==-1;)t.push(r),e.splice(r,1);return {maskWithoutCaretTraps:e,indexes:t}}Object.defineProperty(t,"__esModule",{value:!0}),t.convertMaskToPlaceholder=n,t.isArray=o,t.isString=i,t.isNumber=a,t.isNil=u,t.processCaretTraps=s;var l=r(1),f=[],c="[]";},function(e,t,r){function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:s,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:u,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};if(!(0, i.isArray)(t)){if(("undefined"==typeof t?"undefined":o(t))!==a.strFunction)throw new Error("Text-mask:conformToMask; The mask property must be an array.");t=t(e,r),t=(0, i.processCaretTraps)(t).maskWithoutCaretTraps;}var n=r.guide,l=void 0===n||n,f=r.previousConformedValue,c=void 0===f?s:f,p=r.placeholderChar,d=void 0===p?a.placeholderChar:p,h=r.placeholder,v=void 0===h?(0, i.convertMaskToPlaceholder)(t,d):h,y=r.currentCaretPosition,m=r.keepCharPositions,b=l===!1&&void 0!==c,g=e.length,k=c.length,C=v.length,O=t.length,T=g-k,P=T>0,x=y+(P?-T:0),w=x+Math.abs(T);if(m===!0&&!P){for(var S=s,_=x;_<w;_++)v[_]===d&&(S+=d);e=e.slice(0,x)+S+e.slice(x,g);}for(var M=e.split(s).map(function(e,t){return {char:e,isNew:t>=x&&t<w}}),j=g-1;j>=0;j--){var E=M[j].char;if(E!==d){var R=j>=x&&k===O;E===v[R?j-T:j]&&M.splice(j,1);}}var V=s,N=!1;e:for(var A=0;A<C;A++){var B=v[A];if(B===d){if(M.length>0)for(;M.length>0;){var I=M.shift(),F=I.char,q=I.isNew;if(F===d&&b!==!0){V+=d;continue e}if(t[A].test(F)){if(m===!0&&q!==!1&&c!==s&&l!==!1&&P){for(var D=M.length,L=null,W=0;W<D;W++){var J=M[W];if(J.char!==d&&J.isNew===!1)break;if(J.char===d){L=W;break}}null!==L?(V+=F,M.splice(L,1)):A--;}else V+=F;continue e}N=!0;}b===!1&&(V+=v.substr(A,C));break}V+=B;}if(b&&P===!1){for(var U=null,H=0;H<V.length;H++)v[H]===d&&(U=H);V=null!==U?V.substr(0,U+1):s;}return {conformedValue:V,meta:{someCharsRejected:N}}}Object.defineProperty(t,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=n;var i=r(2),a=r(1),u=[],s="";},function(e,t){function r(e){var t=e.previousConformedValue,r=void 0===t?o:t,i=e.previousPlaceholder,a=void 0===i?o:i,u=e.currentCaretPosition,s=void 0===u?0:u,l=e.conformedValue,f=e.rawValue,c=e.placeholderChar,p=e.placeholder,d=e.indexesOfPipedChars,h=void 0===d?n:d,v=e.caretTrapIndexes,y=void 0===v?n:v;if(0===s||!f.length)return 0;var m=f.length,b=r.length,g=p.length,k=l.length,C=m-b,O=C>0,T=0===b,P=C>1&&!O&&!T;if(P)return s;var x=O&&(r===l||l===p),w=0,S=void 0,_=void 0;if(x)w=s-C;else {var M=l.toLowerCase(),j=f.toLowerCase(),E=j.substr(0,s).split(o),R=E.filter(function(e){return M.indexOf(e)!==-1});_=R[R.length-1];var V=a.substr(0,R.length).split(o).filter(function(e){return e!==c}).length,N=p.substr(0,R.length).split(o).filter(function(e){return e!==c}).length,A=N!==V,B=void 0!==a[R.length-1]&&void 0!==p[R.length-2]&&a[R.length-1]!==c&&a[R.length-1]!==p[R.length-1]&&a[R.length-1]===p[R.length-2];!O&&(A||B)&&V>0&&p.indexOf(_)>-1&&void 0!==f[s]&&(S=!0,_=f[s]);for(var I=h.map(function(e){return M[e]}),F=I.filter(function(e){return e===_}).length,q=R.filter(function(e){return e===_}).length,D=p.substr(0,p.indexOf(c)).split(o).filter(function(e,t){return e===_&&f[t]!==e}).length,L=D+q+F+(S?1:0),W=0,J=0;J<k;J++){var U=M[J];if(w=J+1,U===_&&W++,W>=L)break}}if(O){for(var H=w,Y=w;Y<=g;Y++)if(p[Y]===c&&(H=Y),p[Y]===c||y.indexOf(Y)!==-1||Y===g)return H}else if(S){for(var z=w-1;z>=0;z--)if(l[z]===_||y.indexOf(z)!==-1||0===z)return z}else for(var G=w;G>=0;G--)if(p[G-1]===c||y.indexOf(G)!==-1||0===G)return G}Object.defineProperty(t,"__esModule",{value:!0}),t.default=r;var n=[],o="";},function(e,t,r){function n(e){return e&&e.__esModule?e:{default:e}}function o(e){var t={previousConformedValue:void 0,previousPlaceholder:void 0};return {state:t,update:function(r){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:e,o=n.inputElement,l=n.mask,c=n.guide,y=n.pipe,b=n.placeholderChar,g=void 0===b?h.placeholderChar:b,k=n.keepCharPositions,C=void 0!==k&&k,O=n.showMask,T=void 0!==O&&O;if("undefined"==typeof r&&(r=o.value),r!==t.previousConformedValue){("undefined"==typeof l?"undefined":s(l))===m&&void 0!==l.pipe&&void 0!==l.mask&&(y=l.pipe,l=l.mask);var P=void 0,x=void 0;if(l instanceof Array&&(P=(0, d.convertMaskToPlaceholder)(l,g)),l!==!1){var w=a(r),S=o.selectionEnd,_=t.previousConformedValue,M=t.previousPlaceholder,j=void 0;if(("undefined"==typeof l?"undefined":s(l))===h.strFunction){if(x=l(w,{currentCaretPosition:S,previousConformedValue:_,placeholderChar:g}),x===!1)return;var E=(0, d.processCaretTraps)(x),R=E.maskWithoutCaretTraps,V=E.indexes;x=R,j=V,P=(0, d.convertMaskToPlaceholder)(x,g);}else x=l;var N={previousConformedValue:_,guide:c,placeholderChar:g,pipe:y,placeholder:P,currentCaretPosition:S,keepCharPositions:C},A=(0, p.default)(w,x,N),B=A.conformedValue,I=("undefined"==typeof y?"undefined":s(y))===h.strFunction,F={};I&&(F=y(B,u({rawValue:w},N)),F===!1?F={value:_,rejected:!0}:(0, d.isString)(F)&&(F={value:F}));var q=I?F.value:B,D=(0, f.default)({previousConformedValue:_,previousPlaceholder:M,conformedValue:q,placeholder:P,rawValue:w,currentCaretPosition:S,placeholderChar:g,indexesOfPipedChars:F.indexesOfPipedChars,caretTrapIndexes:j}),L=q===P&&0===D,W=T?P:v,J=L?W:q;t.previousConformedValue=J,t.previousPlaceholder=P,o.value!==J&&(o.value=J,i(o,D));}}}}}function i(e,t){document.activeElement===e&&(b?g(function(){return e.setSelectionRange(t,t,y)},0):e.setSelectionRange(t,t,y));}function a(e){if((0, d.isString)(e))return e;if((0, d.isNumber)(e))return String(e);if(void 0===e||null===e)return v;throw new Error("The 'value' provided to Text Mask needs to be a string or a number. The value received was:\n\n "+JSON.stringify(e))}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n]);}return e},s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=o;var l=r(4),f=n(l),c=r(3),p=n(c),d=r(2),h=r(1),v="",y="none",m="object",b="undefined"!=typeof navigator&&/Android/i.test(navigator.userAgent),g="undefined"!=typeof requestAnimationFrame?requestAnimationFrame:setTimeout;},function(e,t){function r(e){return function(){return e}}var n=function(){};n.thatReturns=r,n.thatReturnsFalse=r(!1),n.thatReturnsTrue=r(!0),n.thatReturnsNull=r(null),n.thatReturnsThis=function(){return this},n.thatReturnsArgument=function(e){return e},e.exports=n;},function(e,t,r){function n(e,t,r,n,i,a,u,s){if(!e){var l;if(void 0===t)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var f=[r,n,i,a,u,s],c=0;l=new Error(t.replace(/%s/g,function(){return f[c++]})),l.name="Invariant Violation";}throw l.framesToPop=1,l}}e.exports=n;},function(e,t,r){var n=r(6),o=r(7),i=r(10);e.exports=function(){function e(e,t,r,n,a,u){u!==i&&o(!1,"Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");}function t(){return e}e.isRequired=e;var r={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t};return r.checkPropTypes=n,r.PropTypes=r,r};},function(e,t,r){e.exports=r(8)();},function(e,t){var r="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";e.exports=r;},function(t,r){t.exports=e;}])});
+});
+
+var MaskedInput = unwrapExports(reactTextMask);
+reactTextMask.MaskedInput;
+reactTextMask.reactTextMask;
+
+var _excluded = ["type", "name", "placeholder", "placeholderChar", "inputRef", "errorMsg", "helperMsg", "InputTextStyles", "mask", "control", "validation"];
+
+var InputMask = function InputMask(props) {
+  props.type;
+      var name = props.name,
+      placeholder = props.placeholder,
+      placeholderChar = props.placeholderChar;
+      props.inputRef;
+      var errorMsg = props.errorMsg,
+      helperMsg = props.helperMsg,
+      InputTextStyles = props.InputTextStyles,
+      mask = props.mask,
+      control = props.control;
+      props.validation;
+      _objectWithoutProperties(props, _excluded); // console.log(ref)
+
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles.InputTextWrapper
+  }, /*#__PURE__*/React.createElement(Controller, {
+    control: control,
+    name: name,
+    render: function render(_ref) {
+      var field = _ref.field;
+      return /*#__PURE__*/React.createElement(MaskedInput, _extends({}, field, {
+        className: classnames(styles.InputText, errorMsg && styles.InputError, InputTextStyles !== null && InputTextStyles !== void 0 ? InputTextStyles : ""),
+        mask: mask,
+        placeholder: placeholder,
+        placeholderChar: placeholderChar
+      }));
+    }
+  }), errorMsg && /*#__PURE__*/React.createElement("span", {
+    className: styles.ErrorMessage
+  }, errorMsg), !errorMsg && helperMsg && /*#__PURE__*/React.createElement("span", {
+    className: styles.HelperMessage
+  }, helperMsg));
+};
+
+export { InputMask as default };

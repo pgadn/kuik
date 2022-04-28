@@ -1,2 +1,0 @@
-var e={};!function(e,t){void 0===t&&(t={});var d=t.insertAt;if(e&&"undefined"!=typeof document){var a=document.head||document.getElementsByTagName("head")[0],n=document.createElement("style");n.type="text/css","top"===d&&a.firstChild?a.insertBefore(n,a.firstChild):a.appendChild(n),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(document.createTextNode(e))}}("");var t=function(t){var d=t.children;return React.createElement("div",{className:e.Card},d)};export{t as default};
-//# sourceMappingURL=Card.esm.js.map

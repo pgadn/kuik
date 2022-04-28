@@ -1,2 +1,41 @@
-"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var t=e(require("react"));var r="CardContent-module_CardContentWrapper__QZHEh";!function(e,t){void 0===t&&(t={});var r=t.insertAt;if(e&&"undefined"!=typeof document){var n=document.head||document.getElementsByTagName("head")[0],d=document.createElement("style");d.type="text/css","top"===r&&n.firstChild?n.insertBefore(d,n.firstChild):n.appendChild(d),d.styleSheet?d.styleSheet.cssText=e:d.appendChild(document.createTextNode(e))}}(".CardContent-module_CardContentWrapper__QZHEh{background-color:#fff;border-radius:20px 20px 0 0;margin-top:-30px;padding:20px}");module.exports=function(e){var n=e.children;return t.default.createElement("div",{className:r},n)};
-//# sourceMappingURL=CardContent.js.map
+import React from 'react';
+
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ".CardContent-module_CardContentWrapper__QZHEh{background-color:#fff;border-radius:20px 20px 0 0;margin-top:-30px;padding:20px}";
+var styles = {"CardContentWrapper":"CardContent-module_CardContentWrapper__QZHEh"};
+styleInject(css_248z);
+
+var CardContent = function CardContent(props) {
+  var children = props.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles.CardContentWrapper
+  }, children);
+};
+
+export { CardContent as default };
