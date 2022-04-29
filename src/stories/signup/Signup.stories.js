@@ -10,7 +10,7 @@ import CardHeader from '../../components/surface/card/CardHeader'
 import CardContent from '../../components/surface/card/CardContent'
 import CardFooter from '../../components/surface/card/CardFooter'
 import Stepper, { Step, StepContent } from '../../components/navigation/stepper'
-import Typography from "../../components/typography/Typography"
+import Typography from "../../components/data_display/typography/Typography"
 
 const stories = storiesOf('Demo 1', module)
 

@@ -18,4 +18,4 @@ export * from './components/surface'
 
 // Typography
 // =============
-export * from './components/typography'
+export * from './components/data_display'
