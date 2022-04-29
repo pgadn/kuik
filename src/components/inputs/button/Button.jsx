@@ -4,14 +4,15 @@ import classNames from "classnames"
 
 const Button = (props) => {
     const {
-        ButtonStyles,
-        type,
-        name,
-        text,
-        size,
-        variant,
         disabled,
+        name,
+        size,
+        style,
+        type,
+        text,
+        variant,
         onClick,
+        ...others
     } = props
 
     return (
@@ -22,13 +23,13 @@ const Button = (props) => {
                     variant && styles[`Button_Variant__${variant}`],
                     size && styles[`Button_Size__${size}`],
                     disabled && styles.Button_Disabled,
-                    ButtonStyles ?? ""
+                    style ?? ""
                 )}
                 type={type ?? "button"}
                 name={name}
                 disabled={disabled}
                 onClick={onClick}
-                {...props}
+                {...others}
             >
                 {text}
             </button>

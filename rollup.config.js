@@ -62,7 +62,7 @@ const generateComponentsConfigs = (baseDir) => {
                             exclude: 'node_modules/**',
                             presets: ['@babel/preset-react'],
                         }),
-                        // terser(),
+                        terser(),
                     ]
                 })
             }

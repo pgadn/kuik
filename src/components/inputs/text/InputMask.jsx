@@ -6,18 +6,14 @@ import { Controller } from "react-hook-form"
 
 const InputMask = (props) => {
     const {
-        type,
+        control,
+        errorMsg,
+        helperMsg,
+        mask,
         name,
         placeholder,
         placeholderChar,
-        inputRef,
-        errorMsg,
-        helperMsg,
-        InputTextStyles,
-        mask,
-        control,
-        validation,
-        ...others
+        style,
     } = props
 
     // console.log(ref)
@@ -33,7 +29,7 @@ const InputMask = (props) => {
                         className={classNames(
                             styles.InputText,
                             errorMsg && styles.InputError,
-                            InputTextStyles ?? ""
+                            style ?? ""
                         )}
                         mask={mask}
                         placeholder={placeholder}

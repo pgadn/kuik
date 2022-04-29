@@ -4,17 +4,15 @@ import classNames from "classnames"
 
 const InputText = (props) => {
     const {
-        type,
-        name,
-        placeholder,
-        inputRef,
         errorMsg,
         helperMsg,
-        InputTextStyles,
-        ...other
+        inputRef,
+        name,
+        placeholder,
+        style,
+        type,
+        ...others
     } = props
-
-    // console.log(inputRef)
 
     return (
         <div className={styles.InputTextWrapper}>
@@ -22,13 +20,13 @@ const InputText = (props) => {
                 className={classNames(
                     styles.InputText,
                     errorMsg && styles.InputError,
-                    InputTextStyles ?? ""
+                    style ?? ""
                 )}
                 type={type ?? "text"}
                 name={name}
                 placeholder={placeholder ?? ""}
                 {...inputRef}
-                {...other}
+                {...others}
             />
             {errorMsg && (
                 <span className={styles.ErrorMessage}>
