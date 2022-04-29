@@ -45,10 +45,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
-/*================ Media Query Mixin ================*/
 .TypographyWrapper {
   color: var(--qcuicq-color-textPrimary);
 }
@@ -97,124 +97,6 @@ body {
   color: var(--qcuicq-color-textDefault);
   margin: 0;
   padding: 0;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
-}
-
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.StepWrapper {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  max-height: 0;
-  opacity: 0;
-  margin-right: calc(100% + 1000px);
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.ActiveStep {
-  position: relative;
-  max-height: 100%;
-  overflow-x: visible;
-  opacity: 1;
-  margin-right: 0;
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepContentWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
-}
-
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0 0 10px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textDark);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
 }
 
 .ButtonWrapper {
@@ -286,4 +168,122 @@ body {
 .Button_Disabled:hover {
   color: var(--qcuicq-color-textLight);
   background-color: transparent;
+}
+
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
+}
+
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textDark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
+.StepContentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
+}
+
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.StepWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  margin-right: calc(100% + 1000px);
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.ActiveStep {
+  position: relative;
+  max-height: 100%;
+  overflow-x: visible;
+  opacity: 1;
+  margin-right: 0;
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }

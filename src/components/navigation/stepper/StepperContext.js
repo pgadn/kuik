@@ -1,4 +1,6 @@
-const StepperContext = React.createContext({
+import { createContext } from "react"
+
+const StepperContext = createContext({
     step: 1,
 })
 

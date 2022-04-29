@@ -1,1 +1,1 @@
-var e=React.createContext({step:1});export{e as default};
+import{createContext as r}from"react";var t=r({step:1});export{t as default};
