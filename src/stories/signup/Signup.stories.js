@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react"
 import { storiesOf } from "@storybook/react"
 import '../../styles/global.scss'
+import styles from './Signup.module.scss'
 
 import InputText from '../../components/inputs/text/InputText'
 import Button from '../../components/inputs/button/Button'
@@ -103,7 +104,7 @@ stories.add('Signup', () => {
                     </Stepper>
                 </CardContent>
                 <CardFooter>
-                    <div>
+                    <div className={styles.SignupActionsWrapper}>
                         <Button
                         type="submit"
                         text="Back"
