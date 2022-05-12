@@ -1,9 +1,19 @@
 {
-  "name": "quiq",
-  "version": "1.0.0",
+  "name": "qcuicq",
+  "version": "1.0.17-beta-2",
   "description": "Simple React UI component, developed with love by PGAN-MIS web team.",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/lib/index.js",
+  "module": "dist/lib/index.esm.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.css",
+    "dist/*.scss",
+    "dist/*.map",
+    "dist/**/*.js",
+    "dist/**/*.css",
+    "dist/**/*.scss",
+    "dist/**/*.map"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
@@ -12,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pgadn/quiq.git"
+    "url": "git+https://github.com/pgadn/qcuicq.git"
   },
   "author": "Michael Jay Arizala",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pgadnmis/cuic/issues"
+    "url": "https://github.com/pgadn/qcuicq/issues"
   },
-  "homepage": "https://github.com/pgadnmis/cuic#readme",
+  "homepage": "https://github.com/pgadn/qcuicq#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
@@ -34,15 +44,21 @@
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "0.0.10",
     "babel-loader": "^8.2.5",
+    "css-loader": "^5.2.7",
+    "postcss-loader": "^6.2.1",
+    "postcss-scss": "^4.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.2",
     "rollup": "^2.70.2",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.42.1",
-    "sass-loader": "^10.2.1"
+    "sass-loader": "^10.2.1",
+    "style-loader": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^17.0.1",
@@ -51,6 +67,8 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
-    "react-hook-form": "^7.29.0"
+    "postcss": "^8.4.12",
+    "react-hook-form": "^7.29.0",
+    "react-text-mask": "^5.4.3"
   }
 }

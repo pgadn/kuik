@@ -1,42 +1,19 @@
+import React from "react"
 import styles from "./InputText.module.scss"
 import classNames from "classnames"
 import MaskedInput from "react-text-mask"
-import PropTypes from "prop-types"
-import { useForm, Controller } from "react-hook-form"
-
-function Mask(props) {
-    const { inputRef, mask, placeholder, placeholderChar, ...others } = props
-    console.log(others)
-    return (
-        <MaskedInput
-            // {...inputRef}
-            // inputref={inputRef}
-            {...others}
-            {...inputRef}
-            mask={mask}
-            placeholder={placeholder}
-            placeholderChar={placeholderChar}
-        />
-    )
-}
-// Mask.propTypes = {
-//     inputRef: PropTypes.func.isRequired,
-// }
+import { Controller } from "react-hook-form"
 
 const InputMask = (props) => {
     const {
-        type,
+        control,
+        errorMsg,
+        helperMsg,
+        mask,
         name,
         placeholder,
         placeholderChar,
-        inputRef,
-        errorMsg,
-        helperMsg,
-        InputTextStyles,
-        mask,
-        control,
-        validation,
-        ...others
+        style,
     } = props
 
     // console.log(ref)
@@ -52,7 +29,7 @@ const InputMask = (props) => {
                         className={classNames(
                             styles.InputText,
                             errorMsg && styles.InputError,
-                            InputTextStyles ?? ""
+                            style ?? ""
                         )}
                         mask={mask}
                         placeholder={placeholder}

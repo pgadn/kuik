@@ -2,41 +2,44 @@
 
 :root {
     /* BASE COLORS */
-    --color-primary: #294197;
-    --color-primary-light: #435bb3;
-    --color-primary-lighter: #768ee2;
-    --color-secondary: #D81D0D;
-    --color-secondary-light: #F05C5C;
-    --color-secondary-lighter: #e9a39d;
-    --color-tertiary: #318C56;
-    --color-tertiary-light: #54A776;
-    --color-tertiary-lighter: #81D2A2;
-    --color-light: #ececec;
-    --color-lighter: #F6F6F6;
-    --color-error: #F05C5C;
+    --qcuicq-color-primary: #294197;
+    --qcuicq-color-primary-light: #435bb3;
+    --qcuicq-color-primary-lighter: #768ee2;
+    --qcuicq-color-secondary: #D81D0D;
+    --qcuicq-color-secondary-light: #F05C5C;
+    --qcuicq-color-secondary-lighter: #e9a39d;
+    --qcuicq-color-tertiary: #318C56;
+    --qcuicq-color-tertiary-light: #54A776;
+    --qcuicq-color-tertiary-lighter: #81D2A2;
+    --qcuicq-color-light: #ececec;
+    --qcuicq-color-lighter: #F6F6F6;
+    --qcuicq-color-error: #F05C5C;
     /* TEXT COLORS */
-    --color-textPrimary: #6B6B6B;
-    --color-textSecondary: #BABABA;
-    --color-textDark: rgb(36, 36, 36);
-    --color-textLight: #C8C8C8;
-    --color-textError: #F05C5C;
-    --color-textDefault: #fff;
+    --qcuicq-color-textPrimary: #6B6B6B;
+    --qcuicq-color-textSecondary: #BABABA;
+    --qcuicq-color-textDark: rgb(36, 36, 36);
+    --qcuicq-color-textLight: #C8C8C8;
+    --qcuicq-color-textError: #F05C5C;
+    --qcuicq-color-textDefault: #fff;
 
     /* BUTTON SIZES */
     /* small */
-    --btn-size-sm-padding: 15px 18px;
-    --btn-size-sm-height: 25px;
-    --btn-size-sm-font: .7rem;
+    --qcuicq-btn-size-sm-padding: 15px 18px;
+    --qcuicq-btn-size-sm-height: 25px;
+    --qcuicq-btn-size-sm-font: .7rem;
     /* md */
-    --btn-size-md-padding: 18px 23px;
-    --btn-size-md-height: 28px;
-    --btn-size-md-font: .8rem;
+    --qcuicq-btn-size-md-padding: 18px 23px;
+    --qcuicq-btn-size-md-height: 28px;
+    --qcuicq-btn-size-md-font: .8rem;
     /* large */
-    --btn-size-lg-padding: 21px 26px;
-    --btn-size-lg-height: 31px;
-    --btn-size-lg-font: .9rem;
+    --qcuicq-btn-size-lg-padding: 21px 26px;
+    --qcuicq-btn-size-lg-height: 31px;
+    --qcuicq-btn-size-lg-font: .9rem;
    }
 
+   * {
+    box-sizing: border-box;
+   }
    body {
     font-family: 'Roboto', sans-serif;
    }

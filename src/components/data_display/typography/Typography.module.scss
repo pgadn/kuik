@@ -1,5 +1,5 @@
 .TypographyWrapper {
-    color: var(--color-textPrimary);
+    color: var(--qcuicq-color-textPrimary);
 }
 
 .Typography_Align__left {
@@ -18,30 +18,30 @@
 .Typography_Variant__h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--color-textDark);
+    color: var(--qcuicq-color-textDark);
     margin: 0;
 
     &.Typography_FontColor__textPrimary {
-        color: var(--color-textPrimary)
+        color: var(--qcuicq-color-textPrimary)
     }
     &.Typography_FontColor__textSecondary {
-        color: var(--color-textSecondary)
+        color: var(--qcuicq-color-textSecondary)
     }
     &.Typography_FontColor__textDark {
-        color: var(--color-textDark)
+        color: var(--qcuicq-color-textDark)
     }
     &.Typography_FontColor__textLight {
-        color: var(--color-textLight)
+        color: var(--qcuicq-color-textLight)
     }
     &.Typography_FontColor__textDefault {
-        color: var(--color-textDefault)
+        color: var(--qcuicq-color-textDefault)
     }
 }
 
 .Typography_Variant__caption {
     font-size: .8rem;
     font-weight: 300;
-    color: var(--color-textDefault);
+    color: var(--qcuicq-color-textDefault);
     margin: 0;
     padding: 0;
 }
