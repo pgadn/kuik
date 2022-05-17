@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import { storiesOf } from "@storybook/react"
 import '../../styles/global.scss'
 import styles from './Signup.module.scss'
-
+import { useForm } from "react-hook-form"
 import InputText from '../../components/inputs/text/InputText'
 import Button from '../../components/inputs/button/Button'
 import Card from '../../components/surface/card/Card'
@@ -11,8 +11,74 @@ import CardContent from '../../components/surface/card/CardContent'
 import CardFooter from '../../components/surface/card/CardFooter'
 import Stepper, { Step, StepContent } from '../../components/navigation/stepper'
 import Typography from "../../components/data_display/typography/Typography"
+import InputSelect from '../../components/inputs/select/InputSelelct'
 
 const stories = storiesOf('Demo 1', module)
+
+const sex = [
+    {
+        id: 1,
+        label: 'Male',
+        value: 'Male',
+    },
+    {
+        id: 2,
+        label: 'Female',
+        value: 'Female',
+    },
+]
+
+const cars = [
+    {
+        id: 1,
+        make: "Ford",
+        label: 'Ranger',
+        value: 'Ranger',
+    },
+    {
+        id: 2,
+        make: "Ford",
+        label: 'Explorer',
+        value: 'Explorer',
+    },
+    {
+        id: 2,
+        make: "Toyota",
+        label: 'Tacoma',
+        value: 'Tacoma',
+    },
+]
+
+const BasicInfoStep = (props) => {
+    const {
+      setWithClearance,
+    } = props;
+    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+
+    const onSubmit = (data) => {
+        setWithClearance(true)
+        const { firstName } = data;
+
+        // updateAccount(firstName, lastName, username, accountImage);
+        console.log(data)
+    };
+
+    return (
+        <div className={styles.BasicInfoStepWrapper}>
+            <form id="basicInfoForm" onSubmit={handleSubmit(onSubmit)}>
+                <InputSelect
+                    group='make'
+                    options={cars}
+                    placeholder="Select Model"
+                    inputRef={register("carModel", {
+                        required: { value: true, message: "This field is required" }
+                    })}
+                    errorMsg={errors && errors.carModel && errors.carModel.message}
+                />
+            </form>
+        </div>
+    )
+}
 
 stories.add('Signup', () => {
     const [currentStep, setCurrentStep] = useState(1)
@@ -27,10 +93,9 @@ stories.add('Signup', () => {
           label: "Basic Information",
           description: "Let's begin by getting to know you. We will check if we have already met before, and will provide you options if similar details exist. Otherwise, we will save your info for the first time.",
           component: (
-              <>
-                <InputText placeholder="Input 1" />
-                <InputText placeholder="Input 2" />
-              </>
+              <BasicInfoStep
+                setWithClearance={(b) => setWithClearance(b)}
+              />
           )
         },
         {
@@ -67,6 +132,7 @@ stories.add('Signup', () => {
             //     setWithClearance(false)
             // }
             setMove(currentStep + 1)
+            setWithClearance(false)
         }
     }, [withClearance])
 
@@ -120,10 +186,10 @@ stories.add('Signup', () => {
                         text={currentStep === steps.length ? "Complete" : "Next"}
                         size="md"
                         variant="contained"
-                        onClick={() => {
-                            // setWithClearance(true)
-                            setMove(currentStep + 1)
-                        }}
+                        // onClick={() => {
+                        //     // setWithClearance(true)
+                        //     setMove(currentStep + 1)
+                        // }}
                         form={steps[currentStep - 1].form}
                         />
                     </div>
