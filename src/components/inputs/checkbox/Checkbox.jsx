@@ -3,7 +3,7 @@ import styles from "./Checkbox.module.scss";
 import classNames from "classnames";
 
 const Checkbox = (props) => {
-  const { name, value, color, size, ...others } = props;
+  const { name, value, color, size, label, disabled, ...others } = props;
 
   return (
     <div className={styles.CheckboxWrapper}>
@@ -15,13 +15,16 @@ const Checkbox = (props) => {
         className={classNames(
           styles.Checkbox,
           size && styles[`Checkbox_Size__${size}`]          
-        )}        
+        )}  
+        disabled={disabled}      
       />
       <label for={`${name}_id`} className={classNames(          
           size && styles[`Label_Size__${size}`]          
-        )}> I have a bike</label>
+        )}> {label}</label>
     </div>
   );
 };
 
 export default Checkbox;
+
+
