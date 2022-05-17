@@ -65,6 +65,54 @@ body {
   Grid brekapoints
 ===================*/
 /*================ Media Query Mixin ================*/
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
+}
+
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textDark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
 .ButtonWrapper {
   font-family: "Roboto", sans-serif;
 }
@@ -134,54 +182,6 @@ body {
 .Button_Disabled:hover {
   color: var(--qcuicq-color-textLight);
   background-color: transparent;
-}
-
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
-}
-
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0 0 10px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textDark);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
 }
 
 .CheckboxWrapper {
@@ -266,15 +266,15 @@ input[type=checkbox]:checked + label {
   font-weight: 440;
 }
 
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
 .CardWrapper {
   display: flex;
   flex-direction: column;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }
 
 .CardContentWrapper {
@@ -284,10 +284,10 @@ input[type=checkbox]:checked + label {
   background-color: #fff;
 }
 
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
 }
 
 .StepWrapper {
@@ -309,31 +309,16 @@ input[type=checkbox]:checked + label {
   transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
-.StepperWrapper {
+.StepLabelWrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
+  justify-content: center;
 }
 
 .StepContentWrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .TypographyWrapper {
@@ -384,4 +369,19 @@ input[type=checkbox]:checked + label {
   color: var(--qcuicq-color-textDefault);
   margin: 0;
   padding: 0;
+}
+
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
 }
