@@ -14,12 +14,14 @@ const Checkbox = (props) => {
         value={value}
         className={classNames(
           styles.Checkbox,
-          size && styles[`Checkbox_Size__${size}`]          
+          size && styles[`Checkbox_Size__${size}`],
+          disabled && styles.Checkbox_Disabled       
         )}  
-        disabled={disabled}      
+        disabled={disabled} 
       />
       <label for={`${name}_id`} className={classNames(          
-          size && styles[`Label_Size__${size}`]          
+          size && styles[`Label_Checkbox_Size__${size}`],
+          disabled && styles.Label_Disabled     
         )}> {label}</label>
     </div>
   );
