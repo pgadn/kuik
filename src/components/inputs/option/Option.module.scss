@@ -1,0 +1,102 @@
+@import "../../../styles/font/roboto";
+
+.OptionWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;   
+  
+
+
+input[type="radio"] {
+    appearance: none;
+    height: .75rem;
+    width: .75rem;
+    outline: 1px solid #C1C1C1;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+label {  
+  padding: .2rem .2rem .1rem .2rem;
+  font-size: .75rem;
+}
+
+.Option_Disabled {
+  cursor: default !important;
+  background-color: transparent !important;
+  &:hover {
+    outline: 1px solid #c1c1c1 !important;
+  }
+}
+.Option_Disabled:hover + label {
+  cursor: default !important;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+
+input[type="radio"]:checked {
+  background-color: #294197;  
+}
+
+input[type="radio"]+label:hover, input[type="radio"]:hover {
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+}
+
+input[type="radio"]+label:hover {
+  color: #6B6B6B;
+  cursor: pointer;
+}
+
+input[type="radio"]:hover{
+  outline: 1px solid #6B6B6B;
+  cursor: pointer;
+}
+
+input[type="radio"]:hover+label{
+  color: #6B6B6B;     
+}
+
+input[type="radio"]:checked {
+  background-color: #294197;  
+}
+
+input[type="radio"]:checked+label {  
+  font-weight: 440;
+}
+
+.Option_Size__sm {
+  padding: var(--qcuicq-optn-size-sm-padding);
+  height: var(--qcuicq-optn-size-sm-height);
+  width: var(--qcuicq-optn-size-sm-width);  
+}
+
+.Label_Option_Size__sm {
+  font-size: var(--qcuicq-optn-size-sm-font);
+}
+
+.Option_Size__md {
+  padding: var(--qcuicq-optn-size-md-padding);
+  height: var(--qcuicq-optn-size-md-height);
+  width: var(--qcuicq-optn-size-md-width);  
+}
+
+.Label_Option_Size__md {
+  font-size: var(--qcuicq-optn-size-md-font);
+}
+
+.Option_Size__lg {
+  padding: var(--qcuicq-optn-size-lg-padding);
+  height: var(--qcuicq-optn-size-lg-height);
+  width: var(--qcuicq-optn-size-lg-width);  
+}
+
+.Label_Option_Size__lg {
+  font-size: var(--qcuicq-optn-size-lg-font);
+}
+
+}
