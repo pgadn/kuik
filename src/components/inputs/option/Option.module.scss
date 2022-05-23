@@ -99,4 +99,16 @@ input[type="radio"]:checked+label {
   font-size: var(--qcuicq-optn-size-lg-font);
 }
 
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: .8rem;
+}
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: .8rem;
+}
+
 }

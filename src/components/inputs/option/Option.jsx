@@ -3,7 +3,18 @@ import styles from "./Option.module.scss";
 import classNames from "classnames";
 
 const Option = (props) => {
-  const { name, value, color, size, label, disabled, ...others } = props;
+  const {
+    name,
+    value,
+    color,
+    size,
+    label,
+    inputRef,
+    errorMsg,
+    helperMsg,
+    disabled,
+    ...others
+  } = props;
 
   return (
     <div className={styles.OptionWrapper}>
@@ -17,6 +28,8 @@ const Option = (props) => {
           size && styles[`Option_Size__${size}`],
           disabled && styles.Option_Disabled
         )}
+        {...inputRef}
+        {...others}
         disabled={disabled}
       />
       <label
@@ -28,6 +41,10 @@ const Option = (props) => {
       >
         {label}
       </label>
+      {errorMsg && <span className={styles.ErrorMessage}>{errorMsg}</span>}
+      {!errorMsg && helperMsg && (
+        <span className={styles.HelperMessage}>{helperMsg}</span>
+      )}
     </div>
   );
 };

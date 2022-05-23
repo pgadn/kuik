@@ -2,7 +2,7 @@ import React from "react"
 import { storiesOf } from "@storybook/react"
 import '../../styles/global.scss'
 
-import {Checkbox, Option} from "../../components/inputs"
+import {Checkbox, Option, Datetimepicker} from "../../components/inputs"
 
 
 const stories = storiesOf('Demo 2', module)
@@ -39,6 +39,8 @@ stories.add('Test', () => {
             >
                 wala
             </label>
+
+            <Datetimepicker/>
       
         </div>
     )
