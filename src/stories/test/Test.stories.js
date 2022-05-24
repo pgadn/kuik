@@ -39,8 +39,10 @@ stories.add('Test', () => {
             >
                 wala
             </label>
-
-            <Datetimepicker/>
+            <div style={{width:"50%"}}>
+            <Datetimepicker />          
+            </div>
+            
       
         </div>
     )

@@ -1,5 +1,70 @@
-@import '../../../styles/font/roboto';
+@import "../../../styles/font/roboto";
 
 .DatetimepickerWrapper {
-    font-family: 'Roboto', sans-serif;
+  position: relative;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1em;
+  padding: 0.5em;
+  color: inherit;
+  flex: auto 1 1;
+  width: 100%;
+  background: none;
+  background-color: transperant;
+
+  .InputText {
+    width: 100%;
+    border: 1px solid transparent;
+    outline: 0;
+    height: 48px;
+    border-radius: 6px;
+    text-indent: 10px;
+    box-shadow: 0 0 10px var(--qcuicq-color-light);
+    color: var(--qcuicq-color-textDark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    padding-right: 3em;
+
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+
+    &::placeholder {
+      color: var(--qcuicq-color-textSecondary);
+    }
+
+    &:focus {
+      border-color: var(--qcuicq-color-primary);
+      transition: all 0.5s ease-out;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+    }
+  }
+
+  .InputError {
+    border: 1px solid var(--qcuicq-color-error);
+  }
+  .HelperMessage {
+    color: var(--qcuicq-color-textLight);
+    font-size: 0.8rem;
+  }
+  .ErrorMessage {
+    color: var(--qcuicq-color-textError);
+    font-size: 0.8rem;
+  }
+
+  .CalendarDateTimePickerIcon {
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    cursor: pointer;
+  }
+  .CalendarDateTimePickerIcon:active {
+    transform: scale(0.97);
+  }
 }

@@ -8,8 +8,7 @@ const Option = (props) => {
     value,
     color,
     size,
-    label,
-    inputRef,
+    label,    
     errorMsg,
     helperMsg,
     disabled,
@@ -27,8 +26,7 @@ const Option = (props) => {
           styles.Option,
           size && styles[`Option_Size__${size}`],
           disabled && styles.Option_Disabled
-        )}
-        {...inputRef}
+        )}        
         {...others}
         disabled={disabled}
       />
