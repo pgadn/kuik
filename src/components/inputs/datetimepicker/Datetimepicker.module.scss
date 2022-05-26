@@ -61,10 +61,97 @@
   .CalendarDateTimePickerIcon {
     position: absolute;
     right: 17px;
-    top: 17px;
+    top: 19px;
     cursor: pointer;
   }
+
   .CalendarDateTimePickerIcon:active {
     transform: scale(0.97);
   }
+
+  ////////// CALENDAR PICKER /////////
+
+  .CalendarVisible {
+    transition: all .2s;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .CalendarHidden {    
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .CalendarDropDown {    
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 8px);
+      padding: 10px 20px 20px 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+
+  .CalendarContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .CalendarHeaderYear {
+    background-color: aqua;
+    text-align: left;
+    min-height:10%;
+    padding: 0px 12px;
+  }
+
+  .CalendarHeaderMonth {
+    background-color: red;
+    min-height:15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 12px;
+  }
+  
+  .CalendarDaysContainer {
+    background-color: fff;    
+  }
+
+  .CalendarWeekDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    margin: 5px 0px;
+  }
+  
+  .CalendarWeekDays span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    text-transform: capitalize;
+  }  
+
+  
+
+  // .CalendarHeaderYear {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;   
+  // }
+
+  // .CalendarHeaderMonth {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   // margin: 10px 0 30px;
+  // }
+
+  
 }
+
+

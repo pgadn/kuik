@@ -31,7 +31,7 @@ const Option = (props) => {
         disabled={disabled}
       />
       <label
-        for={`${value}_id`}
+        htmlFor={`${value}_id`}
         className={classNames(
           size && styles[`Label_Option_Size__${size}`],
           disabled && styles.Label_Disabled

@@ -14,31 +14,12 @@ stories.add('Test', () => {
             <Checkbox size="sm" name="bikesm" label="I have a bike sm" value="bikesm"/>  
             <Checkbox size="md" name="bikemd" label="I have a bike md" value="bikemd"/>  
             <Checkbox size="lg" name="testlg" label="test lg" value="testlg1"/>            
-           
-            <input
-                id="naa"
-                type="checkbox"
-                name="naa_id"
-                value="naa"           
-            />
-            <label for="naa_id"> naa</label>
 
             <Option size="lg" name="test" label="HTML" value="HTML" disabled />
             <Option size="sm" name="test" label="CSS" value="CSS" />
             <Option size="md" name="test" label="Javascript" value="Javascript" />
             <Option size="lg" name="test" label="CSS 3" value="CSS 3" />
-
-            <input
-                type="radio"
-                id="wala_id"
-                name="wala"
-                value="wala"        
-            />
-            <label
-                for="wala_id"        
-            >
-                wala
-            </label>
+                       
             <div style={{width:"50%"}}>
             <Datetimepicker />          
             </div>

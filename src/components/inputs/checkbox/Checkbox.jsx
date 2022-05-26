@@ -8,8 +8,7 @@ const Checkbox = (props) => {
     value,
     color,
     size,
-    label,
-    inputRef,
+    label,    
     errorMsg,
     helperMsg,
     disabled,
@@ -27,13 +26,12 @@ const Checkbox = (props) => {
           styles.Checkbox,
           size && styles[`Checkbox_Size__${size}`],
           disabled && styles.Checkbox_Disabled
-        )}
-        {...inputRef}
+        )}        
         {...others}
         disabled={disabled}
       />
       <label
-        for={`${name}_id`}
+        htmlFor={`${name}_id`}
         className={classNames(
           size && styles[`Label_Checkbox_Size__${size}`],
           disabled && styles.Label_Disabled
