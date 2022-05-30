@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
   /* BASE COLORS */
   --qcuicq-color-primary: #294197;
@@ -35,6 +37,36 @@
   --qcuicq-btn-size-lg-padding: 21px 26px;
   --qcuicq-btn-size-lg-height: 31px;
   --qcuicq-btn-size-lg-font: .9rem;
+  /* CHECKBOX SIZES */
+  /* small */
+  --qcuicq-chkbx-size-sm-padding: .2rem;
+  --qcuicq-chkbx-size-sm-height: .7rem;
+  --qcuicq-chkbx-size-sm-width: .7rem;
+  --qcuicq-chkbx-size-sm-font: .75rem;
+  /* md */
+  --qcuicq-chkbx-size-md-padding: .3rem;
+  --qcuicq-chkbx-size-md-height: .9rem;
+  --qcuicq-chkbx-size-md-width: .9rem;
+  --qcuicq-chkbx-size-md-font: .9rem;
+  --qcuicq-chkbx-size-lg-padding: .3rem;
+  --qcuicq-chkbx-size-lg-height: 1rem;
+  --qcuicq-chkbx-size-lg-width: 1rem;
+  --qcuicq-chkbx-size-lg-font: 1rem;
+  /* OPTION SIZES */
+  /* small */
+  --qcuicq-optn-size-sm-padding: .2rem;
+  --qcuicq-optn-size-sm-height: .7rem;
+  --qcuicq-optn-size-sm-width: .7rem;
+  --qcuicq-optn-size-sm-font: .75rem;
+  /* md */
+  --qcuicq-optn-size-md-padding: .3rem;
+  --qcuicq-optn-size-md-height: .9rem;
+  --qcuicq-optn-size-md-width: .9rem;
+  --qcuicq-optn-size-md-font: .9rem;
+  --qcuicq-optn-size-lg-padding: .3rem;
+  --qcuicq-optn-size-lg-height: 1rem;
+  --qcuicq-optn-size-lg-width: 1rem;
+  --qcuicq-optn-size-lg-font: 1rem;
 }
 
 * {
@@ -49,124 +81,6 @@ body {
   Grid brekapoints
 ===================*/
 /*================ Media Query Mixin ================*/
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.CardWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
-}
-
-.StepWrapper {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  max-height: 0;
-  opacity: 0;
-  margin-right: calc(100% + 1000px);
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.ActiveStep {
-  position: relative;
-  max-height: 100%;
-  overflow-x: visible;
-  opacity: 1;
-  margin-right: 0;
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepContentWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
-}
-
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0 0 10px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textDark);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
-}
-
 .ButtonWrapper {
   font-family: "Roboto", sans-serif;
 }
@@ -236,6 +150,287 @@ body {
 .Button_Disabled:hover {
   color: var(--qcuicq-color-textLight);
   background-color: transparent;
+}
+
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
+}
+
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textDark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
+.CheckboxWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.CheckboxWrapper .Checkbox {
+  cursor: pointer;
+}
+.CheckboxWrapper input[type=checkbox] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #c1c1c1;
+  background-color: #fff;
+}
+.CheckboxWrapper label {
+  padding: 0.2rem;
+  font-size: 0.75rem;
+}
+.CheckboxWrapper .Checkbox_Disabled {
+  cursor: initial !important;
+  background-color: transparent !important;
+}
+.CheckboxWrapper .Checkbox_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.CheckboxWrapper .Checkbox_Disabled:hover + label {
+  cursor: default;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.CheckboxWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.CheckboxWrapper .Checkbox_Size__sm {
+  padding: var(--qcuicq-chkbx-size-sm-padding);
+  height: var(--qcuicq-chkbx-size-sm-height);
+  width: var(--qcuicq-chkbx-size-sm-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__sm {
+  font-size: var(--qcuicq-chkbx-size-sm-font);
+}
+.CheckboxWrapper .Checkbox_Size__md {
+  padding: var(--qcuicq-chkbx-size-md-padding);
+  height: var(--qcuicq-chkbx-size-md-height);
+  width: var(--qcuicq-chkbx-size-md-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__md {
+  font-size: var(--qcuicq-chkbx-size-md-font);
+}
+.CheckboxWrapper .Checkbox_Size__lg {
+  padding: var(--qcuicq-chkbx-size-lg-padding);
+  height: var(--qcuicq-chkbx-size-lg-height);
+  width: var(--qcuicq-chkbx-size-lg-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__lg {
+  font-size: var(--qcuicq-chkbx-size-lg-font);
+}
+.CheckboxWrapper label:hover,
+.CheckboxWrapper input[type=checkbox]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.CheckboxWrapper label:hover {
+  color: #6b6b6b;
+  cursor: pointer;
+}
+.CheckboxWrapper input[type=checkbox]:hover {
+  outline: 1px solid #6b6b6b;
+}
+.CheckboxWrapper input[type=checkbox]:hover + label {
+  color: #6b6b6b;
+}
+.CheckboxWrapper input[type=checkbox]:checked {
+  background-color: #294197;
+}
+.CheckboxWrapper input[type=checkbox]:checked + label {
+  font-weight: 440;
+}
+
+.OptionWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.OptionWrapper input[type=radio] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #C1C1C1;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.OptionWrapper label {
+  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+  font-size: 0.75rem;
+}
+.OptionWrapper .Option_Disabled {
+  cursor: default !important;
+  background-color: transparent !important;
+}
+.OptionWrapper .Option_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.OptionWrapper .Option_Disabled:hover + label {
+  cursor: default !important;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.OptionWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.OptionWrapper input[type=radio] + label:hover {
+  color: #6B6B6B;
+  cursor: pointer;
+}
+.OptionWrapper input[type=radio]:hover {
+  outline: 1px solid #6B6B6B;
+  cursor: pointer;
+}
+.OptionWrapper input[type=radio]:hover + label {
+  color: #6B6B6B;
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio]:checked + label {
+  font-weight: 440;
+}
+.OptionWrapper .Option_Size__sm {
+  padding: var(--qcuicq-optn-size-sm-padding);
+  height: var(--qcuicq-optn-size-sm-height);
+  width: var(--qcuicq-optn-size-sm-width);
+}
+.OptionWrapper .Label_Option_Size__sm {
+  font-size: var(--qcuicq-optn-size-sm-font);
+}
+.OptionWrapper .Option_Size__md {
+  padding: var(--qcuicq-optn-size-md-padding);
+  height: var(--qcuicq-optn-size-md-height);
+  width: var(--qcuicq-optn-size-md-width);
+}
+.OptionWrapper .Label_Option_Size__md {
+  font-size: var(--qcuicq-optn-size-md-font);
+}
+.OptionWrapper .Option_Size__lg {
+  padding: var(--qcuicq-optn-size-lg-padding);
+  height: var(--qcuicq-optn-size-lg-height);
+  width: var(--qcuicq-optn-size-lg-width);
+}
+.OptionWrapper .Label_Option_Size__lg {
+  font-size: var(--qcuicq-optn-size-lg-font);
+}
+
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.StepWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  margin-right: calc(100% + 1000px);
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.ActiveStep {
+  position: relative;
+  max-height: 100%;
+  overflow-x: visible;
+  opacity: 1;
+  margin-right: 0;
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.StepContentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }
 
 .TypographyWrapper {
