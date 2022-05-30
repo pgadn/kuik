@@ -3,69 +3,6 @@
     padding: 0 0 10px;
 }
 
-.InputSelect {
-    width: 100%;
-    border-left: 1px solid transparent;
-    border-top: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    outline: 0;
-    height: 48px;
-    border-radius: 6px 6px 0 0;
-    text-indent: 10px;
-    box-shadow: 0 0 10px var(--qcuicq-color-light);
-    // color: var(--qcuicq-color-textDark);
-    margin-bottom: 10px;
-    
-    transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
-
-    &, & > option {
-        // color: var(--qcuicq-color-textDark);
-        color: var(--qcuicq-color-textSecondary);
-        font-weight: 600;
-        letter-spacing: .5px;
-        font-size: .8rem;
-    }
-
-    & > option {
-        color: var(--qcuicq-color-textPrimary);
-    }
-
-    & > option:first-child {
-        color: var(--qcuicq-color-textSecondary);
-    }
-
-    &:focus {
-        border-color: var(--qcuicq-color-primary);
-        transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
-    }
-}
-
-.InputError {
-    border: 1px solid var(--qcuicq-color-error);
-}
-.HelperMessage {
-    color: var(--qcuicq-color-textLight);
-    font-size: .8rem;
-}
-.ErrorMessage {
-    color: var(--qcuicq-color-textError);
-    font-size: .8rem;
-}
-
-
-
-
-
-
-
-
 
 .Dropdown {
     width: 100%;
@@ -83,86 +20,128 @@
     cursor: pointer;
 
     transition: all .5s ease;
-
-    // input { display: none; }
   }
   .Dropdown.Selected {
     color: var(--qcuicq-color-textPrimary);
   }
   .Dropdown .Select {
-      width: 100%;
-      border: 0;
-      outline: 0;
-      cursor: pointer;
-      display: block;
-      padding: 10px;
-      font-weight: 600;
-      color: var(--qcuicq-color-textPrimary);
+    width: 100%;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    text-indent: 10px;
+    font-weight: 600;
+    color: var(--qcuicq-color-textPrimary);
 
-      &::placeholder {
+    &::placeholder {
         color: var(--qcuicq-color-textLight);
-      }
+    }
   }
   .Dropdown .Select > i {
-      font-size: 13px;
-      color: #888;
-      cursor: pointer;
-      transition: all .3s ease-in-out;
-      float: right;
-      line-height: 20px;
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 20px;
   }
   .Dropdown:hover {
-      box-shadow: 0 0 4px rgb(204, 204, 204);
+    box-shadow: 0 0 4px rgb(204, 204, 204);
   }
   .Dropdown:active {
-      background-color: #f8f8f8;
+    // background-color: #f8f8f8;
   }
   .Dropdown.Active:hover,
   .Dropdown.Active {
-      box-shadow: 0 0 4px rgb(204, 204, 204);
-      border-radius: 6px 6px 0 0;
-      background-color: #f8f8f8;
-      border: 1px solid var(--qcuicq-color-primary);
-      border-bottom: 0;
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 6px 6px 0 0;
+    // background-color: #f8f8f8;
+    border: 1px solid var(--qcuicq-color-primary);
+    border-bottom: 0;
   }
   .Dropdown.Active .Select > i {
-      transform: rotate(-90deg);
+    transform: rotate(-90deg);
   }
   .Dropdown .DropdownMenu {
-      position: absolute;
-      background-color: #fff;
-      width: 100%;
-      left: 0;
-      margin-top: 210px;
-      box-shadow: 0 1px 2px rgb(204, 204, 204);
-      border-radius: 0 0 6px 6px;
-      overflow: hidden;
-      opacity: 0;
-      height: 0;
-      overflow-y: auto;
-      color: var(--qcuicq-color-textPrimary);
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 185px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    overflow-y: auto;
+    color: var(--qcuicq-color-textPrimary);
 
-      transition: margin-top 0.5s ease-out;
+    transition: margin-top 0.5s ease-out;
+
+    &.DropdownMenu__Group {
+        margin-top: 250px;
+    }
   }
   .Dropdown.Active .DropdownMenu {
-      display: block;
-      border: 1px solid var(--qcuicq-color-primary);
-      opacity: 1;
-      height: auto;
-      transition: margin-top 0.1s ease-in, opacity 0.3s ease-out, height 0.2s ease-out;
+    display: block;
+    border: 1px solid var(--qcuicq-color-primary);
+    opacity: 1;
+    height: auto;
+    transition: margin-top 0.1s ease-in, opacity 0.3s ease-out, height 0.2s ease-out;
   }
   .Dropdown .DropdownMenu li, .Dropdown .DropdownMenu option {
-      padding: 10px;
-      transition: all .2s ease-in-out;
-      cursor: pointer;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
   } 
   .Dropdown .DropdownMenu {
-      padding: 10px 10px 0;
+      padding: 10px 10px 10px;
       list-style: none;
+      
+      &.DropdownMenu__Group {
+          padding: 0 10px 0;
+      }
+
+      optgroup {
+        font-weight: 500;
+        color: var(--qcuicq-color-textLight);
+
+        &:last-child {
+            margin-bottom: 10px;
+        }
+        &[label] {
+            margin-top: 15px;
+        }
+        & option:first-child {
+            margin-top: 5px;
+        }
+      }
+
+      option {
+        color: var(--qcuicq-color-textPrimary);
+        font-weight: 500;
+        padding: 6px 0;
+        text-indent: 10px;
+      }
   }
   .Dropdown .DropdownMenu li:hover, .Dropdown .DropdownMenu option:hover {
-      background-color: #f2f2f2;
+    background-color: #f2f2f2;
   }
   .Dropdown .DropdownMenu li:active, .Dropdown .DropdownMenu option:active {
-      background-color: #e2e2e2;
+    background-color: #e2e2e2;
   }
+
+  
+
+.InputError {
+    border: 1px solid var(--qcuicq-color-error);
+}
+.HelperMessage {
+    color: var(--qcuicq-color-textLight);
+    font-size: .8rem;
+}
+.ErrorMessage {
+    color: var(--qcuicq-color-textError);
+    font-size: .8rem;
+}

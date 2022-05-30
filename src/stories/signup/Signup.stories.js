@@ -2,7 +2,8 @@ import React, { useContext, useState, useEffect } from "react"
 import { storiesOf } from "@storybook/react"
 import '../../styles/global.scss'
 import styles from './Signup.module.scss'
-import { useForm } from "react-hook-form"
+import { useForm, Controller } from "react-hook-form"
+import InputMask from '../../components/inputs/text/InputMask'
 import InputText from '../../components/inputs/text/InputText'
 import Button from '../../components/inputs/button/Button'
 import Card from '../../components/surface/card/Card'
@@ -49,15 +50,41 @@ const cars = [
     },
 ]
 
+const eligibility = [
+    {
+        id: 1,
+        type: "Career Service Eligibility",
+        label: 'Career Service Eligibility 1',
+        value: 'Career Service Eligibility 1',
+    },
+    {
+        id: 2,
+        type: "Career Service Eligibility",
+        label: 'Career Service Eligibility 2',
+        value: 'Career Service Eligibility 2',
+    },
+    {
+        id: 3,
+        type: "Special Eligibility",
+        label: 'Barangay Eligibility',
+        value: 'Barangay Eligibility',
+    },
+    {
+        id: 4,
+        type: "Special Eligibility",
+        label: 'TechVoc Eligibility',
+        value: 'TechVoc Eligibility',
+    },
+]
+
 const BasicInfoStep = (props) => {
     const {
       setWithClearance,
     } = props;
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const { register, handleSubmit, formState: { errors }, watch, setValue, control } = useForm();
 
     const onSubmit = (data) => {
         setWithClearance(true)
-        const { firstName } = data;
 
         // updateAccount(firstName, lastName, username, accountImage);
         console.log(data)
@@ -66,14 +93,87 @@ const BasicInfoStep = (props) => {
     return (
         <div className={styles.BasicInfoStepWrapper}>
             <form id="basicInfoForm" onSubmit={handleSubmit(onSubmit)}>
-                <InputSelect
-                    group='make'
-                    options={cars}
-                    placeholder="Select Model"
-                    inputRef={register("carModel", {
+                <Controller
+                    control={control}
+                    name="mobileNum"
+                    rules={{
+                        required: { value: true, message: "This field is required" },
+                        pattern: {
+                            value: /^[\+]?[6]{1}?[3]{1}? [(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+                            message: "Invalid mobile number"
+                        }
+                    }}
+                    render={({ field: { onChange } }) => (
+                        <InputMask
+                            type="text"
+                            name="mobileNum"
+                            placeholder="+63 (xxx) xxx-xxxx"
+                            placeholderChar={"\u2000"}
+                            onChange={(e) => onChange(e)}
+                            mask={[
+                            '+',
+                            '6',
+                            '3',
+                            ' ',
+                            '(',
+                            /[1-9]/,
+                            /\d/,
+                            /\d/,
+                            ')',
+                            ' ',
+                            /\d/,
+                            /\d/,
+                            /\d/,
+                            '-',
+                            /\d/,
+                            /\d/,
+                            /\d/,
+                            /\d/,
+                            ]}
+                            helperMsg="Enter your mobile number"
+                            errorMsg={errors && errors.mobileNum && errors.mobileNum.message}
+                        />
+                    )}
+                />
+                
+                <Controller
+                    control={control}
+                    name="plateNumber"
+                    rules={{
                         required: { value: true, message: "This field is required" }
-                    })}
-                    errorMsg={errors && errors.carModel && errors.carModel.message}
+                    }}
+                    render={({field: { onChange }}) => {
+                        return(
+                            <InputText
+                                options={cars}
+                                name="plateNumber"
+                                onChange={onChange}
+                                placeholder="Car Plate Number"
+                                errorMsg={errors && errors.plateNumber && errors.plateNumber.message}
+                            />
+                        )
+                    }}
+                />
+                <Controller
+                    control={control}
+                    name="carModel"
+                    rules={{
+                        required: { value: true, message: "This field is required" }
+                    }}
+                    render={({field: { onChange }}) => {
+                        return(
+                            <InputSelect
+                                group='type'
+                                options={eligibility}
+                                name="carModel"
+                                // optionLabel="label"
+                                // optionValue="value"
+                                onChange={onChange}
+                                placeholder="Select Car Model"
+                                errorMsg={errors && errors.carModel && errors.carModel.message}
+                            />
+                        )
+                    }}
                 />
             </form>
         </div>
@@ -186,10 +286,6 @@ stories.add('Signup', () => {
                         text={currentStep === steps.length ? "Complete" : "Next"}
                         size="md"
                         variant="contained"
-                        // onClick={() => {
-                        //     // setWithClearance(true)
-                        //     setMove(currentStep + 1)
-                        // }}
                         form={steps[currentStep - 1].form}
                         />
                     </div>

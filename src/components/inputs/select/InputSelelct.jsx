@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState, useContext } from "react"
 import styles from "./InputSelect.module.scss"
 import classNames from "classnames"
 import SelectContext from "./SelectContext"
-import { useFormContext, useForm } from "react-hook-form"
 
 const groupyBy = (xs, key) => {
     return xs.reduce((rv, x) => {
@@ -11,13 +10,16 @@ const groupyBy = (xs, key) => {
     }, {})
 }
 
-export const SelectItem = ({ group, items, hiddenRef }) => {
+export const SelectItem = ({
+    group,
+    items,
+    optionLabel,
+    optionValue,
+}) => {
     const [options, setOptions] = useState(undefined)
     const selectCntx = useContext(SelectContext)
 
     const handleClick_Selected = (o) => {
-        console.log(o)
-        console.log(hiddenRef)
         if (o && o.value) {
             selectCntx.setValue(o.value)
             selectCntx.setSelectedLabel(o.label)
@@ -39,11 +41,11 @@ export const SelectItem = ({ group, items, hiddenRef }) => {
                     <optgroup label={o}>
                         {options[o] && options[o].map((oo) => (
                             <option
-                                key={oo.id}
-                                value={oo.value}
-                                onClick={() => handleClick_Selected(oo)}
+                                key={oo[optionValue] ? oo[optionValue] : oo.value}
+                                value={oo[optionValue] ? oo[optionValue] : oo.value}
+                                onMouseDown={() => handleClick_Selected(oo)}
                             >
-                                {oo.label}
+                                {oo[optionLabel] ? oo[optionLabel] : oo.label}
                             </option>
                         ))}
                     </optgroup>
@@ -58,6 +60,7 @@ export const SelectItem = ({ group, items, hiddenRef }) => {
                 <option
                     key={o.id}
                     value={o.value}
+                    onMouseDown={() => handleClick_Selected(o)}
                 >
                     {o.label}
                 </option>
@@ -70,30 +73,33 @@ const InputSelect = (props) => {
     const {
         errorMsg,
         helperMsg,
-        inputRef,
         name,
         placeholder,
         options,
-        style,
         group = '',
-        ...others
+        onChange,
+        optionLabel,
+        optionValue,
     } = props
     const selectRef = useRef()
-    const hiddenRef = useRef()
     const [active, setActive] = useState(false)
     const [selectedLabel, setSelectedLabel] = useState('')
     const [value, setValue] = useState(undefined)
-    const { register, formState: { errors } } = useForm()
-    const { ref, ...fields } = register('carModel', {
-        required: { value: true, message: "This field is required" }
-    })
 
     const handleClick_Dropdown = () => {
         setActive(!active)
     }
 
     useEffect(() => {
-        console.log(value)
+        if (typeof document !== undefined) {
+            if (value) {
+                let inpt = document.getElementsByName(name)[0]
+                inpt.value = value
+                let event = new Event('change', { bubbles: true })
+                inpt.dispatchEvent(event)
+                onChange && onChange(event)
+            }
+        }
     }, [value])
 
     return (
@@ -103,105 +109,38 @@ const InputSelect = (props) => {
             setSelectedLabel,
         }}>
             <div className={styles.InputSelectWrapper}>
-                {/* <select
-                    ref={selectRef}
-                    onChange={() => {
-                        selectRef.current.style.color = "var(--qcuicq-color-textDark)"
-                    }}
-                    className={classNames(
-                        styles.InputSelect,
-                        errorMsg && styles.InputError,
-                        style ?? ""
-                    )}
-                    name={name}
-                    {...inputRef}
-                    {...others}
-                >
-                    {placeholder && (
-                        <option
-                            disabled
-                            selected
-                        >{placeholder}</option>
-                    )}
-                    {options && options.map((o, idx) => (
-                        <option
-                            key={o && o.id ? o.id : idx}
-                            value={o.value}
-                        >{o.label}</option>
-                    ))}
-                </select> */}
                 <div
                     ref={selectRef}
-                    className={classNames(styles.Dropdown, active && styles.Active, selectedLabel && styles.Selected)}
+                    className={classNames(
+                        styles.Dropdown,
+                        active && styles.Active,
+                        selectedLabel && styles.Selected,
+                        errorMsg && styles.InputError,
+                    )}
                     onClick={() => {
-                        // console.log(selectRef)
-                        // if (!`${selectRef.current.className}`.includes('active')) {
-                        //     selectRef.current.className = selectRef.current.className + ' active'
-                        // } else {
-                        //     selectRef.current.className = `${selectRef.current.className}`.replace(' active','')
-                        // }
                         handleClick_Dropdown()
                     }}
+                    onBlur={(e) => {
+                        e.persist()
+                        setActive(false)
+                    }}
                 >
-                    {placeholder && !selectedLabel ? (
-                        // <div className={styles.Select}>
-                        //     <span>{placeholder}</span>
-                        // </div>
-                        <input
-                            className={styles.Select}
-                            type="text"
-                            name={name}
-                            value={value}
-                            placeholder={placeholder}
-                            {...inputRef}
-                        />
-                    ) : (
-                        // <div className={styles.Select}>
-                        //     <span>{selectedLabel}</span>
-                        // </div>
-                        <input
-                            className={styles.Select}
-                            type="text"
-                            name={name}
-                            value={value}
-                            placeholder={placeholder}
-                            {...inputRef}
-                        />
-                    )}
-                    {/* <input
-                        // ref={(i) => {
-                        //     ref(i)
-                        //     hiddenRef.current = i
-                        // }}
-                        type="hidden"
+                    <input
+                        readOnly
+                        className={styles.Select}
+                        type="text"
                         name={name}
-                        value={value}
-                        {...inputRef}
-                        // {...others}
-                    /> */}
-                    <ul className={styles.DropdownMenu}>
-                        {/* {options && options.map((o, idx) => (
-                            // <li
-                            //     key={o && o.id ? o.id : idx}
-                            //     id={o.value}
-                            //     onClick={() => handleClick_Selected(o)}
-                            // >{o.label}</li>
-                            // <optgroup label={o.group} style={{ color: '#000' }}>
-                            //     <option
-                            //         key={o && o.id ? o.id : idx}
-                            //         id={o.value}
-                            //         onClick={() => handleClick_Selected(o)}
-                            //     >{o.label}</option>
-                            // </optgroup>
-                        ))} */}
-                        <SelectItem group={group} items={options} hiddenRef={hiddenRef} />
+                        placeholder={placeholder}
+                    />
+                    <ul className={classNames(styles.DropdownMenu, group && styles.DropdownMenu__Group)}>
+                        <SelectItem
+                            group={group}
+                            items={options}
+                            optionLabel={optionLabel}
+                            optionValue={optionValue}
+                        />
                     </ul>
                 </div>
-                {/* {errors && errors.carModel && errors.carModel.message && (
-                    <span className={styles.ErrorMessage}>
-                        {errors.carModel.message}
-                    </span>
-                )} */}
                 {errorMsg && (
                     <span className={styles.ErrorMessage}>
                         {errorMsg}
