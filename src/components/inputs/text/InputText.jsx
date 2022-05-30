@@ -6,12 +6,11 @@ const InputText = (props) => {
     const {
         errorMsg,
         helperMsg,
-        inputRef,
         name,
         placeholder,
         style,
         type,
-        ...others
+        onChange,
     } = props
 
     return (
@@ -22,11 +21,12 @@ const InputText = (props) => {
                     errorMsg && styles.InputError,
                     style ?? ""
                 )}
+                onChange={(e) => {
+                    onChange && onChange(e)
+                }}
                 type={type ?? "text"}
                 name={name}
                 placeholder={placeholder ?? ""}
-                {...inputRef}
-                {...others}
             />
             {errorMsg && (
                 <span className={styles.ErrorMessage}>

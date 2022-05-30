@@ -6,7 +6,6 @@ import { Controller } from "react-hook-form"
 
 const InputMask = (props) => {
     const {
-        control,
         errorMsg,
         helperMsg,
         mask,
@@ -14,13 +13,12 @@ const InputMask = (props) => {
         placeholder,
         placeholderChar,
         style,
+        onChange,
     } = props
-
-    // console.log(ref)
 
     return (
         <div className={styles.InputTextWrapper}>
-             <Controller
+             {/* <Controller
                 control={control}
                 name={name}
                 render={({ field }) => (
@@ -36,6 +34,19 @@ const InputMask = (props) => {
                         placeholderChar={placeholderChar}
                     />
                 )}
+            /> */}
+            <MaskedInput
+                // {...field}
+                className={classNames(
+                    styles.InputText,
+                    errorMsg && styles.InputError,
+                    style ?? ""
+                )}
+                onChange={(e) => onChange(e)}
+                name={name}
+                mask={mask}
+                placeholder={placeholder}
+                placeholderChar={placeholderChar}
             />
             {errorMsg && (
                 <span className={styles.ErrorMessage}>
