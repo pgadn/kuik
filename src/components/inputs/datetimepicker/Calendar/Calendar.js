@@ -30,8 +30,12 @@ export default class Calendar {
     });
   }
 
+  isLeapYear(year) {
+    return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
+  }
+
   get isLeapYear() {
-    return isLeapYear(this.year);
+    return this.isLeapYear(this.year);
   }
 
   getMonth(monthNumber) {

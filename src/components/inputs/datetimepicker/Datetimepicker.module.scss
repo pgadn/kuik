@@ -84,7 +84,7 @@
 
   .CalendarDropDown {    
       width: 300px;
-      height: 300px;
+      height: 330px;
       position: absolute;
       top: 100%;
       left: 50%;
@@ -102,19 +102,43 @@
   }
 
   .CalendarHeaderYear {
-    background-color: aqua;
+    background-color: #fff;
+    color: #6B6B6B;
     text-align: left;
     min-height:10%;
-    padding: 0px 12px;
+    padding: 0px 12px;      
+  }
+
+  .Arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: auto;
+  }
+
+  .ArrowRight {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .ArrowLeft {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
   }
 
   .CalendarHeaderMonth {
-    background-color: red;
+    background-color: #fff;
+    color: #6B6B6B;
     min-height:15%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 12px;
+  }
+
+  .CalendarWeek {
+    color: #6B6B6B;
   }
   
   .CalendarDaysContainer {
@@ -134,7 +158,41 @@
     align-items: center;
     font-size: 12px;
     text-transform: capitalize;
-  }  
+  } 
+
+  .CurrentMonthDaysContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+  }
+
+  .CalendarDaysButton {
+    padding: 8px 5px;
+    background: #fff;
+    color: #6B6B6B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .CalendarDaysButton.current {
+    background: #444857;
+  }
+  
+  .CalendarDaysButton.selected {
+    background: #294197;
+    color: #CDD5F1;
+  }
+  
+  .CalendarDaysButton:hover {
+    background: #CDD5F1;
+    border-radius: 45px;
+    border: 0.5px solid #294197;
+    margin: -1px;
+  }
 
   
 
