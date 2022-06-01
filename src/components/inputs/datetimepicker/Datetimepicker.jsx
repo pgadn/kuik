@@ -19,12 +19,28 @@ const Datetimepicker = (props) => {
   } = props;
   
   const [addVisibility, setAddVisibility] = useState(false);
+
+  const [addVisibilityYear, setAddVisibilityYear] = useState(false);
   
   const [cal, setCal] = useState(new Calendar());  
-  let calendar = new Calendar(cal.year,cal.month.number);
+  let calendar = new Calendar(cal.year,cal.month.number);  
+
+  const currentYear = new Calendar();
+
+  const [calendarYearDataArray, setCalendarYearDataArray] = useState([`${currentYear.year}`,`${currentYear.year-1}`,`${currentYear.year-2}`,`${currentYear.year-3}`,`${currentYear.year-4}`]);
+
+  const calendarYearRef = useRef();
+  useOutsideAlerter(calendarYearRef);
+
+  const calendarRef = useRef();
+  // useOutsideAlerter(calendarRef);
 
   const showCalendar = () => {
     setAddVisibility((prevState) => (!prevState));
+  }
+
+  const showYearHandler = () => {
+    setAddVisibilityYear((prevState) => (!prevState));
   }
 
   const CalendarRenderWeekDaysElement = () => {
@@ -66,6 +82,40 @@ const Datetimepicker = (props) => {
     setCal(calendar);
   }
 
+  const onScrollYear = () => {
+    if (calendarYearRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = calendarYearRef.current;      
+      console.log()
+      if (scrollTop + clientHeight === scrollHeight) {
+        
+        setCalendarYearDataArray(oldArray => [...oldArray,Number(oldArray[oldArray.length-1])+1] );        
+      }      
+      else if(scrollTop === 0) {        
+        setCalendarYearDataArray(oldArray => [Number(oldArray[0])-1,...oldArray] );
+      }
+    }
+  }
+
+  function useOutsideAlerter(ref) {
+    useEffect(() => {     
+      const handleClickOutsideRef = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          if(ref == calendarYearRef) {
+            setAddVisibilityYear(false);
+          }else if(ref == calendarRef) {
+            setAddVisibility(false);
+          }       
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutsideRef);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutsideRef);
+      };
+    }, [ref]);
+  }
+
   return (
     <div className={styles.DatetimepickerWrapper}>
       <input
@@ -81,11 +131,19 @@ const Datetimepicker = (props) => {
         {...others}
         disabled={disabled}        
       />
-      <div className={addVisibility ? `${styles.CalendarVisible} ${styles.CalendarDropDown}` : `${styles.CalendarHidden}`}>
+      <div className={addVisibility ? `${styles.CalendarVisible} ${styles.CalendarDropDown}` : `${styles.CalendarHidden}`} ref={calendarRef}>
         <div className={styles.CalendarContainer}>
           <div className={styles.CalendarHeaderYear}>            
               {/* <h4>{cal.year}</h4> */}
-              <h4>{cal && cal.year ? cal.year : null}</h4>
+              {/* <h4>{cal && cal.year ? cal.year : null}</h4> */}
+              <button onClick={() => showYearHandler()}>{cal && cal.year ? cal.year : null}<span className={`${styles.ArrowDownCaret} ${styles.ArrowCaret}`}></span></button>              
+              <div className={addVisibilityYear ? `${styles.CalendarYearDropdown}` : `${styles.CalendarHiddenYear}`} onScroll={() => onScrollYear()} ref={calendarYearRef}>
+                {calendarYearDataArray.map((year,index) => {
+                  return (
+                    <p key={index}>{year}</p>
+                  )
+                })}
+              </div>
           </div>
           <div className={styles.CalendarHeaderMonth}>
           <button type="button" className="prev-month" aria-label="previous month" onClick={() => goToPrevMonth()}><i className={`${styles.Arrow} ${styles.ArrowLeft}`}></i></button>
