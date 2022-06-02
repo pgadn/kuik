@@ -78,10 +78,10 @@ body, input {
   font-family: "Roboto", sans-serif;
 }
 
-/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
+/*================ Media Query Mixin ================*/
 .ButtonWrapper {
   font-family: "Roboto", sans-serif;
 }
@@ -589,21 +589,6 @@ body, input {
   margin: -1px;
 }
 
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
 .StepWrapper {
   width: 100%;
   overflow-x: hidden;
@@ -623,10 +608,19 @@ body, input {
   transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
-.StepLabelWrapper {
+.StepperWrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
 }
 
 .StepContentWrapper {
@@ -635,28 +629,10 @@ body, input {
   flex-direction: column;
 }
 
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardWrapper {
+.StepLabelWrapper {
   display: flex;
-  flex-direction: column;
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
+  align-items: center;
+  justify-content: center;
 }
 
 .TypographyWrapper {
@@ -707,4 +683,28 @@ body, input {
   color: var(--qcuicq-color-textDefault);
   margin: 0;
   padding: 0;
+}
+
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }
