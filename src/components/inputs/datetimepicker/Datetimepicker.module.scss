@@ -114,6 +114,14 @@
     padding: 18px 13px;          
   }
 
+  .YearListP {
+    cursor: pointer;
+  }
+
+  .YearListP:hover {
+    background: #CDD5F1;        
+  }
+
   // .CalendarHeaderYear h4 {
   //   box-shadow: 0 0 6px rgba(0,0,0,0.2);
   //   width: 3.5em;
@@ -226,16 +234,17 @@
     border-radius: 2px;
     cursor: pointer;
     border: none;
-    
   }
 
   .CalendarDaysButton.current {
     background: #444857;
   }
   
-  .CalendarDaysButton.selected {
-    background: #294197;
-    color: #CDD5F1;
+  .CalendarDaysButtonSelected {
+    background: #CDD5F1;
+    border-radius: 45px;
+    border: 0.5px solid #294197;
+    margin: -1px;
   }
   
   .CalendarDaysButton:hover {

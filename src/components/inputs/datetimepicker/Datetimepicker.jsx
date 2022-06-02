@@ -21,13 +21,16 @@ const Datetimepicker = (props) => {
   const [addVisibility, setAddVisibility] = useState(false);
 
   const [addVisibilityYear, setAddVisibilityYear] = useState(false);
-  
+
   const [cal, setCal] = useState(new Calendar());  
-  let calendar = new Calendar(cal.year,cal.month.number);  
+  let calendar = new Calendar(cal.year,cal.month.number);
+  // const [inputTypeValue, setInputTypeValue] = useState(new )
 
   const currentYear = new Calendar();
 
-  const [calendarYearDataArray, setCalendarYearDataArray] = useState([`${currentYear.year}`,`${currentYear.year-1}`,`${currentYear.year-2}`,`${currentYear.year-3}`,`${currentYear.year-4}`]);
+  let selectedDayElement = useRef(null);
+  
+  const [calendarYearDataArray, setCalendarYearDataArray] = useState([currentYear.year-4,currentYear.year-3,currentYear.year-2,currentYear.year-1,currentYear.year]);
 
   const calendarYearRef = useRef();
   useOutsideAlerter(calendarYearRef);
@@ -69,16 +72,24 @@ const Datetimepicker = (props) => {
 
   const CalendarRenderDays = (days = []) => {
     days = getMonthDays();    
-      return days.map((day,index) => <button key={index} className={styles.CalendarDaysButton}>{day.date}</button>);    
+      return days.map((day,index) => <button key={index} className={styles.CalendarDaysButton} onClick={(e) => selectDay(e,day)}>{day.date}</button>);    
   }
 
   const goToPrevMonth = () => {          
-    calendar.goToPreviousMonth();
-    setCal(calendar);     
+    calendar.goToPreviousMonth(); 
+    if(selectedDayElement.current) {      
+      selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
+      selectedDayElement = null;
+    }
+    setCal(calendar);    
   }
 
   const goToNextMonth = () => {
-    calendar.goToNextMonth();
+    calendar.goToNextMonth();    
+    if(selectedDayElement.current) {      
+      selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
+      selectedDayElement = null;
+    }
     setCal(calendar);
   }
 
@@ -96,6 +107,7 @@ const Datetimepicker = (props) => {
     }
   }
 
+
   function useOutsideAlerter(ref) {
     useEffect(() => {     
       const handleClickOutsideRef = (event) => {
@@ -103,7 +115,7 @@ const Datetimepicker = (props) => {
           if(ref == calendarYearRef) {
             setAddVisibilityYear(false);
           }else if(ref == calendarRef) {
-            setAddVisibility(false);
+            // setAddVisibility(false);
           }       
         }
       }
@@ -114,6 +126,25 @@ const Datetimepicker = (props) => {
         document.removeEventListener("mousedown", handleClickOutsideRef);
       };
     }, [ref]);
+  }
+
+  const selectDay = (event,day) => {    
+    let el = event.target;
+    el.classList.add(`${styles.CalendarDaysButtonSelected}`);
+    if(selectedDayElement.current) {      
+      selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
+    }
+    selectedDayElement.current = el;
+    
+    
+  }
+  
+  const selectYear = (year) => {
+    if(selectedDayElement.current) {      
+      selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
+      selectedDayElement = null;
+    }
+    setCal(new Calendar(year,cal.month.number))
   }
 
   return (
@@ -128,7 +159,8 @@ const Datetimepicker = (props) => {
         name={name}        
         placeholder={placeholder ?? "mm/dd/yyyy"}
         {...inputRef}
-        {...others}
+
+        {...others}        
         disabled={disabled}        
       />
       <div className={addVisibility ? `${styles.CalendarVisible} ${styles.CalendarDropDown}` : `${styles.CalendarHidden}`} ref={calendarRef}>
@@ -140,7 +172,7 @@ const Datetimepicker = (props) => {
               <div className={addVisibilityYear ? `${styles.CalendarYearDropdown}` : `${styles.CalendarHiddenYear}`} onScroll={() => onScrollYear()} ref={calendarYearRef}>
                 {calendarYearDataArray.map((year,index) => {
                   return (
-                    <p key={index}>{year}</p>
+                    <p key={index} className={`${styles.YearListP}`} onClick={() => selectYear(year)}>{year}</p>
                   )
                 })}
               </div>
