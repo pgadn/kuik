@@ -32,10 +32,10 @@ const Datetimepicker = (props) => {
   
   const [calendarYearDataArray, setCalendarYearDataArray] = useState([currentYear.year-4,currentYear.year-3,currentYear.year-2,currentYear.year-1,currentYear.year]);
 
-  const calendarYearRef = useRef();
+  let calendarYearRef = useRef();
   useOutsideAlerter(calendarYearRef);
 
-  const calendarRef = useRef();
+  let calendarRef = useRef();
   // useOutsideAlerter(calendarRef);
 
   const showCalendar = () => {

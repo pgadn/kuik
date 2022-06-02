@@ -23,7 +23,7 @@ export default class Calendar {
     };
 
     this.weekDays.forEach((_, i) => {
-      const day = this.month.getDay(i + 1);
+      let day = this.month.getDay(i + 1);
       if (!this.weekDays.includes(day.day)) {
         this.weekDays[day.dayNumber - 1] = day.day;
       }

@@ -2,8 +2,8 @@ import Day from "./Day"
 
 export default class Month {
     constructor(date = null, lang = 'default') {
-      const day = new Day(date, lang);
-      const monthsSize = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      let day = new Day(date, lang);
+      let monthsSize = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
       this.lang = lang;
       
       this.name = day.month;
