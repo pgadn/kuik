@@ -73,14 +73,85 @@
   box-sizing: border-box;
 }
 
-body {
+body, input {
   font-family: "Roboto", sans-serif;
 }
 
+/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
-/*================ Media Query Mixin ================*/
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
+}
+
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textPrimary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
 .ButtonWrapper {
   font-family: "Roboto", sans-serif;
 }
@@ -150,135 +221,6 @@ body {
 .Button_Disabled:hover {
   color: var(--qcuicq-color-textLight);
   background-color: transparent;
-}
-
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
-}
-
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0 0 10px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textDark);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
-}
-
-.CheckboxWrapper {
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  align-items: center;
-}
-.CheckboxWrapper .Checkbox {
-  cursor: pointer;
-}
-.CheckboxWrapper input[type=checkbox] {
-  appearance: none;
-  height: 0.75rem;
-  width: 0.75rem;
-  outline: 1px solid #c1c1c1;
-  background-color: #fff;
-}
-.CheckboxWrapper label {
-  padding: 0.2rem;
-  font-size: 0.75rem;
-}
-.CheckboxWrapper .Checkbox_Disabled {
-  cursor: initial !important;
-  background-color: transparent !important;
-}
-.CheckboxWrapper .Checkbox_Disabled:hover {
-  outline: 1px solid #c1c1c1 !important;
-}
-.CheckboxWrapper .Checkbox_Disabled:hover + label {
-  cursor: default;
-  color: var(--qcuicq-color-textLight) !important;
-}
-.CheckboxWrapper .Label_Disabled {
-  color: var(--qcuicq-color-textLight);
-}
-.CheckboxWrapper .Checkbox_Size__sm {
-  padding: var(--qcuicq-chkbx-size-sm-padding);
-  height: var(--qcuicq-chkbx-size-sm-height);
-  width: var(--qcuicq-chkbx-size-sm-width);
-}
-.CheckboxWrapper .Label_Checkbox_Size__sm {
-  font-size: var(--qcuicq-chkbx-size-sm-font);
-}
-.CheckboxWrapper .Checkbox_Size__md {
-  padding: var(--qcuicq-chkbx-size-md-padding);
-  height: var(--qcuicq-chkbx-size-md-height);
-  width: var(--qcuicq-chkbx-size-md-width);
-}
-.CheckboxWrapper .Label_Checkbox_Size__md {
-  font-size: var(--qcuicq-chkbx-size-md-font);
-}
-.CheckboxWrapper .Checkbox_Size__lg {
-  padding: var(--qcuicq-chkbx-size-lg-padding);
-  height: var(--qcuicq-chkbx-size-lg-height);
-  width: var(--qcuicq-chkbx-size-lg-width);
-}
-.CheckboxWrapper .Label_Checkbox_Size__lg {
-  font-size: var(--qcuicq-chkbx-size-lg-font);
-}
-.CheckboxWrapper label:hover,
-.CheckboxWrapper input[type=checkbox]:hover {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.CheckboxWrapper label:hover {
-  color: #6b6b6b;
-  cursor: pointer;
-}
-.CheckboxWrapper input[type=checkbox]:hover {
-  outline: 1px solid #6b6b6b;
-}
-.CheckboxWrapper input[type=checkbox]:hover + label {
-  color: #6b6b6b;
-}
-.CheckboxWrapper input[type=checkbox]:checked {
-  background-color: #294197;
-}
-.CheckboxWrapper input[type=checkbox]:checked + label {
-  font-weight: 440;
 }
 
 .OptionWrapper {
@@ -363,76 +305,6 @@ body {
   font-size: var(--qcuicq-optn-size-lg-font);
 }
 
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepWrapper {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  max-height: 0;
-  opacity: 0;
-  margin-right: calc(100% + 1000px);
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.ActiveStep {
-  position: relative;
-  max-height: 100%;
-  overflow-x: visible;
-  opacity: 1;
-  margin-right: 0;
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.StepContentWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.CardWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
-}
-
 .TypographyWrapper {
   color: var(--qcuicq-color-textPrimary);
 }
@@ -481,4 +353,131 @@ body {
   color: var(--qcuicq-color-textDefault);
   margin: 0;
   padding: 0;
+}
+
+.CheckboxWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.CheckboxWrapper .Checkbox {
+  cursor: pointer;
+}
+.CheckboxWrapper input[type=checkbox] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #c1c1c1;
+  background-color: #fff;
+}
+.CheckboxWrapper label {
+  padding: 0.2rem;
+  font-size: 0.75rem;
+}
+.CheckboxWrapper .Checkbox_Disabled {
+  cursor: initial !important;
+  background-color: transparent !important;
+}
+.CheckboxWrapper .Checkbox_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.CheckboxWrapper .Checkbox_Disabled:hover + label {
+  cursor: default;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.CheckboxWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.CheckboxWrapper .Checkbox_Size__sm {
+  padding: var(--qcuicq-chkbx-size-sm-padding);
+  height: var(--qcuicq-chkbx-size-sm-height);
+  width: var(--qcuicq-chkbx-size-sm-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__sm {
+  font-size: var(--qcuicq-chkbx-size-sm-font);
+}
+.CheckboxWrapper .Checkbox_Size__md {
+  padding: var(--qcuicq-chkbx-size-md-padding);
+  height: var(--qcuicq-chkbx-size-md-height);
+  width: var(--qcuicq-chkbx-size-md-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__md {
+  font-size: var(--qcuicq-chkbx-size-md-font);
+}
+.CheckboxWrapper .Checkbox_Size__lg {
+  padding: var(--qcuicq-chkbx-size-lg-padding);
+  height: var(--qcuicq-chkbx-size-lg-height);
+  width: var(--qcuicq-chkbx-size-lg-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__lg {
+  font-size: var(--qcuicq-chkbx-size-lg-font);
+}
+.CheckboxWrapper label:hover,
+.CheckboxWrapper input[type=checkbox]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.CheckboxWrapper label:hover {
+  color: #6b6b6b;
+  cursor: pointer;
+}
+.CheckboxWrapper input[type=checkbox]:hover {
+  outline: 1px solid #6b6b6b;
+}
+.CheckboxWrapper input[type=checkbox]:hover + label {
+  color: #6b6b6b;
+}
+.CheckboxWrapper input[type=checkbox]:checked {
+  background-color: #294197;
+}
+.CheckboxWrapper input[type=checkbox]:checked + label {
+  font-weight: 440;
+}
+
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.StepContentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.StepWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  margin-right: calc(100% + 1000px);
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.ActiveStep {
+  position: relative;
+  max-height: 100%;
+  overflow-x: visible;
+  opacity: 1;
+  margin-right: 0;
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
