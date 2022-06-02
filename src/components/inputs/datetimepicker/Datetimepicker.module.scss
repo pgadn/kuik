@@ -1,0 +1,275 @@
+@import "../../../styles/font/roboto";
+
+.DatetimepickerWrapper {
+  position: relative;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1em;
+  padding: 0.5em;
+  color: inherit;
+  flex: auto 1 1;
+  width: 100%;
+  background: none;
+  background-color: transperant;
+
+  .InputText {
+    width: 100%;
+    border: 1px solid transparent;
+    outline: 0;
+    height: 48px;
+    border-radius: 6px;
+    text-indent: 10px;
+    box-shadow: 0 0 10px var(--qcuicq-color-light);
+    color: var(--qcuicq-color-textDark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    padding-right: 3em;
+
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+
+    &::placeholder {
+      color: var(--qcuicq-color-textSecondary);
+    }
+
+    &:focus {
+      border-color: var(--qcuicq-color-primary);
+      transition: all 0.5s ease-out;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+    }
+  }
+
+  .InputError {
+    border: 1px solid var(--qcuicq-color-error);
+  }
+  .HelperMessage {
+    color: var(--qcuicq-color-textLight);
+    font-size: 0.8rem;
+  }
+  .ErrorMessage {
+    color: var(--qcuicq-color-textError);
+    font-size: 0.8rem;
+  }
+
+  .CalendarDateTimePickerIcon {
+    position: absolute;
+    right: 17px;
+    top: 19px;
+    cursor: pointer;
+  }
+
+  .CalendarDateTimePickerIcon:active {
+    transform: scale(0.97);
+  }
+
+  ////////// CALENDAR PICKER /////////
+
+  .CalendarVisible {
+    transition: all .2s;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .CalendarHidden {    
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .CalendarHiddenYear {    
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .CalendarDropDown {    
+      width: 300px;      
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 8px);
+      padding: 0px 20px 10px 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+
+  .CalendarContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .CalendarHeaderYear {
+    background-color: #fff;
+    color: #6B6B6B;
+    text-align: left;
+    min-height:10%;
+    height: 43px;
+    padding: 18px 13px;          
+  }
+
+  .YearListP {
+    cursor: pointer;
+  }
+
+  .YearListP:hover {
+    background: #CDD5F1;        
+  }
+
+  // .CalendarHeaderYear h4 {
+  //   box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  //   width: 3.5em;
+  //   text-align: center;
+  // }
+  .CalendarHeaderYear button {
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    width: 5em;
+    text-align: center;
+    padding: 2.5px 0px;    
+  }
+
+  .CalendarYearDropdown {
+    position: absolute;
+    background-color: #fff;
+    padding: 3px 10px;
+    margin: auto;
+    z-index: 999;
+    text-align: center;
+    width: 4.4em;
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    overflow-y: scroll;    
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    height: 180px;
+  }
+
+  .ArrowCaret {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    vertical-align: middle;
+    border-style: solid;    
+  }
+
+  .ArrowDownCaret {
+    border-width: 3.5px;
+    border-color: #8c8c8c transparent transparent transparent;
+    margin-left: 1.5px;
+  }
+
+  .Arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: auto;
+  }
+
+  .ArrowRight {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .ArrowLeft {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .CalendarHeaderMonth {
+    background-color: #fff;
+    color: #6B6B6B;
+    min-height:15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 12px;
+  }
+
+  .CalendarHeaderMonth button {
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+
+  .CalendarWeek {
+    color: #6B6B6B;
+  }
+  
+  .CalendarDaysContainer {
+    background-color: fff;    
+  }
+
+  .CalendarWeekDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    margin: 5px 0px;
+  }
+  
+  .CalendarWeekDays span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    text-transform: capitalize;
+  } 
+
+  .CurrentMonthDaysContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+  }
+
+  .CalendarDaysButton {
+    padding: 8px 5px;
+    background: #fff;
+    color: #6B6B6B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .CalendarDaysButton.current {
+    background: #444857;
+  }
+  
+  .CalendarDaysButtonSelected {
+    background: #CDD5F1;
+    border-radius: 45px;
+    border: 0.5px solid #294197;
+    margin: -1px;
+  }
+  
+  .CalendarDaysButton:hover {
+    background: #CDD5F1;
+    border-radius: 45px;
+    border: 0.5px solid #294197;
+    margin: -1px;
+  }
+
+  
+
+  // .CalendarHeaderYear {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;   
+  // }
+
+  // .CalendarHeaderMonth {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   // margin: 10px 0 30px;
+  // }
+
+  
+}
+
+
