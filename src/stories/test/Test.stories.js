@@ -22,7 +22,7 @@ stories.add('Test', () => {
             <Option size="lg" name="test" label="CSS 3" value="CSS 3" />
                        
             <div style={{width:"50%"}}>
-            <Datetimepicker value={test} />          
+            <Datetimepicker />          
             </div>
             
       

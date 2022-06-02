@@ -161,10 +161,11 @@ const Datetimepicker = (props) => {
         type="text"
         name={name}        
         placeholder={placeholder ?? "mm/dd/yyyy"}
-        {...inputRef}
-        // value={inputTypeValue}
+        {...inputRef}        
         value={inputTypeValue}
-        onChange={setInputTypeValueHandler}
+        onChange={(e) => {
+          onChange && onChange(e)
+        }}
         {...others}        
         disabled={disabled}        
       />
