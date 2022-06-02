@@ -7,7 +7,8 @@ import {Checkbox, Option, Datetimepicker} from "../../components/inputs"
 
 const stories = storiesOf('Demo 2', module)
 
-stories.add('Test', () => {
+stories.add('Test', () => {    
+
     return (
         <div style={{ backgroundColor: '#eee' }}>            
             <Checkbox size="lg" name="bikedis" label="I have a bike disable" value="bikedis" disabled/>  
@@ -21,7 +22,7 @@ stories.add('Test', () => {
             <Option size="lg" name="test" label="CSS 3" value="CSS 3" />
                        
             <div style={{width:"50%"}}>
-            <Datetimepicker />          
+            <Datetimepicker value={test} />          
             </div>
             
       

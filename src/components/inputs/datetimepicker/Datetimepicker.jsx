@@ -23,8 +23,8 @@ const Datetimepicker = (props) => {
   const [addVisibilityYear, setAddVisibilityYear] = useState(false);
 
   const [cal, setCal] = useState(new Calendar());  
-  let calendar = new Calendar(cal.year,cal.month.number);
-  // const [inputTypeValue, setInputTypeValue] = useState(new )
+  let calendar = new Calendar(cal.year,cal.month.number);  
+  const [inputTypeValue, setInputTypeValue] = useState(new Date(`${cal.month.number}-${cal.today.date}-${cal.year}`).toLocaleDateString());
 
   const currentYear = new Calendar();
 
@@ -95,8 +95,7 @@ const Datetimepicker = (props) => {
 
   const onScrollYear = () => {
     if (calendarYearRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = calendarYearRef.current;      
-      console.log()
+      const { scrollTop, scrollHeight, clientHeight } = calendarYearRef.current;            
       if (scrollTop + clientHeight === scrollHeight) {
         
         setCalendarYearDataArray(oldArray => [...oldArray,Number(oldArray[oldArray.length-1])+1] );        
@@ -134,9 +133,13 @@ const Datetimepicker = (props) => {
     if(selectedDayElement.current) {      
       selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
     }
-    selectedDayElement.current = el;
-    
-    
+    selectedDayElement.current = el;        
+    setInputTypeValueHandler(new Date(`${cal.month.number}-${day.date}-${cal.year}`).toLocaleDateString())
+
+  }
+
+  const setInputTypeValueHandler = (date) => {
+    setInputTypeValue(date);
   }
   
   const selectYear = (year) => {
@@ -159,7 +162,9 @@ const Datetimepicker = (props) => {
         name={name}        
         placeholder={placeholder ?? "mm/dd/yyyy"}
         {...inputRef}
-
+        // value={inputTypeValue}
+        value={inputTypeValue}
+        onChange={setInputTypeValueHandler}
         {...others}        
         disabled={disabled}        
       />
