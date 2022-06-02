@@ -56,14 +56,14 @@ const Datetimepicker = (props) => {
     const prevMonth = cal.getPreviousMonth();
     const totalLastMonthFinalDays = firstDayOfTheMonth.dayNumber - 1;
     const totalDays = cal.month.numberOfDays + totalLastMonthFinalDays;
-    const monthList = Array.from({length: totalDays});
+    let monthList = Array.from({length: totalDays});
 
     for(let i = totalLastMonthFinalDays; i < totalDays; i++) {
       monthList[i] = cal.month.getDay(i + 1 - totalLastMonthFinalDays)
     }
 
     for(let i = 0; i < totalLastMonthFinalDays; i++) {
-      const inverted = totalLastMonthFinalDays - (i + 1);
+      let inverted = totalLastMonthFinalDays - (i + 1);
       monthList[i] = prevMonth.getDay(prevMonth.numberOfDays - inverted);
     }
     
