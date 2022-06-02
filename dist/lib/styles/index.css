@@ -78,34 +78,10 @@ body, input {
   font-family: "Roboto", sans-serif;
 }
 
+/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
-/*================ Media Query Mixin ================*/
-.CardWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
-}
-
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
 .ButtonWrapper {
   font-family: "Roboto", sans-serif;
 }
@@ -647,16 +623,40 @@ body, input {
   transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .StepContentWrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.StepLabelWrapper {
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardWrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }
 
 .TypographyWrapper {
