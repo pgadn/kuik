@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
   /* BASE COLORS */
   --qcuicq-color-primary: #294197;
@@ -77,25 +78,13 @@ body, input {
   font-family: "Roboto", sans-serif;
 }
 
-/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
+/*================ Media Query Mixin ================*/
 .CardWrapper {
   display: flex;
   flex-direction: column;
-}
-
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
 }
 
 .CardContentWrapper {
@@ -105,51 +94,16 @@ body, input {
   background-color: #fff;
 }
 
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }
 
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0 0 10px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textPrimary);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
 }
 
 .ButtonWrapper {
@@ -223,136 +177,51 @@ body, input {
   background-color: transparent;
 }
 
-.OptionWrapper {
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  align-items: center;
-}
-.OptionWrapper input[type=radio] {
-  appearance: none;
-  height: 0.75rem;
-  width: 0.75rem;
-  outline: 1px solid #C1C1C1;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.OptionWrapper label {
-  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
-  font-size: 0.75rem;
-}
-.OptionWrapper .Option_Disabled {
-  cursor: default !important;
-  background-color: transparent !important;
-}
-.OptionWrapper .Option_Disabled:hover {
-  outline: 1px solid #c1c1c1 !important;
-}
-.OptionWrapper .Option_Disabled:hover + label {
-  cursor: default !important;
-  color: var(--qcuicq-color-textLight) !important;
-}
-.OptionWrapper .Label_Disabled {
-  color: var(--qcuicq-color-textLight);
-}
-.OptionWrapper input[type=radio]:checked {
-  background-color: #294197;
-}
-.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.OptionWrapper input[type=radio] + label:hover {
-  color: #6B6B6B;
-  cursor: pointer;
-}
-.OptionWrapper input[type=radio]:hover {
-  outline: 1px solid #6B6B6B;
-  cursor: pointer;
-}
-.OptionWrapper input[type=radio]:hover + label {
-  color: #6B6B6B;
-}
-.OptionWrapper input[type=radio]:checked {
-  background-color: #294197;
-}
-.OptionWrapper input[type=radio]:checked + label {
-  font-weight: 440;
-}
-.OptionWrapper .Option_Size__sm {
-  padding: var(--qcuicq-optn-size-sm-padding);
-  height: var(--qcuicq-optn-size-sm-height);
-  width: var(--qcuicq-optn-size-sm-width);
-}
-.OptionWrapper .Label_Option_Size__sm {
-  font-size: var(--qcuicq-optn-size-sm-font);
-}
-.OptionWrapper .Option_Size__md {
-  padding: var(--qcuicq-optn-size-md-padding);
-  height: var(--qcuicq-optn-size-md-height);
-  width: var(--qcuicq-optn-size-md-width);
-}
-.OptionWrapper .Label_Option_Size__md {
-  font-size: var(--qcuicq-optn-size-md-font);
-}
-.OptionWrapper .Option_Size__lg {
-  padding: var(--qcuicq-optn-size-lg-padding);
-  height: var(--qcuicq-optn-size-lg-height);
-  width: var(--qcuicq-optn-size-lg-width);
-}
-.OptionWrapper .Label_Option_Size__lg {
-  font-size: var(--qcuicq-optn-size-lg-font);
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
 }
 
-.TypographyWrapper {
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
   color: var(--qcuicq-color-textPrimary);
-}
-
-.Typography_Align__left {
-  text-align: left;
-}
-
-.Typography_Align__center {
-  text-align: center;
-}
-
-.Typography_Align__right {
-  text-align: right;
-}
-
-.Typography_Align__justify {
-  text-align: justify;
-}
-
-.Typography_Variant__h3 {
-  font-size: 1.3rem;
   font-weight: 600;
-  color: var(--qcuicq-color-textDark);
-  margin: 0;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
 }
-.Typography_Variant__h3.Typography_FontColor__textPrimary {
-  color: var(--qcuicq-color-textPrimary);
-}
-.Typography_Variant__h3.Typography_FontColor__textSecondary {
+.InputText::placeholder {
   color: var(--qcuicq-color-textSecondary);
 }
-.Typography_Variant__h3.Typography_FontColor__textDark {
-  color: var(--qcuicq-color-textDark);
-}
-.Typography_Variant__h3.Typography_FontColor__textLight {
-  color: var(--qcuicq-color-textLight);
-}
-.Typography_Variant__h3.Typography_FontColor__textDefault {
-  color: var(--qcuicq-color-textDefault);
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
 }
 
-.Typography_Variant__caption {
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
   font-size: 0.8rem;
-  font-weight: 300;
-  color: var(--qcuicq-color-textDefault);
-  margin: 0;
-  padding: 0;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
 }
 
 .CheckboxWrapper {
@@ -436,6 +305,314 @@ body, input {
   font-weight: 440;
 }
 
+.OptionWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.OptionWrapper input[type=radio] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #C1C1C1;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.OptionWrapper label {
+  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+  font-size: 0.75rem;
+}
+.OptionWrapper .Option_Disabled {
+  cursor: default !important;
+  background-color: transparent !important;
+}
+.OptionWrapper .Option_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.OptionWrapper .Option_Disabled:hover + label {
+  cursor: default !important;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.OptionWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.OptionWrapper input[type=radio] + label:hover {
+  color: #6B6B6B;
+  cursor: pointer;
+}
+.OptionWrapper input[type=radio]:hover {
+  outline: 1px solid #6B6B6B;
+  cursor: pointer;
+}
+.OptionWrapper input[type=radio]:hover + label {
+  color: #6B6B6B;
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio]:checked + label {
+  font-weight: 440;
+}
+.OptionWrapper .Option_Size__sm {
+  padding: var(--qcuicq-optn-size-sm-padding);
+  height: var(--qcuicq-optn-size-sm-height);
+  width: var(--qcuicq-optn-size-sm-width);
+}
+.OptionWrapper .Label_Option_Size__sm {
+  font-size: var(--qcuicq-optn-size-sm-font);
+}
+.OptionWrapper .Option_Size__md {
+  padding: var(--qcuicq-optn-size-md-padding);
+  height: var(--qcuicq-optn-size-md-height);
+  width: var(--qcuicq-optn-size-md-width);
+}
+.OptionWrapper .Label_Option_Size__md {
+  font-size: var(--qcuicq-optn-size-md-font);
+}
+.OptionWrapper .Option_Size__lg {
+  padding: var(--qcuicq-optn-size-lg-padding);
+  height: var(--qcuicq-optn-size-lg-height);
+  width: var(--qcuicq-optn-size-lg-width);
+}
+.OptionWrapper .Label_Option_Size__lg {
+  font-size: var(--qcuicq-optn-size-lg-font);
+}
+.OptionWrapper .InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+.OptionWrapper .HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+.OptionWrapper .ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
+.DatetimepickerWrapper {
+  position: relative;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1em;
+  padding: 0.5em;
+  color: inherit;
+  flex: auto 1 1;
+  width: 100%;
+  background: none;
+  background-color: transperant;
+}
+.DatetimepickerWrapper .InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textDark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  padding-right: 3em;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.DatetimepickerWrapper .InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.DatetimepickerWrapper .InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.DatetimepickerWrapper .InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+.DatetimepickerWrapper .HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+.DatetimepickerWrapper .ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+.DatetimepickerWrapper .CalendarDateTimePickerIcon {
+  position: absolute;
+  right: 17px;
+  top: 19px;
+  cursor: pointer;
+}
+.DatetimepickerWrapper .CalendarDateTimePickerIcon:active {
+  transform: scale(0.97);
+}
+.DatetimepickerWrapper .CalendarVisible {
+  transition: all 0.2s;
+  opacity: 1;
+  visibility: visible;
+}
+.DatetimepickerWrapper .CalendarHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.DatetimepickerWrapper .CalendarHiddenYear {
+  opacity: 0;
+  visibility: hidden;
+}
+.DatetimepickerWrapper .CalendarDropDown {
+  width: 300px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  padding: 0px 20px 10px 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.DatetimepickerWrapper .CalendarContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.DatetimepickerWrapper .CalendarHeaderYear {
+  background-color: #fff;
+  color: #6B6B6B;
+  text-align: left;
+  min-height: 10%;
+  height: 43px;
+  padding: 18px 13px;
+}
+.DatetimepickerWrapper .YearListP {
+  cursor: pointer;
+}
+.DatetimepickerWrapper .YearListP:hover {
+  background: #CDD5F1;
+}
+.DatetimepickerWrapper .CalendarHeaderYear button {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  width: 5em;
+  text-align: center;
+  padding: 2.5px 0px;
+}
+.DatetimepickerWrapper .CalendarYearDropdown {
+  position: absolute;
+  background-color: #fff;
+  padding: 3px 10px;
+  margin: auto;
+  z-index: 999;
+  text-align: center;
+  width: 4.4em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow-y: scroll;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  height: 180px;
+}
+.DatetimepickerWrapper .ArrowCaret {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-style: solid;
+}
+.DatetimepickerWrapper .ArrowDownCaret {
+  border-width: 3.5px;
+  border-color: #8c8c8c transparent transparent transparent;
+  margin-left: 1.5px;
+}
+.DatetimepickerWrapper .Arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: auto;
+}
+.DatetimepickerWrapper .ArrowRight {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.DatetimepickerWrapper .ArrowLeft {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.DatetimepickerWrapper .CalendarHeaderMonth {
+  background-color: #fff;
+  color: #6B6B6B;
+  min-height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 12px;
+}
+.DatetimepickerWrapper .CalendarHeaderMonth button {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.DatetimepickerWrapper .CalendarWeek {
+  color: #6B6B6B;
+}
+.DatetimepickerWrapper .CalendarDaysContainer {
+  background-color: fff;
+}
+.DatetimepickerWrapper .CalendarWeekDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+  margin: 5px 0px;
+}
+.DatetimepickerWrapper .CalendarWeekDays span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.DatetimepickerWrapper .CurrentMonthDaysContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+.DatetimepickerWrapper .CalendarDaysButton {
+  padding: 8px 5px;
+  background: #fff;
+  color: #6B6B6B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+}
+.DatetimepickerWrapper .CalendarDaysButton.current {
+  background: #444857;
+}
+.DatetimepickerWrapper .CalendarDaysButtonSelected {
+  background: #CDD5F1;
+  border-radius: 45px;
+  border: 0.5px solid #294197;
+  margin: -1px;
+}
+.DatetimepickerWrapper .CalendarDaysButton:hover {
+  background: #CDD5F1;
+  border-radius: 45px;
+  border: 0.5px solid #294197;
+  margin: -1px;
+}
+
 .StepperWrapper {
   display: flex;
   flex-direction: column;
@@ -449,18 +626,6 @@ body, input {
   color: var(--qcuicq-color-textLight);
   margin-top: 15px;
   text-align: center;
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.StepContentWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .StepWrapper {
@@ -480,4 +645,66 @@ body, input {
   opacity: 1;
   margin-right: 0;
   transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.StepContentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TypographyWrapper {
+  color: var(--qcuicq-color-textPrimary);
+}
+
+.Typography_Align__left {
+  text-align: left;
+}
+
+.Typography_Align__center {
+  text-align: center;
+}
+
+.Typography_Align__right {
+  text-align: right;
+}
+
+.Typography_Align__justify {
+  text-align: justify;
+}
+
+.Typography_Variant__h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--qcuicq-color-textDark);
+  margin: 0;
+}
+.Typography_Variant__h3.Typography_FontColor__textPrimary {
+  color: var(--qcuicq-color-textPrimary);
+}
+.Typography_Variant__h3.Typography_FontColor__textSecondary {
+  color: var(--qcuicq-color-textSecondary);
+}
+.Typography_Variant__h3.Typography_FontColor__textDark {
+  color: var(--qcuicq-color-textDark);
+}
+.Typography_Variant__h3.Typography_FontColor__textLight {
+  color: var(--qcuicq-color-textLight);
+}
+.Typography_Variant__h3.Typography_FontColor__textDefault {
+  color: var(--qcuicq-color-textDefault);
+}
+
+.Typography_Variant__caption {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--qcuicq-color-textDefault);
+  margin: 0;
+  padding: 0;
 }
