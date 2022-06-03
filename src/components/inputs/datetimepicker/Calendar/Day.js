@@ -33,21 +33,5 @@ export default class Day {
       date.getMonth() === this.monthNumber - 1 &&
       date.getFullYear() === this.year
     );
-  }
-
-  format(formatStr) {
-    return formatStr
-      .replace(/\bYYYY\b/, this.year)
-      .replace(/\bYYY\b/, this.yearShort)
-      .replace(/\bWW\b/, this.week.toString().padStart(2, "0"))
-      .replace(/\bW\b/, this.week)
-      .replace(/\bDDDD\b/, this.day)
-      .replace(/\bDDD\b/, this.dayShort)
-      .replace(/\bDD\b/, this.date.toString().padStart(2, "0"))
-      .replace(/\bD\b/, this.date)
-      .replace(/\bMMMM\b/, this.month)
-      .replace(/\bMMM\b/, this.monthShort)
-      .replace(/\bMM\b/, this.monthNumber.toString().padStart(2, "0"))
-      .replace(/\bM\b/, this.monthNumber);
-  }
+  }  
 }

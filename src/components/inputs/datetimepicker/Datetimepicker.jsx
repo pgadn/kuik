@@ -15,6 +15,8 @@ const Datetimepicker = (props) => {
     helperMsg,
     placeholder,
     disabled,
+    onChange,
+    format,
     ...others
   } = props;
   
@@ -28,15 +30,17 @@ const Datetimepicker = (props) => {
 
   const currentYear = new Calendar();
 
+  const currentDay = useRef(cal.today);
+
   let selectedDayElement = useRef(null);
   
   const [calendarYearDataArray, setCalendarYearDataArray] = useState([currentYear.year-4,currentYear.year-3,currentYear.year-2,currentYear.year-1,currentYear.year]);
 
   let calendarYearRef = useRef();
-  useOutsideAlerter(calendarYearRef);
+  useOutsideClick(calendarYearRef);
 
   let calendarRef = useRef();
-  // useOutsideAlerter(calendarRef);
+  // useOutsideClick(calendarRef);
 
   const showCalendar = () => {
     setAddVisibility((prevState) => (!prevState));
@@ -72,7 +76,7 @@ const Datetimepicker = (props) => {
 
   const CalendarRenderDays = (days = []) => {
     days = getMonthDays();    
-      return days.map((day,index) => <button key={index} className={styles.CalendarDaysButton} onClick={(e) => selectDay(e,day)}>{day.date}</button>);    
+      return days.map((day,index) => <button type="button" key={index} className={styles.CalendarDaysButton} onClick={(e) => selectDay(e,day)}>{day.date}</button>);    
   }
 
   const goToPrevMonth = () => {          
@@ -107,7 +111,7 @@ const Datetimepicker = (props) => {
   }
 
 
-  function useOutsideAlerter(ref) {
+  function useOutsideClick(ref) {
     useEffect(() => {     
       const handleClickOutsideRef = (event) => {
         if (ref.current && !ref.current.contains(event.target)) {
@@ -133,10 +137,26 @@ const Datetimepicker = (props) => {
     if(selectedDayElement.current) {      
       selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
     }
-    selectedDayElement.current = el;        
+    selectedDayElement.current = el;    
     setInputTypeValueHandler(new Date(`${cal.month.number}-${day.date}-${cal.year}`).toLocaleDateString())
+    currentDay.current = day;
 
   }
+
+  useEffect(() => {
+    if (typeof document !== undefined) {
+      if (inputTypeValue) {
+          let inpt = document.getElementsByName(name)[0]
+          // console.log();
+          // console.log(currentDay.current.date);       
+          // inpt.value = )
+          let test = new Date(new Date(`${cal.month.number}-${currentDay.current.date}-${cal.year} ${new Date().toTimeString().split(" ")[0]}`))
+          let event = new Event('change', { bubbles: true })
+          inpt.dispatchEvent(event)
+          onChange && onChange(test)
+      }
+    }
+  },[inputTypeValue])
 
   const setInputTypeValueHandler = (date) => {
     setInputTypeValue(date);
@@ -163,9 +183,12 @@ const Datetimepicker = (props) => {
         placeholder={placeholder ?? "mm/dd/yyyy"}
         {...inputRef}        
         value={inputTypeValue}
-        onChange={(e) => {
-          onChange && onChange(e)
-        }}
+        readOnly
+        
+        // onChange={(e) => {
+        //   console.log(e)
+        //   onChange && onChange("test")
+        // }}
         {...others}        
         disabled={disabled}        
       />
@@ -174,7 +197,7 @@ const Datetimepicker = (props) => {
           <div className={styles.CalendarHeaderYear}>            
               {/* <h4>{cal.year}</h4> */}
               {/* <h4>{cal && cal.year ? cal.year : null}</h4> */}
-              <button onClick={() => showYearHandler()}>{cal && cal.year ? cal.year : null}<span className={`${styles.ArrowDownCaret} ${styles.ArrowCaret}`}></span></button>              
+              <button type="button" onClick={() => showYearHandler()}>{cal && cal.year ? cal.year : null}<span className={`${styles.ArrowDownCaret} ${styles.ArrowCaret}`}></span></button>              
               <div className={addVisibilityYear ? `${styles.CalendarYearDropdown}` : `${styles.CalendarHiddenYear}`} onScroll={() => onScrollYear()} ref={calendarYearRef}>
                 {calendarYearDataArray.map((year,index) => {
                   return (
