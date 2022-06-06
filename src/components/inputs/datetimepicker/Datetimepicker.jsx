@@ -3,6 +3,7 @@ import styles from "./Datetimepicker.module.scss";
 import classNames from "classnames";
 import CalendarSVG from "../../../styles/icons/Calendar/Calendar"
 import Calendar from "./Calendar/Calendar"
+import {formatDate} from "./Calendar/CalendarFormatter"
 
 const Datetimepicker = (props) => {
   const {
@@ -26,7 +27,10 @@ const Datetimepicker = (props) => {
 
   const [cal, setCal] = useState(new Calendar());  
   let calendar = new Calendar(cal.year,cal.month.number);  
-  const [inputTypeValue, setInputTypeValue] = useState(new Date(`${cal.month.number}-${cal.today.date}-${cal.year}`).toLocaleDateString());
+  
+  // formatDate(new Date(), 'M/dd/yyyy')  
+  const [inputTypeValue, setInputTypeValue] = useState(format ? formatDate(new Date(`${cal.month.number}-${cal.today.date}-${cal.year}`), `${format}`):formatDate(new Date(`${cal.month.number}-${cal.today.date}-${cal.year}`), 'M/dd/yyyy'));
+  // const [inputTypeValue, setInputTypeValue] = useState(formatDate(new Date(`${cal.month.number}-${cal.today.date}-${cal.year}`), 'M/dd/yyyy'));
 
   const currentYear = new Calendar();
 
@@ -134,11 +138,13 @@ const Datetimepicker = (props) => {
   const selectDay = (event,day) => {    
     let el = event.target;
     el.classList.add(`${styles.CalendarDaysButtonSelected}`);
-    if(selectedDayElement.current) {      
+    if(selectedDayElement.current) {
       selectedDayElement.current.classList.remove(`${styles.CalendarDaysButtonSelected}`);
     }
-    selectedDayElement.current = el;    
-    setInputTypeValueHandler(new Date(`${cal.month.number}-${day.date}-${cal.year}`).toLocaleDateString())
+    selectedDayElement.current = el; 
+    formatDate(new Date(), 'M/dd/yyyy')   
+    setInputTypeValueHandler(format ? formatDate(new Date(`${cal.month.number}-${day.date}-${cal.year}`), `${format}`):formatDate(new Date(`${cal.month.number}-${day.date}-${cal.year}`), 'M/dd/yyyy'))
+    // setInputTypeValueHandler(new Date(`${cal.month.number}-${day.date}-${cal.year}`).toLocaleDateString())
     currentDay.current = day;
 
   }
@@ -169,6 +175,8 @@ const Datetimepicker = (props) => {
     }
     setCal(new Calendar(year,cal.month.number))
   }
+
+  
 
   return (
     <div className={styles.DatetimepickerWrapper}>
