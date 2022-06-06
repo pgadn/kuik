@@ -12,7 +12,7 @@ stories.add('Test', () => {
     const [testDate, setTestDate] = useState(new Date());
 
     const handleChangeTestDate = (e) => {
-        console.log(e)
+        // console.log(e)
     }
 
     return (
@@ -28,6 +28,12 @@ stories.add('Test', () => {
             <Option size="lg" name="test" label="CSS 3" value="CSS 3" />
                        
             <div style={{width:"50%"}}>
+            {/* console.log(formatDate(new Date()));
+            console.log(formatDate(new Date(), 'dd-MMM-yyyy')); //OP's request
+            console.log(formatDate(new Date(), 'EEEE, MMMM d, yyyy HH:mm:ss.S aaa'));
+            console.log(formatDate(new Date(), 'EEE, MMM d, yyyy HH:mm'));
+            console.log(formatDate(new Date(), 'yyyy-MM-dd HH:mm:ss.S'));
+            console.log(formatDate(new Date(), 'M/dd/yyyy')); */}
             <Datetimepicker name="testpicker" onChange={handleChangeTestDate}/>          
             </div>
             

@@ -82,6 +82,53 @@ body, input {
   Grid brekapoints
 ===================*/
 /*================ Media Query Mixin ================*/
+.InputTextWrapper {
+  width: 100%;
+  padding: 0 0 10px;
+}
+
+.InputText {
+  width: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+  height: 48px;
+  border-radius: 6px;
+  text-indent: 10px;
+  box-shadow: 0 0 10px var(--qcuicq-color-light);
+  color: var(--qcuicq-color-textPrimary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.InputText::placeholder {
+  color: var(--qcuicq-color-textSecondary);
+}
+.InputText:focus {
+  border-color: var(--qcuicq-color-primary);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+
+.HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+
+.ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
 .ButtonWrapper {
   font-family: "Roboto", sans-serif;
 }
@@ -151,146 +198,6 @@ body, input {
 .Button_Disabled:hover {
   color: var(--qcuicq-color-textLight);
   background-color: transparent;
-}
-
-.InputTextWrapper {
-  width: 100%;
-  padding: 0 0 10px;
-}
-
-.InputText {
-  width: 100%;
-  border: 1px solid transparent;
-  outline: 0;
-  height: 48px;
-  border-radius: 6px;
-  text-indent: 10px;
-  box-shadow: 0 0 10px var(--qcuicq-color-light);
-  color: var(--qcuicq-color-textPrimary);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem;
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-.InputText::placeholder {
-  color: var(--qcuicq-color-textSecondary);
-}
-.InputText:focus {
-  border-color: var(--qcuicq-color-primary);
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-}
-
-.InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-
-.HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-
-.ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
-}
-
-.OptionWrapper {
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  align-items: center;
-}
-.OptionWrapper input[type=radio] {
-  appearance: none;
-  height: 0.75rem;
-  width: 0.75rem;
-  outline: 1px solid #C1C1C1;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.OptionWrapper label {
-  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
-  font-size: 0.75rem;
-}
-.OptionWrapper .Option_Disabled {
-  cursor: default !important;
-  background-color: transparent !important;
-}
-.OptionWrapper .Option_Disabled:hover {
-  outline: 1px solid #c1c1c1 !important;
-}
-.OptionWrapper .Option_Disabled:hover + label {
-  cursor: default !important;
-  color: var(--qcuicq-color-textLight) !important;
-}
-.OptionWrapper .Label_Disabled {
-  color: var(--qcuicq-color-textLight);
-}
-.OptionWrapper input[type=radio]:checked {
-  background-color: #294197;
-}
-.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.OptionWrapper input[type=radio] + label:hover {
-  color: #6B6B6B;
-  cursor: pointer;
-}
-.OptionWrapper input[type=radio]:hover {
-  outline: 1px solid #6B6B6B;
-  cursor: pointer;
-}
-.OptionWrapper input[type=radio]:hover + label {
-  color: #6B6B6B;
-}
-.OptionWrapper input[type=radio]:checked {
-  background-color: #294197;
-}
-.OptionWrapper input[type=radio]:checked + label {
-  font-weight: 440;
-}
-.OptionWrapper .Option_Size__sm {
-  padding: var(--qcuicq-optn-size-sm-padding);
-  height: var(--qcuicq-optn-size-sm-height);
-  width: var(--qcuicq-optn-size-sm-width);
-}
-.OptionWrapper .Label_Option_Size__sm {
-  font-size: var(--qcuicq-optn-size-sm-font);
-}
-.OptionWrapper .Option_Size__md {
-  padding: var(--qcuicq-optn-size-md-padding);
-  height: var(--qcuicq-optn-size-md-height);
-  width: var(--qcuicq-optn-size-md-width);
-}
-.OptionWrapper .Label_Option_Size__md {
-  font-size: var(--qcuicq-optn-size-md-font);
-}
-.OptionWrapper .Option_Size__lg {
-  padding: var(--qcuicq-optn-size-lg-padding);
-  height: var(--qcuicq-optn-size-lg-height);
-  width: var(--qcuicq-optn-size-lg-width);
-}
-.OptionWrapper .Label_Option_Size__lg {
-  font-size: var(--qcuicq-optn-size-lg-font);
-}
-.OptionWrapper .InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-.OptionWrapper .HelperMessage {
-  color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
-}
-.OptionWrapper .ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
 }
 
 .CheckboxWrapper {
@@ -372,52 +279,6 @@ body, input {
 }
 .CheckboxWrapper input[type=checkbox]:checked + label {
   font-weight: 440;
-}
-
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepWrapper {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  max-height: 0;
-  opacity: 0;
-  margin-right: calc(100% + 1000px);
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.ActiveStep {
-  position: relative;
-  max-height: 100%;
-  overflow-x: visible;
-  opacity: 1;
-  margin-right: 0;
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.StepContentWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .DatetimepickerWrapper {
@@ -635,15 +496,148 @@ body, input {
   margin: -1px;
 }
 
-.CardWrapper {
+.OptionWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.OptionWrapper input[type=radio] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #C1C1C1;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.OptionWrapper label {
+  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+  font-size: 0.75rem;
+}
+.OptionWrapper .Option_Disabled {
+  cursor: default !important;
+  background-color: transparent !important;
+}
+.OptionWrapper .Option_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.OptionWrapper .Option_Disabled:hover + label {
+  cursor: default !important;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.OptionWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.OptionWrapper input[type=radio] + label:hover {
+  color: #6B6B6B;
+  cursor: pointer;
+}
+.OptionWrapper input[type=radio]:hover {
+  outline: 1px solid #6B6B6B;
+  cursor: pointer;
+}
+.OptionWrapper input[type=radio]:hover + label {
+  color: #6B6B6B;
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio]:checked + label {
+  font-weight: 440;
+}
+.OptionWrapper .Option_Size__sm {
+  padding: var(--qcuicq-optn-size-sm-padding);
+  height: var(--qcuicq-optn-size-sm-height);
+  width: var(--qcuicq-optn-size-sm-width);
+}
+.OptionWrapper .Label_Option_Size__sm {
+  font-size: var(--qcuicq-optn-size-sm-font);
+}
+.OptionWrapper .Option_Size__md {
+  padding: var(--qcuicq-optn-size-md-padding);
+  height: var(--qcuicq-optn-size-md-height);
+  width: var(--qcuicq-optn-size-md-width);
+}
+.OptionWrapper .Label_Option_Size__md {
+  font-size: var(--qcuicq-optn-size-md-font);
+}
+.OptionWrapper .Option_Size__lg {
+  padding: var(--qcuicq-optn-size-lg-padding);
+  height: var(--qcuicq-optn-size-lg-height);
+  width: var(--qcuicq-optn-size-lg-width);
+}
+.OptionWrapper .Label_Option_Size__lg {
+  font-size: var(--qcuicq-optn-size-lg-font);
+}
+.OptionWrapper .InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+.OptionWrapper .HelperMessage {
+  color: var(--qcuicq-color-textLight);
+  font-size: 0.8rem;
+}
+.OptionWrapper .ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
+}
+
+.StepWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  margin-right: calc(100% + 1000px);
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.ActiveStep {
+  position: relative;
+  max-height: 100%;
+  overflow-x: visible;
+  opacity: 1;
+  margin-right: 0;
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
+}
+
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.StepContentWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .CardHeaderWrapper {
@@ -657,6 +651,12 @@ body, input {
   border-radius: 20px 20px 0 0;
   margin-top: -30px;
   background-color: #fff;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }
 
 .TypographyWrapper {
