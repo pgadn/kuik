@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styles from "./InputText.module.scss"
 import classNames from "classnames"
 
@@ -11,7 +11,20 @@ const InputText = (props) => {
         style,
         type,
         onChange,
+        value,
     } = props
+
+    useEffect(() => {
+        if (typeof document !== undefined) {
+            if (value) {
+                let inpt = document.getElementsByName(name)[0]
+                inpt.value = value
+                let event = new Event('change', { bubbles: true })
+                inpt.dispatchEvent(event)
+                onChange && onChange(event)
+            }
+        }
+    }, [value])
 
     return (
         <div className={styles.InputTextWrapper}>
@@ -21,9 +34,11 @@ const InputText = (props) => {
                     errorMsg && styles.InputError,
                     style ?? ""
                 )}
+                value={value}
                 onChange={(e) => {
                     onChange && onChange(e)
                 }}
+
                 type={type ?? "text"}
                 name={name}
                 placeholder={placeholder ?? ""}

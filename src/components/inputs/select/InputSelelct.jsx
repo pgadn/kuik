@@ -80,17 +80,19 @@ const InputSelect = (props) => {
         onChange,
         optionLabel,
         optionValue,
+        internalValue,
     } = props
     const selectRef = useRef()
     const [active, setActive] = useState(false)
     const [selectedLabel, setSelectedLabel] = useState('')
-    const [value, setValue] = useState(undefined)
+    const [value, setValue] = useState(internalValue ? internalValue : value)
 
     const handleClick_Dropdown = () => {
         setActive(!active)
     }
 
     useEffect(() => {
+        const _value = internalValue ? internalValue : value
         if (typeof document !== undefined) {
             if (value) {
                 let inpt = document.getElementsByName(name)[0]
