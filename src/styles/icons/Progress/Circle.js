@@ -1,12 +1,11 @@
 import * as React from "react";
 
 const CircleSVG = (props) => {
-  const { fill, className } = props;
+  const { color, className, classNameSVG } = props;
 
   return (
     <svg
-      width="100px"
-      height="100px"
+      className={classNameSVG}
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
       style={{
@@ -20,14 +19,13 @@ const CircleSVG = (props) => {
       <circle
         cx="50"
         cy="50"
-        fill="none"
-        stroke="#e15b64"
+        fill="none"        
         stroke-width="10"
-        r="35"
+        r="31"
         stroke-dasharray="164.93361431346415 56.97787143782138"
         transform="matrix(1,0,0,1,0,0)"
         style={{
-          transform: "matrix(1, 0, 0, 1, 0, 0)"
+          transform: "matrix(1, 0, 0, 1, 0, 0)",          
         }}
         className={className}
       ></circle>

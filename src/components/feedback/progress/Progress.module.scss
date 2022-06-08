@@ -5,11 +5,12 @@
         -webkit-animation-iteration-count:infinite;
         -webkit-animation-timing-function:linear;
         -webkit-animation-name:orbit;
-        -webkit-animation-duration:1.5s;
+        -webkit-animation-duration:1.3s;
         -moz-animation-iteration-count:infinite;
         -moz-animation-timing-function:linear;
         -moz-animation-name:orbit;
-        -moz-animation-duration:1.5s;
+        -moz-animation-duration:1.3s;
+        stroke:#294197;        
     }
     
     @-webkit-keyframes orbit { 
@@ -20,5 +21,36 @@
     from { -moz-transform:rotate(0deg); -moz-transform-origin: 50% 50%; } 
     to { -moz-transform:rotate(360deg); -moz-transform-origin: 50% 50%; } 
     }
+
+    .defaultSVG {
+        width: 2.1em;
+        height: 2.1em;    
+    }
+
+    .Progress_Variant__primary {
+        stroke: var(--qcuicq-color-primary);
+    }
+
+    .Progress_Variant__secondary {
+        stroke: var(--qcuicq-color-secondary);
+    }
+
+    .Progress_Variant__tertiary {
+        stroke: var(--qcuicq-color-tertiary);
+    }
+
+    .Progress_Size__sm {
+        width: var(--qcuicq-progress-size-sm-width);
+        height: var(--qcuicq-progress-size-sm-height);
+    }
     
+    .Progress_Size__md {
+        width: var(--qcuicq-progress-size-md-width);
+        height: var(--qcuicq-progress-size-md-height);
+    } 
+
+    .Progress_Size__lg {
+        width: var(--qcuicq-progress-size-lg-width);
+        height: var(--qcuicq-progress-size-lg-height);
+    } 
 }
