@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react"
 import '../../styles/global.scss'
 
 import {Checkbox, Option, Datetimepicker} from "../../components/inputs"
+import {Progress} from "../../components/feedback"
 
 
 const stories = storiesOf('Demo 2', module)
@@ -26,7 +27,7 @@ stories.add('Test', () => {
             <Option size="sm" name="test" label="CSS" value="CSS" />
             <Option size="md" name="test" label="Javascript" value="Javascript" />
             <Option size="lg" name="test" label="CSS 3" value="CSS 3" />
-                       
+            <Progress/>       
             <div style={{width:"50%"}}>
             {/* console.log(formatDate(new Date()));
             console.log(formatDate(new Date(), 'dd-MMM-yyyy')); //OP's request
@@ -36,6 +37,7 @@ stories.add('Test', () => {
             console.log(formatDate(new Date(), 'M/dd/yyyy')); */}
             <Datetimepicker name="testpicker" onChange={handleChangeTestDate}/>          
             </div>
+            
             
       
         </div>
