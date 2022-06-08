@@ -78,10 +78,34 @@ body, input {
   font-family: "Roboto", sans-serif;
 }
 
+/*================ Media Query Mixin ================*/
 /*=================
   Grid brekapoints
 ===================*/
-/*================ Media Query Mixin ================*/
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
+}
+
 .InputTextWrapper {
   width: 100%;
   padding: 0 0 10px;
@@ -129,75 +153,97 @@ body, input {
   font-size: 0.8rem;
 }
 
-.ButtonWrapper {
+.OptionWrapper {
   font-family: "Roboto", sans-serif;
-}
-
-.Button {
-  border: 0;
-  outline: 0;
-  border-radius: 4px;
-  color: var(--qcuicq-color-textDark);
-  background-color: transparent;
   display: flex;
   align-items: center;
+}
+.OptionWrapper input[type=radio] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #C1C1C1;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.OptionWrapper label {
+  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+  font-size: 0.75rem;
+}
+.OptionWrapper .Option_Disabled {
+  cursor: default !important;
+  background-color: transparent !important;
+}
+.OptionWrapper .Option_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.OptionWrapper .Option_Disabled:hover + label {
+  cursor: default !important;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.OptionWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
+}
+.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.OptionWrapper input[type=radio] + label:hover {
+  color: #6B6B6B;
   cursor: pointer;
-  padding: var(--qcuicq-btn-size-md-padding);
-  height: var(--qcuicq-btn-size-md-height);
-  font-size: var(--qcuicq-btn-size-md-font);
-  transition: 0.8s;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -o-transition: 0.8s;
 }
-.Button:hover {
-  background-color: var(--qcuicq-color-light);
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
+.OptionWrapper input[type=radio]:hover {
+  outline: 1px solid #6B6B6B;
+  cursor: pointer;
 }
-.Button:active {
-  background-color: var(--qcuicq-color-primary-lighter);
-  color: var(--qcuicq-color-textDark);
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
+.OptionWrapper input[type=radio]:hover + label {
+  color: #6B6B6B;
 }
-
-.Button_Variant__contained {
-  color: #fff;
-  background-color: var(--qcuicq-color-primary);
+.OptionWrapper input[type=radio]:checked {
+  background-color: #294197;
 }
-.Button_Variant__contained:hover {
-  background-color: var(--qcuicq-color-primary-light);
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
+.OptionWrapper input[type=radio]:checked + label {
+  font-weight: 440;
 }
-
-.Button_Size__sm {
-  padding: var(--qcuicq-btn-size-sm-padding);
-  height: var(--qcuicq-btn-size-sm-height);
-  font-size: var(--qcuicq-btn-size-sm-font);
+.OptionWrapper .Option_Size__sm {
+  padding: var(--qcuicq-optn-size-sm-padding);
+  height: var(--qcuicq-optn-size-sm-height);
+  width: var(--qcuicq-optn-size-sm-width);
 }
-
-.Button_Size__lg {
-  padding: var(--qcuicq-btn-size-lg-padding);
-  height: var(--qcuicq-btn-size-lg-height);
-  font-size: var(--qcuicq-btn-size-lg-font);
+.OptionWrapper .Label_Option_Size__sm {
+  font-size: var(--qcuicq-optn-size-sm-font);
 }
-
-.Button_Disabled {
+.OptionWrapper .Option_Size__md {
+  padding: var(--qcuicq-optn-size-md-padding);
+  height: var(--qcuicq-optn-size-md-height);
+  width: var(--qcuicq-optn-size-md-width);
+}
+.OptionWrapper .Label_Option_Size__md {
+  font-size: var(--qcuicq-optn-size-md-font);
+}
+.OptionWrapper .Option_Size__lg {
+  padding: var(--qcuicq-optn-size-lg-padding);
+  height: var(--qcuicq-optn-size-lg-height);
+  width: var(--qcuicq-optn-size-lg-width);
+}
+.OptionWrapper .Label_Option_Size__lg {
+  font-size: var(--qcuicq-optn-size-lg-font);
+}
+.OptionWrapper .InputError {
+  border: 1px solid var(--qcuicq-color-error);
+}
+.OptionWrapper .HelperMessage {
   color: var(--qcuicq-color-textLight);
-  background-color: transparent;
-  cursor: initial;
+  font-size: 0.8rem;
 }
-.Button_Disabled:hover {
-  color: var(--qcuicq-color-textLight);
-  background-color: transparent;
+.OptionWrapper .ErrorMessage {
+  color: var(--qcuicq-color-textError);
+  font-size: 0.8rem;
 }
 
 .CheckboxWrapper {
@@ -496,97 +542,90 @@ body, input {
   margin: -1px;
 }
 
-.OptionWrapper {
+.ButtonWrapper {
   font-family: "Roboto", sans-serif;
+}
+
+.Button {
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  color: var(--qcuicq-color-textDark);
+  background-color: transparent;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  padding: var(--qcuicq-btn-size-md-padding);
+  height: var(--qcuicq-btn-size-md-height);
+  font-size: var(--qcuicq-btn-size-md-font);
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
 }
-.OptionWrapper input[type=radio] {
-  appearance: none;
-  height: 0.75rem;
-  width: 0.75rem;
-  outline: 1px solid #C1C1C1;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.OptionWrapper label {
-  padding: 0.2rem 0.2rem 0.1rem 0.2rem;
-  font-size: 0.75rem;
-}
-.OptionWrapper .Option_Disabled {
-  cursor: default !important;
-  background-color: transparent !important;
-}
-.OptionWrapper .Option_Disabled:hover {
-  outline: 1px solid #c1c1c1 !important;
-}
-.OptionWrapper .Option_Disabled:hover + label {
-  cursor: default !important;
-  color: var(--qcuicq-color-textLight) !important;
-}
-.OptionWrapper .Label_Disabled {
-  color: var(--qcuicq-color-textLight);
-}
-.OptionWrapper input[type=radio]:checked {
-  background-color: #294197;
-}
-.OptionWrapper input[type=radio] + label:hover, .OptionWrapper input[type=radio]:hover {
+.Button:hover {
+  background-color: var(--qcuicq-color-light);
   transition: 0.5s;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
 }
-.OptionWrapper input[type=radio] + label:hover {
-  color: #6B6B6B;
-  cursor: pointer;
+.Button:active {
+  background-color: var(--qcuicq-color-primary-lighter);
+  color: var(--qcuicq-color-textDark);
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
 }
-.OptionWrapper input[type=radio]:hover {
-  outline: 1px solid #6B6B6B;
-  cursor: pointer;
+
+.Button_Variant__contained {
+  color: #fff;
+  background-color: var(--qcuicq-color-primary);
 }
-.OptionWrapper input[type=radio]:hover + label {
-  color: #6B6B6B;
+.Button_Variant__contained:hover {
+  background-color: var(--qcuicq-color-primary-light);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
 }
-.OptionWrapper input[type=radio]:checked {
-  background-color: #294197;
+
+.Button_Size__sm {
+  padding: var(--qcuicq-btn-size-sm-padding);
+  height: var(--qcuicq-btn-size-sm-height);
+  font-size: var(--qcuicq-btn-size-sm-font);
 }
-.OptionWrapper input[type=radio]:checked + label {
-  font-weight: 440;
+
+.Button_Size__lg {
+  padding: var(--qcuicq-btn-size-lg-padding);
+  height: var(--qcuicq-btn-size-lg-height);
+  font-size: var(--qcuicq-btn-size-lg-font);
 }
-.OptionWrapper .Option_Size__sm {
-  padding: var(--qcuicq-optn-size-sm-padding);
-  height: var(--qcuicq-optn-size-sm-height);
-  width: var(--qcuicq-optn-size-sm-width);
-}
-.OptionWrapper .Label_Option_Size__sm {
-  font-size: var(--qcuicq-optn-size-sm-font);
-}
-.OptionWrapper .Option_Size__md {
-  padding: var(--qcuicq-optn-size-md-padding);
-  height: var(--qcuicq-optn-size-md-height);
-  width: var(--qcuicq-optn-size-md-width);
-}
-.OptionWrapper .Label_Option_Size__md {
-  font-size: var(--qcuicq-optn-size-md-font);
-}
-.OptionWrapper .Option_Size__lg {
-  padding: var(--qcuicq-optn-size-lg-padding);
-  height: var(--qcuicq-optn-size-lg-height);
-  width: var(--qcuicq-optn-size-lg-width);
-}
-.OptionWrapper .Label_Option_Size__lg {
-  font-size: var(--qcuicq-optn-size-lg-font);
-}
-.OptionWrapper .InputError {
-  border: 1px solid var(--qcuicq-color-error);
-}
-.OptionWrapper .HelperMessage {
+
+.Button_Disabled {
   color: var(--qcuicq-color-textLight);
-  font-size: 0.8rem;
+  background-color: transparent;
+  cursor: initial;
 }
-.OptionWrapper .ErrorMessage {
-  color: var(--qcuicq-color-textError);
-  font-size: 0.8rem;
+.Button_Disabled:hover {
+  color: var(--qcuicq-color-textLight);
+  background-color: transparent;
+}
+
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
 }
 
 .StepWrapper {
@@ -608,55 +647,16 @@ body, input {
   transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepContentWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .StepLabelWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.CardWrapper {
+.StepContentWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
-}
-
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
 }
 
 .TypographyWrapper {
