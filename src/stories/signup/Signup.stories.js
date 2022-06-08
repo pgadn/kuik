@@ -81,6 +81,8 @@ const BasicInfoStep = (props) => {
     const {
       setWithClearance,
     } = props;
+    const [plateNumber, setPlateNumber] = useState("ABC 1234")
+    const [elg, setElg] = useState("Career Service Eligibility 2")
     const { register, handleSubmit, formState: { errors }, watch, setValue, control } = useForm();
 
     const onSubmit = (data) => {
@@ -147,7 +149,11 @@ const BasicInfoStep = (props) => {
                             <InputText
                                 options={cars}
                                 name="plateNumber"
-                                onChange={onChange}
+                                value={plateNumber}
+                                onChange={(v) => {
+                                    setPlateNumber(v.target.value)
+                                    onChange(v)
+                                }}
                                 placeholder="Car Plate Number"
                                 errorMsg={errors && errors.plateNumber && errors.plateNumber.message}
                             />
@@ -166,9 +172,13 @@ const BasicInfoStep = (props) => {
                                 group='type'
                                 options={eligibility}
                                 name="carModel"
+                                internalValue={elg}
                                 // optionLabel="label"
                                 // optionValue="value"
-                                onChange={onChange}
+                                onChange={(v) => {
+                                    setElg(v.target.value)
+                                    onChange(v)
+                                }}
                                 placeholder="Select Car Model"
                                 errorMsg={errors && errors.carModel && errors.carModel.message}
                             />
