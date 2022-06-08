@@ -64,11 +64,22 @@
     --qcuicq-optn-size-md-height: .9rem;
     --qcuicq-optn-size-md-width: .9rem;
     --qcuicq-optn-size-md-font: .9rem;
-    // /* large */
+   /* large */
     --qcuicq-optn-size-lg-padding: .3rem;
     --qcuicq-optn-size-lg-height: 1rem;
     --qcuicq-optn-size-lg-width: 1rem;
     --qcuicq-optn-size-lg-font: 1rem;
+
+   /* PROGRESS CIRCLE SIZES */
+   /* small */
+   --qcuicq-progress-size-sm-width: 1.7rem;
+   --qcuicq-progress-size-sm-height: 1.7rem;
+   /* md */
+   --qcuicq-progress-size-md-width: 2.3rem;
+   --qcuicq-progress-size-md-height: 2.3rem;
+   /* large */
+   --qcuicq-progress-size-lg-width: 3.1rem;
+   --qcuicq-progress-size-lg-height: 3.1rem;
    }
 
 * {
