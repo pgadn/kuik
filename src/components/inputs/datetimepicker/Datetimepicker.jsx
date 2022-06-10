@@ -114,7 +114,6 @@ const Datetimepicker = (props) => {
     }
   }
 
-
   function useOutsideClick(ref) {
     useEffect(() => {     
       const handleClickOutsideRef = (event) => {
