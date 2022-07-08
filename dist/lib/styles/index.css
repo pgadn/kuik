@@ -93,77 +93,6 @@ body, input {
 /*=================
   Grid brekapoints
 ===================*/
-.ButtonWrapper {
-  font-family: "Roboto", sans-serif;
-}
-
-.Button {
-  border: 0;
-  outline: 0;
-  border-radius: 4px;
-  color: var(--qcuicq-color-textDark);
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: var(--qcuicq-btn-size-md-padding);
-  height: var(--qcuicq-btn-size-md-height);
-  font-size: var(--qcuicq-btn-size-md-font);
-  transition: 0.8s;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -o-transition: 0.8s;
-}
-.Button:hover {
-  background-color: var(--qcuicq-color-light);
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.Button:active {
-  background-color: var(--qcuicq-color-primary-lighter);
-  color: var(--qcuicq-color-textDark);
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-}
-
-.Button_Variant__contained {
-  color: #fff;
-  background-color: var(--qcuicq-color-primary);
-}
-.Button_Variant__contained:hover {
-  background-color: var(--qcuicq-color-primary-light);
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-
-.Button_Size__sm {
-  padding: var(--qcuicq-btn-size-sm-padding);
-  height: var(--qcuicq-btn-size-sm-height);
-  font-size: var(--qcuicq-btn-size-sm-font);
-}
-
-.Button_Size__lg {
-  padding: var(--qcuicq-btn-size-lg-padding);
-  height: var(--qcuicq-btn-size-lg-height);
-  font-size: var(--qcuicq-btn-size-lg-font);
-}
-
-.Button_Disabled {
-  color: var(--qcuicq-color-textLight);
-  background-color: transparent;
-  cursor: initial;
-}
-.Button_Disabled:hover {
-  color: var(--qcuicq-color-textLight);
-  background-color: transparent;
-}
-
 .InputTextWrapper {
   width: 100%;
   padding: 0 0 10px;
@@ -209,87 +138,6 @@ body, input {
 .ErrorMessage {
   color: var(--qcuicq-color-textError);
   font-size: 0.8rem;
-}
-
-.CheckboxWrapper {
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  align-items: center;
-}
-.CheckboxWrapper .Checkbox {
-  cursor: pointer;
-}
-.CheckboxWrapper input[type=checkbox] {
-  appearance: none;
-  height: 0.75rem;
-  width: 0.75rem;
-  outline: 1px solid #c1c1c1;
-  background-color: #fff;
-}
-.CheckboxWrapper label {
-  padding: 0.2rem;
-  font-size: 0.75rem;
-}
-.CheckboxWrapper .Checkbox_Disabled {
-  cursor: initial !important;
-  background-color: transparent !important;
-}
-.CheckboxWrapper .Checkbox_Disabled:hover {
-  outline: 1px solid #c1c1c1 !important;
-}
-.CheckboxWrapper .Checkbox_Disabled:hover + label {
-  cursor: default;
-  color: var(--qcuicq-color-textLight) !important;
-}
-.CheckboxWrapper .Label_Disabled {
-  color: var(--qcuicq-color-textLight);
-}
-.CheckboxWrapper .Checkbox_Size__sm {
-  padding: var(--qcuicq-chkbx-size-sm-padding);
-  height: var(--qcuicq-chkbx-size-sm-height);
-  width: var(--qcuicq-chkbx-size-sm-width);
-}
-.CheckboxWrapper .Label_Checkbox_Size__sm {
-  font-size: var(--qcuicq-chkbx-size-sm-font);
-}
-.CheckboxWrapper .Checkbox_Size__md {
-  padding: var(--qcuicq-chkbx-size-md-padding);
-  height: var(--qcuicq-chkbx-size-md-height);
-  width: var(--qcuicq-chkbx-size-md-width);
-}
-.CheckboxWrapper .Label_Checkbox_Size__md {
-  font-size: var(--qcuicq-chkbx-size-md-font);
-}
-.CheckboxWrapper .Checkbox_Size__lg {
-  padding: var(--qcuicq-chkbx-size-lg-padding);
-  height: var(--qcuicq-chkbx-size-lg-height);
-  width: var(--qcuicq-chkbx-size-lg-width);
-}
-.CheckboxWrapper .Label_Checkbox_Size__lg {
-  font-size: var(--qcuicq-chkbx-size-lg-font);
-}
-.CheckboxWrapper label:hover,
-.CheckboxWrapper input[type=checkbox]:hover {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-.CheckboxWrapper label:hover {
-  color: #6b6b6b;
-  cursor: pointer;
-}
-.CheckboxWrapper input[type=checkbox]:hover {
-  outline: 1px solid #6b6b6b;
-}
-.CheckboxWrapper input[type=checkbox]:hover + label {
-  color: #6b6b6b;
-}
-.CheckboxWrapper input[type=checkbox]:checked {
-  background-color: #294197;
-}
-.CheckboxWrapper input[type=checkbox]:checked + label {
-  font-weight: 440;
 }
 
 .OptionWrapper {
@@ -383,6 +231,158 @@ body, input {
 .OptionWrapper .ErrorMessage {
   color: var(--qcuicq-color-textError);
   font-size: 0.8rem;
+}
+
+.CheckboxWrapper {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.CheckboxWrapper .Checkbox {
+  cursor: pointer;
+}
+.CheckboxWrapper input[type=checkbox] {
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  outline: 1px solid #c1c1c1;
+  background-color: #fff;
+}
+.CheckboxWrapper label {
+  padding: 0.2rem;
+  font-size: 0.75rem;
+}
+.CheckboxWrapper .Checkbox_Disabled {
+  cursor: initial !important;
+  background-color: transparent !important;
+}
+.CheckboxWrapper .Checkbox_Disabled:hover {
+  outline: 1px solid #c1c1c1 !important;
+}
+.CheckboxWrapper .Checkbox_Disabled:hover + label {
+  cursor: default;
+  color: var(--qcuicq-color-textLight) !important;
+}
+.CheckboxWrapper .Label_Disabled {
+  color: var(--qcuicq-color-textLight);
+}
+.CheckboxWrapper .Checkbox_Size__sm {
+  padding: var(--qcuicq-chkbx-size-sm-padding);
+  height: var(--qcuicq-chkbx-size-sm-height);
+  width: var(--qcuicq-chkbx-size-sm-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__sm {
+  font-size: var(--qcuicq-chkbx-size-sm-font);
+}
+.CheckboxWrapper .Checkbox_Size__md {
+  padding: var(--qcuicq-chkbx-size-md-padding);
+  height: var(--qcuicq-chkbx-size-md-height);
+  width: var(--qcuicq-chkbx-size-md-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__md {
+  font-size: var(--qcuicq-chkbx-size-md-font);
+}
+.CheckboxWrapper .Checkbox_Size__lg {
+  padding: var(--qcuicq-chkbx-size-lg-padding);
+  height: var(--qcuicq-chkbx-size-lg-height);
+  width: var(--qcuicq-chkbx-size-lg-width);
+}
+.CheckboxWrapper .Label_Checkbox_Size__lg {
+  font-size: var(--qcuicq-chkbx-size-lg-font);
+}
+.CheckboxWrapper label:hover,
+.CheckboxWrapper input[type=checkbox]:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.CheckboxWrapper label:hover {
+  color: #6b6b6b;
+  cursor: pointer;
+}
+.CheckboxWrapper input[type=checkbox]:hover {
+  outline: 1px solid #6b6b6b;
+}
+.CheckboxWrapper input[type=checkbox]:hover + label {
+  color: #6b6b6b;
+}
+.CheckboxWrapper input[type=checkbox]:checked {
+  background-color: #294197;
+}
+.CheckboxWrapper input[type=checkbox]:checked + label {
+  font-weight: 440;
+}
+
+.ButtonWrapper {
+  font-family: "Roboto", sans-serif;
+}
+
+.Button {
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  color: var(--qcuicq-color-textDark);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--qcuicq-btn-size-md-padding);
+  height: var(--qcuicq-btn-size-md-height);
+  font-size: var(--qcuicq-btn-size-md-font);
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+}
+.Button:hover {
+  background-color: var(--qcuicq-color-light);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.Button:active {
+  background-color: var(--qcuicq-color-primary-lighter);
+  color: var(--qcuicq-color-textDark);
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+.Button_Variant__contained {
+  color: #fff;
+  background-color: var(--qcuicq-color-primary);
+}
+.Button_Variant__contained:hover {
+  background-color: var(--qcuicq-color-primary-light);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.Button_Size__sm {
+  padding: var(--qcuicq-btn-size-sm-padding);
+  height: var(--qcuicq-btn-size-sm-height);
+  font-size: var(--qcuicq-btn-size-sm-font);
+}
+
+.Button_Size__lg {
+  padding: var(--qcuicq-btn-size-lg-padding);
+  height: var(--qcuicq-btn-size-lg-height);
+  font-size: var(--qcuicq-btn-size-lg-font);
+}
+
+.Button_Disabled {
+  color: var(--qcuicq-color-textLight);
+  background-color: transparent;
+  cursor: initial;
+}
+.Button_Disabled:hover {
+  color: var(--qcuicq-color-textLight);
+  background-color: transparent;
 }
 
 .DatetimepickerWrapper {
@@ -600,28 +600,50 @@ body, input {
   margin: -1px;
 }
 
-.CardWrapper {
+.StepperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.StepIndicatorText {
+  font-size: 0.7rem;
+  color: var(--qcuicq-color-textLight);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.StepLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.StepContentWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.CardHeaderWrapper {
-  padding: 20px 20px 45px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: var(--qcuicq-color-primary);
+.StepWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  margin-right: calc(100% + 1000px);
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
-.CardFooterWrapper {
-  padding: 20px 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--qcuicq-color-light);
-}
-
-.CardContentWrapper {
-  padding: 20px 20px;
-  border-radius: 20px 20px 0 0;
-  margin-top: -30px;
-  background-color: #fff;
+.ActiveStep {
+  position: relative;
+  max-height: 100%;
+  overflow-x: visible;
+  opacity: 1;
+  margin-right: 0;
+  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
 }
 
 .TypographyWrapper {
@@ -674,48 +696,26 @@ body, input {
   padding: 0;
 }
 
-.StepperWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 300px;
-}
-
-.StepIndicatorText {
-  font-size: 0.7rem;
-  color: var(--qcuicq-color-textLight);
-  margin-top: 15px;
-  text-align: center;
-}
-
-.StepWrapper {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  max-height: 0;
-  opacity: 0;
-  margin-right: calc(100% + 1000px);
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.ActiveStep {
-  position: relative;
-  max-height: 100%;
-  overflow-x: visible;
-  opacity: 1;
-  margin-right: 0;
-  transition: overflow-x 1s ease-out, margin-right 0.8s ease-out, opacity 1s ease-out;
-}
-
-.StepContentWrapper {
-  width: 100%;
+.CardWrapper {
   display: flex;
   flex-direction: column;
 }
 
-.StepLabelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.CardHeaderWrapper {
+  padding: 20px 20px 45px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--qcuicq-color-primary);
+}
+
+.CardContentWrapper {
+  padding: 20px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
+.CardFooterWrapper {
+  padding: 20px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--qcuicq-color-light);
 }

@@ -7,6 +7,7 @@ import {formatDate} from "./Calendar/CalendarFormatter"
 
 const Datetimepicker = (props) => {
   const {
+    ref,
     style,
     name,    
     color,
@@ -180,6 +181,7 @@ const Datetimepicker = (props) => {
   return (
     <div className={styles.DatetimepickerWrapper}>
       <input
+        ref={ref}
         className={classNames(
           styles.InputText,                
           errorMsg && styles.InputError,
