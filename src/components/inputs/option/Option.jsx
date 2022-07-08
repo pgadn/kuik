@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 const Option = (props) => {
   const {
+    ref,
     name,
     value,
     color,
@@ -18,6 +19,7 @@ const Option = (props) => {
   return (
     <div className={styles.OptionWrapper}>
       <input
+        ref={ref}
         type="radio"
         id={`${value}_id`}
         name={name}

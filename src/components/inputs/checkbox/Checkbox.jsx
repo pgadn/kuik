@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 const Checkbox = (props) => {
   const {
+    ref,
     name,
     value,
     color,
@@ -18,6 +19,7 @@ const Checkbox = (props) => {
   return (
     <div className={styles.CheckboxWrapper}>
       <input
+        ref={ref}
         id={`${name}_id`}
         type="checkbox"
         name={name}

@@ -4,6 +4,7 @@ import classNames from "classnames"
 
 const InputText = (props) => {
     const {
+        ref,
         errorMsg,
         helperMsg,
         name,
@@ -29,6 +30,7 @@ const InputText = (props) => {
     return (
         <div className={styles.InputTextWrapper}>
             <input
+                ref={ref}
                 className={classNames(
                     styles.InputText,
                     errorMsg && styles.InputError,
