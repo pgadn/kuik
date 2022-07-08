@@ -2,10 +2,10 @@ import React from "react"
 import styles from "./InputText.module.scss"
 import classNames from "classnames"
 import MaskedInput from "react-text-mask"
-import { Controller } from "react-hook-form"
 
 const InputMask = (props) => {
     const {
+        ref,
         errorMsg,
         helperMsg,
         mask,
@@ -37,6 +37,7 @@ const InputMask = (props) => {
             /> */}
             <MaskedInput
                 // {...field}
+                ref={ref}
                 className={classNames(
                     styles.InputText,
                     errorMsg && styles.InputError,

@@ -55,25 +55,25 @@ const eligibility = [
         id: 1,
         type: "Career Service Eligibility",
         label: 'Career Service Eligibility 1',
-        value: 'Career Service Eligibility 1',
+        value: '1',
     },
     {
         id: 2,
         type: "Career Service Eligibility",
         label: 'Career Service Eligibility 2',
-        value: 'Career Service Eligibility 2',
+        value: '2',
     },
     {
         id: 3,
         type: "Special Eligibility",
         label: 'Barangay Eligibility',
-        value: 'Barangay Eligibility',
+        value: '3',
     },
     {
         id: 4,
         type: "Special Eligibility",
         label: 'TechVoc Eligibility',
-        value: 'TechVoc Eligibility',
+        value: '4',
     },
 ]
 

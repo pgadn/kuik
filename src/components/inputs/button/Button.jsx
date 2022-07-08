@@ -4,6 +4,7 @@ import classNames from "classnames"
 
 const Button = (props) => {
     const {
+        ref,
         disabled,
         name,
         size,
@@ -18,6 +19,7 @@ const Button = (props) => {
     return (
         <div className={styles.ButtonWrapper}>
             <button
+                ref={ref}
                 className={classNames(
                     styles.Button,
                     variant && styles[`Button_Variant__${variant}`],

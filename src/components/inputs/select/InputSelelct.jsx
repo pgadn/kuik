@@ -96,7 +96,9 @@ const InputSelect = (props) => {
         if (typeof document !== undefined) {
             if (value) {
                 let inpt = document.getElementsByName(name)[0]
+                let inptLabel = document.getElementsByName("nameLabel")[0]
                 inpt.value = value
+                inptLabel.value = selectedLabel
                 let event = new Event('change', { bubbles: true })
                 inpt.dispatchEvent(event)
                 onChange && onChange(event)
@@ -130,8 +132,15 @@ const InputSelect = (props) => {
                     <input
                         readOnly
                         className={styles.Select}
-                        type="text"
+                        type="hidden"
                         name={name}
+                        placeholder={placeholder}
+                    />
+                    <input
+                        readOnly
+                        className={styles.Select}
+                        type="text"
+                        name="nameLabel"
                         placeholder={placeholder}
                     />
                     <ul className={classNames(styles.DropdownMenu, group && styles.DropdownMenu__Group)}>
