@@ -172,8 +172,8 @@ const BasicInfoStep = (props) => {
                                 group='type'
                                 options={eligibility}
                                 name="carModel"
-                                internalValue={elg}
-                                // optionLabel="label"
+                                // internalValue={elg}
+                                optionLabel="label"
                                 // optionValue="value"
                                 onChange={(v) => {
                                     setElg(v.target.value)
