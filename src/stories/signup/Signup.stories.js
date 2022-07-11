@@ -12,7 +12,7 @@ import CardContent from '../../components/surface/card/CardContent'
 import CardFooter from '../../components/surface/card/CardFooter'
 import Stepper, { Step, StepContent } from '../../components/navigation/stepper'
 import Typography from "../../components/data_display/typography/Typography"
-import InputSelect from '../../components/inputs/select/InputSelelct'
+import InputSelect from '../../components/inputs/select/InputSelect'
 
 const stories = storiesOf('Demo 1', module)
 

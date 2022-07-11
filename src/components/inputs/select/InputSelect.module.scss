@@ -89,6 +89,7 @@
     opacity: 1;
     height: auto;
     transition: margin-top 0.1s ease-in, opacity 0.3s ease-out, height 0.2s ease-out;
+    z-index: 2;
   }
   .Dropdown .DropdownMenu li, .Dropdown .DropdownMenu option {
     padding: 10px;
