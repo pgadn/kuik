@@ -21,8 +21,8 @@ export const SelectItem = ({
 
     const handleClick_Selected = (o) => {
         if (o && o.value) {
-            selectCntx.setValue(o.value)
-            selectCntx.setSelectedLabel(o.label)
+            selectCntx.setValue(optionValue ? o[optionValue] : o.value)
+            selectCntx.setSelectedLabel(optionLabel ? o[optionLabel] : o.label)
         }
     }
 
@@ -62,7 +62,7 @@ export const SelectItem = ({
                     value={o.value}
                     onMouseDown={() => handleClick_Selected(o)}
                 >
-                    {o.label}
+                    {optionLabel ? o[optionLabel] : o.label}
                 </option>
             ))}
         </>
