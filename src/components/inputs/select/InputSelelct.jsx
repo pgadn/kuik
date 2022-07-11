@@ -41,11 +41,11 @@ export const SelectItem = ({
                     <optgroup label={o}>
                         {options[o] && options[o].map((oo) => (
                             <option
-                                key={oo[optionValue] ? oo[optionValue] : oo.value}
-                                value={oo[optionValue] ? oo[optionValue] : oo.value}
+                                key={optionValue ? oo[optionValue] : oo.value}
+                                value={optionValue ? oo[optionValue] : oo.value}
                                 onMouseDown={() => handleClick_Selected(oo)}
                             >
-                                {oo[optionLabel] ? oo[optionLabel] : oo.label}
+                                {optionLabel ? oo[optionLabel] : oo.label}
                             </option>
                         ))}
                     </optgroup>
